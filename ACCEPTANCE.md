@@ -14,7 +14,7 @@ are explained, not hidden).
 - **A1 (MUST).** Every entry passes the executability test: it names specific
   `inputs_you_can_change` and specific `outputs_you_can_observe`, and the
   `executability_justification` states what a user varies and what observably changes.
-  *Why: the catalog's whole promise is "runnable," not "documented."*
+  *Why: the catalog's core requirement is that an entry be "runnable," not merely "documented."*
 - **A2 (MUST).** No entry is a purely static/descriptive artifact (e.g. a static DSM
   with no computation, a requirements matrix). *Why: those waste a professional's time
   here.*
@@ -40,14 +40,14 @@ are explained, not hidden).
 
 - **C1 (MUST).** Every one of the 17 core domain clusters in the brief has at least
   **2** qualifying entries, *unless* a documented note in `GAPS.md`/`PROGRESS.md`
-  explains that the domain genuinely yields fewer. *Why: a catalog thin in a domain a
-  professional cares about is not useful to them.*
+  explains that the domain genuinely yields fewer. *Why: a catalog with few entries in a
+  domain a professional cares about is not useful to them.*
 - **C2 (MUST).** Every explicitly named seed model in the brief is either present as an
   entry or has a one-line note explaining its absence (e.g. fails the inclusion test).
   *Why: the brief's seeds are the minimum a knowledgeable reader will look for.*
 - **C3 (SHOULD).** The catalog contains at least **80** entries total, going beyond the
-  named seeds where a domain is rich. *Why: "seeds, not limits."*
-- **C4 (SHOULD).** Both ends of the access spectrum are represented (permissive-open
+  named seeds where a domain has many qualifying models. *Why: "seeds, not limits."*
+- **C4 (SHOULD).** The full range of access types is represented (permissive-open
   through commercial and campus-or-employer-licensed). *Why: professionals use licensed
   tools too; the catalog must not be open-source-only.*
 
@@ -74,12 +74,12 @@ are explained, not hidden).
   a structured card carrying the schema fields.
 - **E2 (MUST).** The site supports **full-text search**, **filter by domain**, **filter
   by access type**, and **sort by maintenance recency**. *Why: these are exactly the
-  cuts a professional makes when scanning tools.* This is verified by
+  ways a professional narrows a list of tools.* This is verified by
   `tests/test_site_logic.mjs` exercising the real site logic module.
 - **E3 (MUST).** Search/filter/sort logic passes 100% of the headless tests.
-- **E4 (SHOULD).** Each card surfaces access type, maintenance status, verification
-  confidence, and last-verified date at a glance. *Why: trust signals must be visible
-  without a click.*
+- **E4 (SHOULD).** Each card shows access type, maintenance status, verification
+  confidence, and last-verified date without opening the entry. *Why: these trust
+  indicators must be visible without a click.*
 
 ## 6. Links
 

@@ -31,7 +31,7 @@ A running account of the build, kept current as work proceeds. Newest section la
 
 - `scripts/validate.py`: schema validation + cross-entry rules (id uniqueness,
   id/filename match, domain in registry, ISO date check, unstated-vs-declared
-  consistency, a soft >25-element inclusion warning). Fails loudly with non-zero exit.
+  consistency, a soft >25-element inclusion warning). Exits non-zero with explicit errors.
 - `scripts/build.py`: validates first, then renders the website (`site/`) and the three
   prose documents (`docs/`) from the same data. Refuses to build on invalid data.
 - `web/`: hand-written site source. `catalog-logic.mjs` is a pure module shared by the
@@ -45,7 +45,7 @@ A running account of the build, kept current as work proceeds. Newest section la
 
 ## Stage C — Populate the catalog  ✅
 
-- **Method.** Fanned out parallel domain research across the 17 core clusters plus the
+- **Method.** Ran parallel domain research across the 17 core clusters plus the
   two adjacent ones. Each research pass produced schema-shaped entries with per-field
   source URLs and an honest `verification_confidence`, verifying volatile facts against
   PyPI JSON, GitHub releases, and project/vendor sites. A one-time `scripts/ingest.py`
@@ -80,7 +80,7 @@ A running account of the build, kept current as work proceeds. Newest section la
   authored domain lead-ins that spell out acronyms, and glosses in parentheses. **Part 2**
   (generative AI across the traditions) and **Part 3** (the intersection of open runnable
   models and AI) are authored essays whose few figures (entry counts, open-vs-licensed
-  split) are injected from the live catalog so they never drift from the data.
+  split) are injected from the live catalog so they stay consistent with the data.
 - Style holds to the brief: flowing short declarative sentences, no bullets/tables/
   bold run-ins, minimal headers.
 

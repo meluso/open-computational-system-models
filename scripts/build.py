@@ -88,8 +88,8 @@ DOMAIN_INTRO = {
     "equation-based-physical": (
         "We move to equation-based physical modeling. The idea is to write the physics "
         "as equations and let a solver sort out cause and effect, rather than fixing "
-        "the direction of computation in advance. Modelica is the open language at the "
-        "center of this tradition."
+        "the direction of computation in advance. Modelica is the central open language "
+        "in this tradition."
     ),
     "controls-dynamics-python": (
         "Here are the controls and dynamics libraries written for Python. They let an "
@@ -124,8 +124,8 @@ DOMAIN_INTRO = {
     ),
     "wind-marine-energy": (
         "Here is wind and marine energy. These models capture the aeroelastic behavior "
-        "of a wind turbine, the wakes that turbines cast on one another across a farm, "
-        "and the response of a wave energy converter in the sea."
+        "of a wind turbine, the wakes that turbines create downstream of one another "
+        "across a farm, and the response of a wave energy converter in the sea."
     ),
     "process-chemical": (
         "Now we reach process and chemical engineering. These simulators assemble a "
@@ -144,8 +144,8 @@ DOMAIN_INTRO = {
         "whether a set of tasks can be scheduled or whether a safety property holds."
     ),
     "parametric-spreadsheets": (
-        "Now consider parametric spreadsheet models. A spreadsheet may be humble, but "
-        "when its inputs drive a chain of recomputed outputs across dozens of linked "
+        "Now consider parametric spreadsheet models. A spreadsheet is a simple tool, but "
+        "when its inputs drive a sequence of recomputed outputs across dozens of linked "
         "cells, it is a runnable system model in every sense that matters here."
     ),
     "computing-dsm": (
@@ -157,7 +157,7 @@ DOMAIN_INTRO = {
     "heterogeneous-digital-twin": (
         "Finally among the core clusters we reach heterogeneous and digital-twin "
         "platforms. These frameworks let different kinds of model run together, or couple "
-        "separate simulators into a single co-simulation that can stand in for a real "
+        "separate simulators into a single co-simulation that can substitute for a real "
         "system."
     ),
     "systems-biology-sbml": (
@@ -308,7 +308,7 @@ def build_part2(entries: list[dict], domains: list[dict]) -> str:
 
 This part steps back from the inventory and asks a single question. Where is
 generative artificial intelligence, shortened to A I, actually changing how these
-system models get built and used, and where is it mostly noise. We will move
+system models get built and used, and where does it add little. We will move
 across the traditions in the catalog, from writing code, through the modeling
 languages, into the spreadsheets, and on to systems engineering. The honest
 answer differs sharply from one tradition to the next.
@@ -318,16 +318,16 @@ general-purpose languages. Many of the most capable tools in this catalog are
 Python libraries. OpenMDAO for optimization, python-control and do-mpc for
 control, SimPy and Mesa for simulation, pandapower and PyPSA for power systems,
 Orekit and Basilisk for spacecraft. For all of these, a large language model is a
-genuine accelerant. It can scaffold a model, wire up a component, recall an
+substantial help. It can scaffold a model, wire up a component, recall an
 unfamiliar interface, and explain an error message. The reason it works so well
 here is that the languages are popular, the libraries are open, and decades of
-example code sit in public repositories that the models were trained on. The same
-holds, with a little more friction, for MATLAB and Simulink. The MATLAB language
+example code are available in public repositories that the models were trained on. The same
+holds, with more difficulty, for MATLAB and Simulink. The MATLAB language
 is widely documented, so a model can write MATLAB scripts capably, and MathWorks
 has added an A I assistant of its own. But Simulink itself is a visual,
 block-diagram tool. A model can describe how to build a Simulink diagram, and can
 generate the MATLAB that builds one programmatically, but it cannot yet drag the
-blocks. The further a tradition sits from text, the weaker the help.
+blocks. The less text-based a tradition is, the weaker the help.
 
 That single observation, that these tools help most where the artifact is text
 and where training data is abundant, explains nearly everything that follows.
@@ -340,36 +340,36 @@ write plausible Modelica that does not quite simulate. The verification burden
 falls back on the engineer.
 
 Now consider spreadsheets, the parametric budget models for satellites, launch
-vehicles, and the like. These are a quiet success story for A I assistance.
+vehicles, and the like. These are an underappreciated success for A I assistance.
 Spreadsheet formulas are text, the patterns are common, and the major spreadsheet
 vendors have shipped natural-language features that write formulas and explain
 them. For an engineer assembling a link budget or a mass and power budget, this is
 real help with low stakes, because the result is immediately checkable.
 
 Then there is systems engineering and the modeling languages, M B S E and SysML.
-This is where the marketing is loudest and the substance is thinnest. The vision
-is appealing. Describe a system in plain language and have the model produce a
-SysML model. In practice the results are brittle. SysML version one has a heavy,
-tool-specific representation under the surface, so generated models often fail to
+This is where the claims are strongest and the demonstrated results are weakest. The
+goal is appealing. Describe a system in plain language and have the model produce a
+SysML model. In practice the results are unreliable. SysML version one has a complex,
+tool-specific underlying representation, so generated models often fail to
 load or fail to mean what they appear to mean. SysML version two, which is newer,
 has a clean textual notation and a published grammar, and this matters a great
 deal. A textual, well-specified language is exactly what these models are good at.
-So the most credible near-term A I help in systems engineering is not the grand
-vision but the narrow one. Generate the textual SysML version two for a constraint
+So the most credible near-term A I help in systems engineering is not the broad
+goal but the narrow one. Generate the textual SysML version two for a constraint
 or an analysis, and let the engineer check it.
 
 A pattern emerges across the catalog. Of the {n} models recorded here, {n_open}
 are open source and {n_licensed} are reached through a commercial, freemium, or
 institutional license. Generative A I helps most with the open, text-based,
-widely-used tools, because those are the ones whose code filled the training data.
-It helps least with the closed, visual, or niche tools, because those left little
-public trace and cannot be driven through text.
+widely-used tools, because those are the ones whose code is well represented in the
+training data. It helps least with the closed, visual, or niche tools, because those
+left little public material and cannot be driven through text.
 
 Two cautions belong in any honest account. First, these models are confident when
 they are wrong, and a simulation that runs is not a simulation that is correct. In
 engineering, a plausible-looking but subtly wrong model is more dangerous than an
-obvious error, because it passes the eye test. Second, the help is concentrated at
-the start of the work, the scaffolding and the boilerplate, and thins out exactly
+obvious error, because it looks correct on inspection. Second, the help is concentrated at
+the start of the work, the scaffolding and the boilerplate, and diminishes exactly
 where engineering judgment matters most, in choosing assumptions, validating
 against data, and deciding whether the answer can be trusted. The tools shorten the
 typing. They do not shorten the thinking.
@@ -387,17 +387,17 @@ def build_part3(entries: list[dict], domains: list[dict]) -> str:
 
 The first part inventoried the models. The second asked where generative
 artificial intelligence, shortened to A I, helps. This third part joins them,
-because the two questions turn out to be the same question seen from two sides.
+because the two questions turn out to be two aspects of the same question.
 The usefulness of A I across these engineering traditions tracks, almost line for
 line, the availability of open, runnable system models. Where open models are
-abundant, the A I is genuinely useful. Where they are scarce or locked away, the A
-I has little to stand on.
+abundant, the A I is genuinely useful. Where they are scarce or proprietary, the A
+I has little to draw on.
 
 The reason is mechanical, not mysterious. A language model learns from text it can
 see. An open, runnable model contributes far more than a closed one, because it
 brings its source code, its documentation, its issue threads, its tutorials, and
 the many public projects built on top of it. A commercial tool reached only
-through a license leaves a thin public trace by comparison. So the very openness
+through a license leaves little public material by comparison. So the very openness
 that lets a human run a model for free is the same openness that taught the A I how
 that model works. Of the {n} models in this catalog, {n_open} are open source, and
 it is no accident that those are the same traditions where A I assistance is
@@ -412,9 +412,9 @@ populated with permissively licensed tools whose code is fully public.
 
 Now look at where open, runnable models are scarce. Three gaps stand out. The
 first is systems engineering. For all the talk of A I writing system models, the
-supply of open, executable SysML and Capella models is thin, and much of what
-exists lives inside vendor tools. The arrival of the textual SysML version two
-notation may change this, because a clean text format invites public examples, and
+supply of open, executable SysML and Capella models is small, and much of what
+exists is held only inside vendor tools. The arrival of the textual SysML version two
+notation may change this, because a clean text format encourages public examples, and
 public examples are what the A I needs. The second gap is the commercial physical
 modeling and systems simulation tools, the high-end environments for
 multi-physics, powertrain, and plant simulation. They are powerful and widely used
@@ -426,27 +426,27 @@ artifact is not text.
 From this reading, the opportunities follow directly. The highest-value move for
 any of these traditions that wants to benefit from A I is to publish open, runnable
 example models in a textual form, with documentation, under a permissive license.
-That single act does double duty. It lets a practicing engineer run and learn the
-model for free, and it feeds the public corpus that makes the A I helpful for that
-very tool. A catalog like this one is a small step in that direction, because it
+That single act serves two purposes. It lets a practicing engineer run and learn the
+model for free, and it adds to the public corpus that makes the A I helpful for that
+very tool. A catalog like this one is one contribution toward that, because it
 gathers the runnable models in one place, records how to reach each one, and says
 honestly which facts it could not confirm.
 
-There is a quieter opportunity too, pointing the other way. A I can help close the
-gap it depends on. It is already reasonable to use a model to translate a model
+There is a quieter opportunity too, in the opposite direction. A I can help reduce the
+scarcity it depends on. It is already reasonable to use a model to translate a model
 between formalisms, to generate the textual SysML version two for an analysis, to
-write the script that drives a simulator, or to convert a brittle spreadsheet into
+write the script that drives a simulator, or to convert an undocumented spreadsheet into
 documented code. Used this way, generative A I does not only consume open models.
-It can help manufacture more of them.
+It can help produce more of them.
 
-The gap to watch, and to guard against, is trust. As it becomes easy to generate
+The risk to watch is trust. As it becomes easy to generate
 system models, it becomes easy to generate models that look right and are wrong.
-The traditions in this catalog that have strong validation cultures, the ones that
+The traditions in this catalog that have strong validation practices, the ones that
 check a simulation against measured data and against conservation laws, are the
-ones best placed to absorb A I help safely. The discipline that made these models
+ones best positioned to adopt A I help safely. The discipline that made these models
 trustworthy in the first place is exactly the discipline that A I makes more
 necessary, not less. The runnable, checkable, openly licensed model is both the
-fuel for the A I and the test it must pass.
+input the A I depends on and the standard it must meet.
 """
     return text
 

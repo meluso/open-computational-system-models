@@ -9,7 +9,7 @@ PIP := .venv/bin/pip
 help:
 	@echo "Targets:"
 	@echo "  make venv      - create .venv and install deps (PyYAML, jsonschema)"
-	@echo "  make validate  - validate every entry against the schema (fails loudly)"
+	@echo "  make validate  - validate every entry against the schema (exits non-zero on any error)"
 	@echo "  make build     - validate, then render site/ and docs/"
 	@echo "  make test      - run validation + headless site-logic tests"
 	@echo "  make test-site - run the Node headless search/filter/sort tests"

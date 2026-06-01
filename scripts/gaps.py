@@ -106,7 +106,7 @@ def main() -> int:
             lines.append(
                 "These hosts answered but blocked the scripted request (HTTP "
                 "401/403/405/429 — typically vendor/government anti-bot). The pages "
-                "are live; confirm in a browser:\n"
+                "load in a browser; confirm manually:\n"
             )
             for r in guarded:
                 lines.append(f"- {r['code']} — `{r['id']}` — {r['url']}")

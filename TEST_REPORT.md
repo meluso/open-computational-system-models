@@ -6,7 +6,7 @@ core clusters plus two adjacent ones).
 
 How to reproduce: `make venv && make all && make links && make gaps`.
 
-## Headline
+## Summary
 
 | Area | Result |
 |---|---|
@@ -54,7 +54,7 @@ How to reproduce: `make venv && make all && make links && make gaps`.
 - **C3 (SHOULD) PASS.** 89 entries (target ≥80).
 - **C4 (SHOULD) PASS.** Access spectrum is broad: permissive-open 51, copyleft-open
   11, weak-copyleft-open 8, campus-or-employer-licensed 12, commercial 4, free-closed 2,
-  freemium 1. Both ends represented.
+  freemium 1. Full range represented.
 
 ### 4. Accuracy & verifiability
 - **D1 (MUST) PASS.** No volatile fact was invented. 41 fields carry the explicit
@@ -88,7 +88,7 @@ How to reproduce: `make venv && make all && make links && make gaps`.
 - **F1 (MUST) PASS.** All 89 `access_link`s are syntactically valid `https?://` URLs.
 - **F2 (SHOULD) PASS.** 89 checked: 77 return HTTP 200; 12 are "guarded" (HTTP 403)
   — all MathWorks documentation/File-Exchange pages (11) and Argonne GREET (1), which
-  block scripted requests but are live in a browser. **Zero genuinely dead links.**
+  block scripted requests but load in a browser. **Zero genuinely dead links.**
 
 ### 7. The prose documents
 - **G1 (MUST) PASS.** `docs/part1.md` (inventory by domain), `docs/part2.md`
@@ -116,7 +116,7 @@ No MUST criterion failed. Items worth the maintainer's attention:
    and listed in `GAPS.md`. Action taken: did not guess.
 2. **12 guarded links (HTTP 403).** All MathWorks / GREET anti-bot responses, not dead
    links. Action taken: classified separately by the link checker and listed in
-   `GAPS.md` for a quick browser confirmation.
+   `GAPS.md` for quick manual confirmation in a browser.
 3. **Two adjacent domains have a single entry each** (SBML, CFD). By design — they are
    adjacent and included only where framable as a runnable multi-element system.
 4. **Three documented seed absences** (EAST-ADL, change-propagation DSM, standalone

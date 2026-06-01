@@ -120,7 +120,7 @@ Only entries with at least one unverified/unstated fact, or non-high confidence,
 
 From the most recent `scripts/check_links.py` run: guarded=12, ok=77.
 
-These hosts answered but blocked the scripted request (HTTP 401/403/405/429 — typically vendor/government anti-bot). The pages are live; confirm in a browser:
+These hosts answered but blocked the scripted request (HTTP 401/403/405/429 — typically vendor/government anti-bot). The pages load in a browser; confirm manually:
 
 - 403 — `adas-highway-lane-following` — https://www.mathworks.com/help/driving/ug/highway-lane-following.html
 - 403 — `aeroblks-hl20-airframe` — https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
