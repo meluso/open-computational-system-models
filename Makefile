@@ -4,7 +4,7 @@
 PY := .venv/bin/python
 PIP := .venv/bin/pip
 
-.PHONY: help venv validate build test test-site links gaps clean all
+.PHONY: help venv validate build test test-site links gaps serve clean all
 
 help:
 	@echo "Targets:"
@@ -14,6 +14,7 @@ help:
 	@echo "  make test      - run validation + headless site-logic tests"
 	@echo "  make test-site - run the Node headless search/filter/sort tests"
 	@echo "  make links     - check access_link URLs resolve (add SOURCES=1 for sources)"
+	@echo "  make serve     - preview the built site over HTTP at localhost:8000"
 	@echo "  make all       - validate, build, test"
 	@echo "  make clean     - remove generated site/ output"
 
@@ -39,6 +40,11 @@ links:
 
 gaps:
 	$(PY) scripts/gaps.py
+
+# Serve the built site over HTTP. Open the page over http://, not file://,
+# otherwise the browser blocks the ES-module imports and nothing renders.
+serve:
+	cd site && python3 -m http.server 8000
 
 all: validate build test
 
