@@ -1,0 +1,11 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Tooling scratch
+*.log
+linkcheck.json
+.DS_Store
+
+# Note: site/ and docs/ ARE committed — they are the published build artifacts.

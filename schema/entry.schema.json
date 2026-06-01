@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/meluso/open-computational-system-models/schema/entry.schema.json",
+  "title": "Computational System Model catalog entry",
+  "description": "Schema for a single catalog entry. Every entry is one YAML file under data/<domain>/. Volatile fields may carry the sentinel string 'unstated — needs direct verification' instead of a guessed value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "gloss",
+    "domain",
+    "system_represented",
+    "inputs_you_can_change",
+    "outputs_you_can_observe",
+    "runtime_required",
+    "access_type",
+    "license",
+    "scale",
+    "maintenance_status",
+    "access_link",
+    "suitability",
+    "executability_justification",
+    "last_verified",
+    "source_per_field",
+    "verification_confidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable kebab-case identifier, unique across the catalog. Matches the filename stem.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Canonical name of the model or tool."
+    },
+    "gloss": {
+      "type": "string",
+      "minLength": 10,
+      "description": "One-line plain-language description for a non-specialist."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain slug; must exist in data/domains.yml.",
+      "enum": [
+        "executable-mbse",
+        "mathworks-mbd",
+        "mdo",
+        "equation-based-physical",
+        "controls-dynamics-python",
+        "des-abm",
+        "power-energy",
+        "infrastructure-networks",
+        "robotics-multibody",
+        "aerospace-space",
+        "wind-marine-energy",
+        "process-chemical",
+        "circuits-electronics",
+        "architecture-description-langs",
+        "parametric-spreadsheets",
+        "computing-dsm",
+        "heterogeneous-digital-twin",
+        "systems-biology-sbml",
+        "continuum-cfd"
+      ]
+    },
+    "system_represented": {
+      "type": "string",
+      "minLength": 5,
+      "description": "The engineered system the model represents."
+    },
+    "inputs_you_can_change": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Specific inputs or parameters a user can vary."
+    },
+    "outputs_you_can_observe": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Specific outcomes of interest that respond to changed inputs."
+    },
+    "runtime_required": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Tool, language, or runtime needed to actually run it."
+    },
+    "access_type": {
+      "type": "string",
+      "description": "How a user gets access. Mandatory. Never used as an inclusion filter.",
+      "enum": [
+        "permissive-open",
+        "weak-copyleft-open",
+        "copyleft-open",
+        "free-closed",
+        "freemium",
+        "commercial",
+        "campus-or-employer-licensed"
+      ]
+    },
+    "license": {
+      "type": "string",
+      "minLength": 2,
+      "description": "License name where applicable, or the unstated sentinel."
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_count", "grouping"],
+      "properties": {
+        "element_count": {
+          "type": "string",
+          "description": "Approximate element count for a representative runnable model, or the unstated sentinel. The inclusion test requires more than 25 interacting elements."
+        },
+        "grouping": {
+          "type": "string",
+          "description": "How elements group into subsystems, or the unstated sentinel."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional clarification of what counts as an element for this tool."
+        }
+      }
+    },
+    "maintenance_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["active", "maintained", "dormant", "abandoned", "unknown"],
+          "description": "active = frequent releases/commits; maintained = updated but slower; dormant = no recent activity but usable; abandoned = unmaintained; unknown = could not determine."
+        },
+        "latest_version": {
+          "type": "string",
+          "description": "Latest version string, or the unstated sentinel."
+        },
+        "latest_release_date": {
+          "type": "string",
+          "description": "Latest release date (ISO or year), or the unstated sentinel."
+        }
+      }
+    },
+    "access_link": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://",
+      "description": "Canonical URL."
+    },
+    "suitability": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Who it suits, e.g. newcomer versus expert, and in what role."
+    },
+    "executability_justification": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Why this entry passes the executability inclusion test: what a user varies and what observably changes."
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO date the volatile facts were confirmed. Mandatory."
+    },
+    "source_per_field": {
+      "type": "object",
+      "description": "Map of volatile field name -> source (URL or short note). Should cover at least version/license/maintenance and access_link.",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string" }
+    },
+    "verification_confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall", "unverified"],
+      "properties": {
+        "overall": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Honest overall confidence in the volatile facts."
+        },
+        "unverified": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Explicit list of field names whose values are unverified or carry the unstated sentinel. May be empty."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional caveats."
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional free-form tags for cross-cutting themes."
+    }
+  }
+}

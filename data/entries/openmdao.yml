@@ -1,0 +1,58 @@
+id: openmdao
+name: OpenMDAO
+gloss: An open-source framework for gradient-based multidisciplinary design optimization of coupled engineering systems.
+domain: mdo
+system_represented: >-
+  Coupled multidisciplinary engineering systems — for example an aircraft whose
+  aerodynamics, structures, and propulsion are optimized together — assembled
+  from interconnected analysis components.
+inputs_you_can_change:
+  - design variables (e.g. geometry, sizing, operating conditions)
+  - constraints and objective function
+  - component connections and model topology
+  - solver and optimizer settings
+  - analytic vs. finite-difference derivative options
+outputs_you_can_observe:
+  - optimized design variable values
+  - objective and constraint values at the optimum
+  - coupled multidisciplinary analysis results
+  - total derivatives / design sensitivities
+  - optimizer iteration history
+runtime_required: Python 3 (with NumPy/SciPy; optional pyOptSparse for advanced optimizers)
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: >-
+    Framework, not a fixed model — representative coupled models assemble dozens
+    to hundreds of components, variables, and connections.
+  grouping: Components are nested into Groups (subsystems), which compose into the overall model.
+  notes: An "element" here is a Component or a connection in the model dependency graph.
+maintenance_status:
+  status: active
+  latest_version: 3.43.0
+  latest_release_date: "2026-03-11"
+access_link: https://openmdao.org/
+suitability: >-
+  Suits engineers and researchers comfortable with Python who need rigorous,
+  derivative-based optimization of coupled systems; steeper learning curve than a
+  point tool, so less suited to a casual newcomer.
+executability_justification: >-
+  A user defines design variables, an objective, and constraints, runs the
+  optimizer, and observes a changed optimum and changed coupled-analysis outputs —
+  varying inputs produces observably different outcomes.
+last_verified: "2026-06-01"
+source_per_field:
+  latest_version: https://pypi.org/pypi/openmdao/json (3.43.0, uploaded 2026-03-11)
+  latest_release_date: https://pypi.org/pypi/openmdao/json
+  license: https://pypi.org/pypi/openmdao/json (Apache-2.0)
+  access_link: https://openmdao.org/
+  maintained_by: NASA Glenn Research Center (MDAO Lab), per openmdao.org
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Version and license confirmed against PyPI on the verification date.
+tags:
+  - optimization
+  - python
+  - nasa
+  - aircraft

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Catalog of Computational System Models</title>
+    <meta
+      name="description"
+      content="A searchable, filterable catalog of runnable computational system models for practicing engineers and data scientists."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <h1>A Catalog of Computational System Models</h1>
+        <p class="tagline">
+          Runnable models of engineered systems — change inputs, observe
+          different outcomes. Built for practicing engineers and data
+          scientists.
+        </p>
+        <p id="meta-line" class="meta-line"></p>
+      </div>
+    </header>
+
+    <section class="controls wrap" aria-label="Search and filters">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search name, system, inputs, outputs…"
+        autocomplete="off"
+        aria-label="Search models"
+      />
+      <select id="domain-filter" aria-label="Filter by domain"></select>
+      <select id="access-filter" aria-label="Filter by access type"></select>
+      <select id="sort" aria-label="Sort order">
+        <option value="maintenance-desc">Sort: most recently maintained</option>
+        <option value="maintenance-asc">Sort: least recently maintained</option>
+        <option value="name-asc">Sort: name A→Z</option>
+        <option value="name-desc">Sort: name Z→A</option>
+        <option value="domain">Sort: by domain</option>
+      </select>
+      <button id="reset" type="button">Reset</button>
+      <span id="result-count" class="result-count" aria-live="polite"></span>
+    </section>
+
+    <main id="results" class="results wrap" aria-label="Catalog results"></main>
+
+    <footer class="site-footer wrap">
+      <p>
+        Every entry records its access type, an honest verification confidence,
+        and the date its volatile facts were last checked. Fields marked
+        <span class="unstated">unstated — needs direct verification</span> were
+        deliberately not guessed. See the repository for the schema, the
+        narrative prose documents, and the gaps log.
+      </p>
+    </footer>
+
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>
