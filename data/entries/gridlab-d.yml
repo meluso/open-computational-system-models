@@ -1,0 +1,53 @@
+id: gridlab-d
+name: GridLAB-D
+gloss: GridLAB-D, the US Department of Energy's agent-based power distribution system simulation and analysis
+  tool.
+domain: power-energy
+system_represented: Electric power distribution systems with detailed end-use models, modeled as interconnected
+  objects (nodes, links, transformers, houses, loads, controls) using an agent-based, time-series simulation
+  engine that couples power flow with end-use, market, and control behavior.
+inputs_you_can_change:
+- feeder topology and component definitions (.glm models)
+- house/thermal and end-use load parameters
+- weather/climate input data
+- DER, controller, and market module settings
+- simulation timestep and duration
+outputs_you_can_observe:
+- node voltages and line/transformer power flows over time
+- aggregate and per-house load profiles
+- transformer/equipment loading and losses
+- controller actions and market clearing results
+- voltage regulation and demand-response effects
+runtime_required: GridLAB-D executable (Windows/Linux/macOS builds); models written in GLM
+access_type: permissive-open
+license: BSD-style (DOE/PNNL)
+scale:
+  element_count: Includes IEEE distribution test feeders and taxonomy feeders; models commonly contain
+    hundreds to thousands of nodes plus thousands of house/end-use objects.
+  grouping: Objects grouped by class and module (powerflow, residential, market, tape); feeders organized
+    hierarchically by node/link connectivity.
+  notes: Strong residential end-use and DER modeling.
+maintenance_status:
+  status: active
+  latest_version: v5.3.0
+  latest_release_date: '2025-01-07'
+access_link: https://github.com/gridlab-d/gridlab-d
+suitability: Distribution utilities and researchers studying DER integration, demand response, and end-use
+  load behavior on feeders.
+executability_justification: Users edit GLM models (loads, DER, controls, weather) and run the simulation
+  to observe changed voltages, flows, and load profiles over time. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/gridlab-d/gridlab-d/releases/latest
+  latest_release_date: https://api.github.com/repos/gridlab-d/gridlab-d/releases/latest
+  license: https://github.com/gridlab-d/gridlab-d
+  access_link: https://github.com/gridlab-d/gridlab-d
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: License is BSD-style per project; exact SPDX text not re-fetched this session.
+tags:
+- distribution
+- agent-based
+- end-use
+- doe

@@ -1,0 +1,56 @@
+id: epanet
+name: EPANET
+gloss: EPANET, the US Environmental Protection Agency's model for simulating hydraulic and water-quality
+  behavior in pressurized drinking-water distribution networks.
+domain: infrastructure-networks
+system_represented: Drinking-water distribution systems represented as networks of junctions (nodes),
+  pipes, pumps, valves, tanks, and reservoirs, simulated for extended-period hydraulics and water quality
+  (e.g. chlorine decay, water age).
+inputs_you_can_change:
+- network topology (junctions, pipes, pumps, valves, tanks)
+- pipe diameters, lengths, and roughness coefficients
+- nodal water demands and demand patterns
+- pump curves and control rules
+- water-quality source concentrations and reaction coefficients
+outputs_you_can_observe:
+- node pressures and hydraulic heads
+- pipe flows and velocities
+- tank water levels over time
+- water age and chlorine/contaminant concentrations
+- pump energy use and operating status
+runtime_required: EPANET Windows GUI, or the EPANET toolkit/library (C API) usable from Python (e.g. via
+  WNTR or EPANET-Python)
+access_type: permissive-open
+license: public domain (US EPA); OWA EPANET engine under MIT
+scale:
+  element_count: Example/benchmark networks (e.g. Net1, Net2, Net3) plus real-world models with hundreds
+    to many thousands of pipes and junctions.
+  grouping: Elements grouped into nodes (junctions, reservoirs, tanks) and links (pipes, pumps, valves);
+    can be organized by pressure zones.
+  notes: Widely used reference engine for water network analysis.
+maintenance_status:
+  status: active
+  latest_version: v2.3.5 (OpenWaterAnalytics EPANET); EPA EPANET 2.2.x
+  latest_release_date: '2026-02-20'
+access_link: https://www.epa.gov/water-research/epanet
+suitability: Water utilities, civil/environmental engineers, and researchers analyzing distribution-system
+  hydraulics and water quality.
+executability_justification: Users edit pipes, demands, pumps, and controls and run an extended-period
+  simulation to observe changed pressures, flows, tank levels, and water quality. Passes the inclusion
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/OpenWaterAnalytics/EPANET/releases/latest
+  latest_release_date: https://api.github.com/repos/OpenWaterAnalytics/EPANET/releases/latest
+  license: https://www.epa.gov/water-research/epanet
+  access_link: https://www.epa.gov/water-research/epanet
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: EPA distributes the official EPANET (2.2.x) as public domain; the community OpenWaterAnalytics
+    engine (latest v2.3.5, 2026-02-20) is MIT-licensed. EPA exact current build number not pinned.
+tags:
+- water-distribution
+- hydraulics
+- water-quality
+- epa

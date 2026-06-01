@@ -1,0 +1,56 @@
+id: nasa-gmat
+name: NASA GMAT
+gloss: GMAT (General Mission Analysis Tool) is NASA's open-source software system for spacecraft mission
+  design, trajectory optimization, and navigation across regimes from low Earth orbit to deep space.
+domain: aerospace-space
+system_represented: Models spacecraft missions and their orbital trajectories, including high-fidelity
+  force modeling (gravity fields, drag, solar radiation pressure, third bodies), propulsive maneuvers,
+  propagation, and optimization/targeting for mission design and operations.
+inputs_you_can_change:
+- Spacecraft initial orbital state and physical properties
+- Force model configuration (gravity field, drag, SRP, point masses)
+- Burn/maneuver and thruster definitions
+- Propagator settings and mission timeline/sequence
+- Targeting/optimization variables and goals
+outputs_you_can_observe:
+- Propagated orbit/ephemeris and ground track
+- Orbital element time histories
+- Maneuver delta-V and fuel use
+- Targeting/optimization convergence and achieved goals
+- 2D/3D trajectory visualization and reports
+runtime_required: GMAT desktop application (Windows/Linux/macOS) with GUI and scripting; optional Python/MATLAB
+  interfaces
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative mission script assembles spacecraft, force models, propagators, maneuvers,
+    solvers, and output subscribers into a sequence of many interacting resources and commands, exceeding
+    25 interacting elements.
+  grouping: Organized into Resources (spacecraft, force models, propagators, burns, solvers, coordinate
+    systems) and a Mission Sequence of commands acting on them.
+  notes: Element count scales with mission complexity; codebase is ~2 million source lines.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: '2026-05-06'
+access_link: https://github.com/nasa/GMAT
+suitability: Mission designers, flight dynamics engineers, and researchers at agencies, industry, and
+  academia doing trajectory design and navigation.
+executability_justification: Users vary spacecraft state, force models, maneuvers, and mission sequence
+  and run the mission; propagated trajectory, delta-V, and targeting outcomes change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/nasa/GMAT/releases/latest
+  latest_release_date: https://api.github.com/repos/nasa/GMAT/releases/latest
+  license: https://github.com/nasa/GMAT
+  access_link: https://github.com/nasa/GMAT
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: R2026a release (May 2026) confirmed via GitHub releases API; Apache-2.0 confirmed via GitHub
+    repo. Also distributed via SourceForge.
+tags:
+- spacecraft
+- mission-design
+- trajectory
+- nasa

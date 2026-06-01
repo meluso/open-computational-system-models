@@ -1,0 +1,55 @@
+id: ptolemy-ii
+name: Ptolemy II
+gloss: UC Berkeley open-source framework for modeling and simulating heterogeneous concurrent systems
+  using multiple models of computation (actor-oriented design).
+domain: heterogeneous-digital-twin
+system_represented: Ptolemy II models heterogeneous concurrent systems—cyber-physical and IoT systems—where
+  actors communicate through ports and a pluggable "director" sets the model of computation (continuous,
+  discrete-event, synchronous dataflow, finite-state, etc.). Different subsystems can run under different
+  semantics within one hierarchical model.
+inputs_you_can_change:
+- Actor parameters
+- Director / model-of-computation choice per composite
+- Model topology (actor wiring)
+- Input data streams and source actors
+- Simulation duration and solver settings
+outputs_you_can_observe:
+- Plotted signal time-series from plotter actors
+- Actor output token streams
+- State-machine transitions
+- Event traces under discrete-event semantics
+runtime_required: Ptolemy II (Java; Vergil graphical editor), JVM required
+access_type: permissive-open
+license: unstated — needs direct verification
+scale:
+  element_count: Representative models contain dozens of interconnected actors across hierarchical composites
+  grouping: Actors grouped into hierarchical composite actors, each with its own director
+  notes: Multiple models of computation in one model
+maintenance_status:
+  status: dormant
+  latest_version: 11.0.1
+  latest_release_date: '2018-06-18'
+  notes: Only routine dependency-bump commits in 2025 (e.g., rhino, jsoup, jython); no new release since
+    2018.
+access_link: https://ptolemy.berkeley.edu/ptolemyII/
+suitability: Researchers and students studying heterogeneous models of computation, cyber-physical and
+  dataflow system design.
+executability_justification: Users change actor parameters, director choice, and inputs and observe changed
+  plotted/token outputs when running models in Vergil. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  gloss: https://ptolemy.berkeley.edu/ptolemyII/
+  latest_version: https://ptolemy.berkeley.edu/ptolemyII/
+  latest_release_date: https://github.com/icyphy/ptII/releases
+  maintenance_status: https://api.github.com/repos/icyphy/ptII/commits?per_page=5
+verification_confidence:
+  overall: high
+  unverified:
+  - license
+  notes: License (BSD-style Ptolemy license) not directly fetched this session; latest release 11.0.1
+    (June 2018) confirmed, repo shows only maintenance commits in 2025 → dormant.
+tags:
+- actor-oriented
+- models-of-computation
+- cyber-physical
+- open-source

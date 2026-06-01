@@ -1,0 +1,51 @@
+id: sps-three-phase-grid-pv
+name: Three-Phase Grid-Connected Solar Photovoltaic System
+gloss: A grid-connected rooftop solar photovoltaic (PV) plant that feeds three-phase power into the grid
+  at unity power factor, with maximum-power-point tracking (MPPT) and an inverter, built in Simscape Electrical.
+domain: mathworks-mbd
+system_represented: 'A three-phase grid-connected solar PV system with no intermediate DC-DC converter:
+  parallel strings of series-connected solar panels (modeled with the Solar Cell block), an MPPT controller,
+  a DC-AC inverter, and a grid interface that injects solar power at unity power factor.'
+inputs_you_can_change:
+- solar irradiance and temperature
+- panel configuration (panels per string, parallel strings)
+- MPPT technique (incremental conductance vs perturb-and-observe)
+- inverter type (average, two-level, or three-level)
+outputs_you_can_observe:
+- real power delivered to the grid
+- maximum-power-point tracking performance (DC voltage/power)
+- three-phase grid current/voltage and power factor
+- small-signal stability metrics (phase and gain margin from Bode plots)
+runtime_required: MATLAB + Simulink + Simscape Electrical
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Solar Plant subsystem, MPPT controller, inverter stage, and grid interface.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Simscape Electrical docs; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+suitability: Suits power-systems / power-electronics engineers and advanced students; requires licensed
+  MATLAB + Simscape Electrical.
+executability_justification: The user changes irradiance/temperature, panel count, MPPT method, or inverter
+  type, runs the simulation, and observes the grid power, MPPT tracking, and stability margins change.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+  system_represented: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+  inputs_you_can_change: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+  outputs_you_can_observe: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+  runtime_required: https://www.mathworks.com/help/sps/ug/three-phase-grid-connected-in-pv-system.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- simscape-electrical
+- solar-pv
+- power-systems

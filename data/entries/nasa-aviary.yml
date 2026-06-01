@@ -1,0 +1,56 @@
+id: nasa-aviary
+name: NASA Aviary
+gloss: NASA's open-source aircraft analysis, design, and optimization tool built on the OpenMDAO (open-source
+  Multidisciplinary Design Analysis and Optimization) framework.
+domain: mdo
+system_represented: Models a complete fixed-wing aircraft for conceptual and preliminary multidisciplinary
+  design and optimization, integrating mass/sizing, aerodynamics, propulsion, and mission/trajectory analysis.
+  Incorporates sizing methods from NASA's legacy GASP (General Aviation Synthesis Program) and FLOPS (Flight
+  Optimization System) tools.
+inputs_you_can_change:
+- Aircraft geometry and sizing parameters (wing area, aspect ratio, etc.)
+- Mission profile and segment definitions
+- Propulsion/engine model selection and parameters
+- Aerodynamics and mass-estimation method choices
+- Design variables and optimization objectives/constraints
+outputs_you_can_observe:
+- Gross/empty weight and component mass breakdown
+- Fuel burn and mission performance
+- Aerodynamic coefficients across the mission
+- Optimized design variable values
+- Trajectory/mission state histories
+runtime_required: Python 3 with OpenMDAO; installed via pip ("aviary"); optimizer such as SciPy or pyOptSparse
+  recommended
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative sized-aircraft mission model couples many tens of OpenMDAO components
+    across mass, aero, propulsion, and mission subsystems, far exceeding 25 interacting elements.
+  grouping: Decomposed into disciplinary subsystems (geometry/sizing, aerodynamics, propulsion, mass)
+    and a mission analysis subsystem composed of mission phases, all assembled as OpenMDAO groups.
+  notes: Element count depends on chosen subsystem fidelity and mission segmentation.
+maintenance_status:
+  status: active
+  latest_version: '1.0'
+  latest_release_date: '2026-04-29'
+access_link: https://github.com/OpenMDAO/Aviary
+suitability: Aircraft conceptual/preliminary designers, university senior-design courses, NASA and industry
+  MDO practitioners.
+executability_justification: Users vary geometry, mission, propulsion, and design variables and run analysis
+  or optimization; outputs such as weight, fuel burn, and optimized design change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/aviary/json
+  latest_release_date: https://pypi.org/pypi/aviary/json
+  license: https://pypi.org/pypi/aviary/json
+  access_link: https://github.com/OpenMDAO/Aviary
+  system_represented: https://pypi.org/pypi/aviary/json
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: 1.0 release (Apr 2026) and Apache-2.0 confirmed via PyPI JSON.
+tags:
+- aircraft-design
+- mdo
+- openmdao
+- nasa

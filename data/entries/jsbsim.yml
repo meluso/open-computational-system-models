@@ -1,0 +1,57 @@
+id: jsbsim
+name: JSBSim
+gloss: JSBSim is an open-source, general-purpose object-oriented flight dynamics model (FDM) for simulating
+  aircraft and other flight vehicles.
+domain: aerospace-space
+system_represented: Models the six-degree-of-freedom flight dynamics of an aircraft (or rocket/missile),
+  computing forces and moments from aerodynamics, propulsion, landing gear, mass properties, and control
+  systems to integrate the vehicle's motion through the atmosphere. Runs standalone or embedded in simulators
+  such as FlightGear.
+inputs_you_can_change:
+- Aircraft configuration file (aero, mass, geometry definition)
+- Control inputs (throttle, elevator, aileron, rudder)
+- Initial conditions (position, velocity, attitude)
+- Engine/propulsion parameters
+- Atmospheric and environment settings
+outputs_you_can_observe:
+- Position, velocity, and attitude time histories
+- Aerodynamic forces and moments
+- Engine thrust and fuel state
+- Accelerations and angular rates
+- Control-surface and trim states
+runtime_required: C++ library with command-line tool; Python bindings via pip ("JSBSim"); reads XML aircraft/script
+  files
+access_type: weak-copyleft-open
+license: LGPL-2.1-or-later
+scale:
+  element_count: A representative aircraft model defines many interacting elements (aerodynamic coefficient
+    functions, propulsion components, flight-control system channels, gear contacts), exceeding 25 interacting
+    elements.
+  grouping: 'Organized into subsystems per aircraft definition: aerodynamics, propulsion (engines/tanks/thrusters),
+    flight control system, ground reactions, and mass balance.'
+  notes: Element count scales with aircraft model complexity and FCS channel count.
+maintenance_status:
+  status: active
+  latest_version: v1.3.1
+  latest_release_date: '2026-05-17'
+access_link: https://github.com/JSBSim-Team/jsbsim
+suitability: Flight dynamics engineers, simulation developers, and researchers needing a scriptable, embeddable
+  FDM.
+executability_justification: Users vary aircraft configuration, control inputs, and initial conditions
+  and run the simulation; trajectory, forces, and vehicle states change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/JSBSim-Team/jsbsim/releases/latest
+  latest_release_date: https://api.github.com/repos/JSBSim-Team/jsbsim/releases/latest
+  license: https://pypi.org/pypi/JSBSim/json
+  access_link: https://github.com/JSBSim-Team/jsbsim
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: v1.3.1 (May 2026) confirmed via GitHub releases API; LGPLv2+ confirmed via PyPI JSON.
+tags:
+- flight-dynamics
+- aircraft
+- simulation
+- cpp
+- python

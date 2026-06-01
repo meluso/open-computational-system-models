@@ -1,0 +1,54 @@
+id: sm-manipulator-arm-simscape
+name: Model and Control a Manipulator Arm with Robotics and Simscape
+gloss: A pick-and-place workflow for an ABB YuMi industrial robot arm, designing control in Simulink and
+  simulating the multibody mechanics and contact with Simscape Multibody.
+domain: mathworks-mbd
+system_represented: A single arm of the dual-arm ABB YuMi industrial manipulator executing a pick-and-place
+  task, modeled across three increasing-fidelity models culminating in a high-fidelity Simscape Multibody
+  mechanical simulation with contact proxies, a gripper, and an object (widget) to be grasped.
+inputs_you_can_change:
+- waypoint configurations (robot joint positions)
+- trajectory parameters (trapezoidal velocity profile)
+- gripper open/close command
+- contact-model parameters (stiffness, damping, friction)
+- controller gains
+outputs_you_can_observe:
+- joint positions, velocities, and accelerations
+- gripper status and reaction/contact forces
+- object (widget) position and contact interactions
+- task-scheduler state transitions
+runtime_required: MATLAB + Simulink + Robotics System Toolbox + Simscape + Simscape Multibody
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Task Scheduler & Trajectory Generation, Joint Controller & Basic Dynamics, and Simscape Robot
+    & Environment (high-fidelity multibody plant with contact and gripper).
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Robotics System Toolbox docs; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+suitability: Suits robotics / mechatronics engineers comfortable with Simulink and Simscape Multibody;
+  requires licensed MATLAB plus those toolboxes.
+executability_justification: The user changes waypoints, trajectory timing, gripper commands, or contact/controller
+  parameters, runs the simulation, and observes the arm's joint motion, grasp forces, and whether the
+  object is successfully picked and placed.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+  system_represented: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+  inputs_you_can_change: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+  outputs_you_can_observe: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+  runtime_required: https://www.mathworks.com/help/robotics/ug/model-and-control-a-manipulator-arm-with-simscape.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- simscape-multibody
+- robotics
+- manipulator

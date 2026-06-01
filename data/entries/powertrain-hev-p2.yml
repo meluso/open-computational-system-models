@@ -1,0 +1,59 @@
+id: powertrain-hev-p2
+name: HEV P2 Reference Application (Powertrain Blockset)
+gloss: A full Hybrid Electric Vehicle (HEV) in the P2 architecture (motor coupled between engine and transmission),
+  with engine, battery, motor, dual-clutch transmission, and supervisory powertrain control.
+domain: mathworks-mbd
+system_represented: A complete passenger-car hybrid electric powertrain in the P2 configuration, with
+  a spark-ignition internal combustion engine, lithium-ion battery, electric traction motor, and dual-clutch
+  transmission, plus the vehicle controller (VCU), engine controller (ECU), transmission controller (TCU),
+  and braking control. It is used for fuel-economy tradeoff analysis, control calibration, and hardware-in-the-loop
+  (HIL) testing.
+inputs_you_can_change:
+- driver scenario / drive-cycle variant (reference velocity and maneuvers)
+- environmental conditions (road grade, wind, temperature, pressure)
+- driver commands (acceleration, braking, gear, steering)
+- powertrain component sizing/parameters via the Virtual Vehicle Composer
+- supervisory energy-management (ECMS) controller settings
+outputs_you_can_observe:
+- vehicle speed and performance metrics
+- battery state of charge (SOC)
+- fuel economy and tailpipe emissions
+- component-level power and energy flows
+- engine and powertrain efficiency (e.g. efficiency histograms)
+runtime_required: MATLAB + Simulink + Powertrain Blockset (Stateflow used for controller logic)
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Controller (VCU/ECU/TCU/braking), Vehicle (drivetrain, electric plant, engine), Scenarios/Environment/Driver
+    Commands, Visualization dashboards, and a power-and-energy analysis live script.
+  notes: A preassembled multi-subsystem reference application, far more than 25 blocks.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Powertrain Blockset; release family confirmed from mathworks.com, per-example
+    version not separately stated.
+access_link: https://www.mathworks.com/help/autoblks/ug/explore-the-hybrid-electric-vehicle-p2-reference-application.html
+suitability: Suits powertrain/controls engineers with a Simulink background; requires licensed MATLAB
+  + Powertrain Blockset to run. Not a newcomer's first model.
+executability_justification: The user selects a drive cycle, changes environment and component parameters
+  or the energy-management controller, runs the simulation, and observes changed time-series of vehicle
+  speed, battery SOC, fuel economy, and emissions.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/autoblks/ug/explore-the-hybrid-electric-vehicle-p2-reference-application.html
+  system_represented: https://www.mathworks.com/help/autoblks/ug/explore-the-hybrid-electric-vehicle-p2-reference-application.html
+  inputs_you_can_change: https://www.mathworks.com/help/autoblks/ug/explore-the-hybrid-electric-vehicle-p2-reference-application.html
+  outputs_you_can_observe: https://www.mathworks.com/help/autoblks/ug/explore-the-hybrid-electric-vehicle-p2-reference-application.html
+  runtime_required: https://www.mathworks.com/help/autoblks/powertrain-reference-applications.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- powertrain-blockset
+- hev
+- automotive

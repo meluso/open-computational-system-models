@@ -1,0 +1,57 @@
+id: orekit
+name: Orekit
+gloss: Orekit is an open-source, low-level space flight dynamics library written in Java, providing building
+  blocks for orbit propagation, attitude, and mission analysis.
+domain: aerospace-space
+system_represented: Models spacecraft orbital and attitude dynamics, providing orbits, dates, frames,
+  attitude laws, force models (gravity, drag, SRP, third bodies), numerical and analytical propagators,
+  maneuvers, and orbit determination for space mission analysis.
+inputs_you_can_change:
+- Initial orbit/state and epoch
+- Force model selection (gravity field, atmospheric drag, SRP, third bodies)
+- Propagator type and integration settings
+- Attitude law and maneuver definitions
+- Reference frames and time scales
+outputs_you_can_observe:
+- Propagated orbital states/ephemeris
+- Orbital element time histories
+- Spacecraft attitude over time
+- Event detections (eclipses, station visibility, node/apside crossings)
+- Orbit determination residuals and estimated parameters
+runtime_required: Java (JVM); available via Maven Central; usable from Java or via wrappers (e.g. Orekit
+  Python wrapper)
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative propagation/orbit-determination setup composes many interacting objects
+    (orbit, propagator, multiple force models, attitude provider, event detectors, measurement handlers),
+    exceeding 25 interacting elements.
+  grouping: 'Organized into packages of building blocks: orbits/dates/frames, attitude, forces, propagation,
+    and estimation, assembled programmatically into a model.'
+  notes: Element count scales with the number of force models, detectors, and measurements configured.
+maintenance_status:
+  status: active
+  latest_version: 13.1.5
+  latest_release_date: '2026-05-02'
+access_link: https://www.orekit.org/
+suitability: Flight dynamics engineers and developers building custom space mission analysis, propagation,
+  and orbit determination tools.
+executability_justification: Developers configure an initial state, force models, and propagator/detectors
+  and run propagation or estimation; resulting ephemeris, events, and estimates change observably with
+  inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://www.orekit.org/news/2026/05/02/orekit-13.1.5-released.html
+  latest_release_date: https://www.orekit.org/news/2026/05/02/orekit-13.1.5-released.html
+  license: https://www.orekit.org/
+  access_link: https://www.orekit.org/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: 13.1.5 (May 2026) confirmed via CS-SI GitHub mirror releases API and orekit.org news; Apache-2.0
+    confirmed via orekit.org. Primary development is on GitLab (gitlab.orekit.org); GitHub is a mirror.
+tags:
+- space-flight-dynamics
+- orbit-propagation
+- java
+- library

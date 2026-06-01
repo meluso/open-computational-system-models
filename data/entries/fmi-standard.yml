@@ -1,0 +1,57 @@
+id: fmi-standard
+name: FMI / FMU Standard
+gloss: Functional Mock-up Interface (FMI) — the open standard defining the Functional Mock-up Unit (FMU)
+  container that makes simulation models exchangeable and co-simulable across tools.
+domain: heterogeneous-digital-twin
+system_represented: FMI is a free, tool-independent standard (a Modelica Association Project) defining
+  a container and interface—XML, binaries, and C code packaged as a ZIP (an FMU)—to exchange and co-simulate
+  dynamic models of engineered systems. It is what lets heterogeneous models from different tools be wired
+  into one runnable digital twin. Note this is a standard, not a tool.
+inputs_you_can_change:
+- FMU input variables defined in the model description
+- Tunable parameters exposed by the FMU
+- Initial/start values
+- Co-simulation step size and master-algorithm settings
+- Connections between FMUs in a co-simulation
+outputs_you_can_observe:
+- FMU output variable time-series
+- Internal state/derivative values exposed by the FMU
+- Event timings
+- Co-simulation coupling signals between FMUs
+runtime_required: Any FMI-importing tool/library (e.g., FMPy, PyFMI, OMSimulator); the standard itself
+  is consumed via such runtimes
+access_type: permissive-open
+license: CC-BY-SA 4.0 (specification text); BSD 2-Clause (C headers and XML schema)
+scale:
+  element_count: A representative co-simulation connects dozens of FMUs/components; spec defines the interface,
+    not a model
+  grouping: Models packaged as FMUs and connected into co-simulation systems
+  notes: Standard, not a tool; over 280 tools support it
+maintenance_status:
+  status: active
+  latest_version: 3.0.2
+  latest_release_date: unstated — needs direct verification
+  notes: FMI-LS-STRUCT v1.0.0-beta.1 layered standard published 2026-04-28
+access_link: https://fmi-standard.org/
+suitability: Anyone integrating models across tools into co-simulations or digital twins; tool developers
+  implementing import/export.
+executability_justification: FMUs conforming to the standard expose changeable inputs/parameters and produce
+  observable outputs when executed in an FMI runtime; the standard is what makes models runnable/co-simulable.
+  Inclusion test met via conforming FMUs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://fmi-standard.org/
+  license: https://github.com/modelica/fmi-standard/blob/master/LICENSE.txt
+  gloss: https://fmi-standard.org/
+  system_represented: https://fmi-standard.org/
+verification_confidence:
+  overall: high
+  unverified:
+  - latest_release_date
+  notes: fmi-standard.org confirms current spec 3.0.2 but does not state the 3.0.2 release date on the
+    fetched page.
+tags:
+- standard
+- fmi
+- fmu
+- co-simulation

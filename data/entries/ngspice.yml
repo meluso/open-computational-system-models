@@ -1,0 +1,51 @@
+id: ngspice
+name: ngspice
+gloss: ngspice (next-generation SPICE — Simulation Program with Integrated Circuit Emphasis) is an open-source
+  mixed-signal circuit simulator that solves netlists for voltages and currents.
+domain: circuits-electronics
+system_represented: Models electronic circuits described as SPICE netlists — interconnected resistors,
+  capacitors, inductors, diodes, transistors, sources, and subcircuits — performing DC, AC, transient,
+  noise, and mixed-signal analyses.
+inputs_you_can_change:
+- Circuit topology and component values in the netlist
+- Analysis type and parameters (.dc, .ac, .tran, .noise sweeps)
+- Device model parameters (transistor models, etc.)
+- Source waveforms and stimulus
+- Temperature and simulation options
+outputs_you_can_observe:
+- Node voltages and branch currents vs time/frequency
+- Transient, AC frequency-response, and DC sweep waveforms
+- Operating-point reports
+- Noise spectra
+- Measured quantities (.measure outputs)
+runtime_required: ngspice binary/CLI (Windows/Linux/macOS); also embeddable as a shared library
+access_type: permissive-open
+license: Modified BSD (BSD-3-Clause), with some compatible licenses for parts
+scale:
+  element_count: Per-netlist; circuits routinely contain dozens to thousands of components, easily exceeding
+    25 interacting elements
+  grouping: Groups into devices and hierarchical subcircuits connected at nodes
+  notes: Element count depends on the user's netlist
+maintenance_status:
+  status: active
+  latest_version: ngspice-46
+  latest_release_date: '2026-03-29'
+access_link: https://ngspice.sourceforge.io/
+suitability: Electronics engineers, students, and EDA tool developers needing a free SPICE engine
+executability_justification: Users edit netlists, component values, and analysis directives; the solver
+  recomputes node voltages and currents, so different inputs yield different waveforms.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://ngspice.sourceforge.io/download.html
+  latest_release_date: https://ngspice.sourceforge.io/news.html
+  license: https://ngspice.sourceforge.io/devel.html
+  access_link: https://ngspice.sourceforge.io/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Release date (2026-03-29) reported via search of the ngspice NEWS page; version 46 confirmed
+    on download page.
+tags:
+- spice
+- circuit-simulation
+- eda

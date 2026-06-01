@@ -1,0 +1,59 @@
+id: urdf-robot-descriptions-ros
+name: URDF Robot Descriptions (ROS)
+gloss: Unified Robot Description Format (URDF) is the XML model that defines a robot's links, joints,
+  kinematics, and dynamics for the Robot Operating System (ROS) ecosystem, driving visualization, kinematics,
+  and physics simulation.
+domain: robotics-multibody
+system_represented: Describes the physical structure of a robot (manipulator arms, mobile bases, humanoids,
+  quadrupeds) as a tree of rigid links connected by joints, with inertial, visual, and collision properties.
+  Consumed by ROS tools (RViz, robot_state_publisher, MoveIt) and physics simulators to model and control
+  the robot.
+inputs_you_can_change:
+- Link geometry, mass, and inertia tensors
+- Joint types (revolute, prismatic, continuous, fixed) and axes
+- Joint limits (position, velocity, effort) and dynamics (damping, friction)
+- Kinematic tree topology (parent/child link assignments, joint origins)
+- Materials, collision meshes, and sensor/plugin attachments (via xacro/Gazebo tags)
+outputs_you_can_observe:
+- Forward kinematics / link transforms (TF frames)
+- 3D visualization of the robot pose in RViz
+- Computed joint states and end-effector positions
+- Collision geometry and self-collision checks (via MoveIt)
+- Simulated dynamics when loaded into Gazebo or other physics engines
+runtime_required: ROS 2 (e.g., Kilted Kaiju or a current LTS) with urdf/xacro, robot_state_publisher,
+  RViz; URDF files are also consumed by standalone simulators
+access_type: permissive-open
+license: Apache-2.0 (ROS 2 core packages)
+scale:
+  element_count: A representative humanoid or dual-arm URDF has dozens of links and joints (e.g., 25-60+);
+    mobile manipulators commonly have 30+ links/joints
+  grouping: Links and joints group into kinematic chains/subsystems (arms, legs, torso, head, grippers)
+    within a single kinematic tree
+  notes: Element count scales with robot complexity; the format itself imposes no fixed count
+maintenance_status:
+  status: active
+  latest_version: ROS 2 Kilted Kaiju (rolling/Lyrical Luth in development)
+  latest_release_date: '2025-05-23'
+access_link: https://docs.ros.org/en/kilted/index.html
+suitability: Roboticists, controls engineers, students, and researchers needing a standard, tooling-rich
+  way to describe and simulate robot kinematics and dynamics
+executability_justification: Editing link/joint parameters in a URDF and loading it into robot_state_publisher/RViz
+  or a simulator produces observably different transforms, poses, and dynamics; varying joint limits or
+  inertia changes simulated motion.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://docs.ros.org/en/kilted/Releases.html
+  latest_release_date: https://docs.ros.org/en/jazzy/Releases/Release-Kilted-Kaiju.html
+  license: https://github.com/ros2/ros2
+  access_link: https://docs.ros.org/en/kilted/index.html
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: ROS distributions, not URDF spec, carry version numbers; Kilted Kaiju confirmed as current distro
+    (May 2025), with Lyrical Luth LTS planned May 2026.
+tags:
+- ros
+- urdf
+- kinematics
+- robot-description
+- simulation

@@ -1,0 +1,54 @@
+id: gazebo-simulator
+name: Gazebo
+gloss: Gazebo is an open-source 3D robotics simulator that models robots, sensors, and environments with
+  physics, rendering, and sensor emulation for testing control and perception software.
+domain: robotics-multibody
+system_represented: Simulates complete robotic systems and their environments, including multi-link robots
+  (arms, mobile bases, drones, legged robots), actuators, and sensors (cameras, LiDAR, IMU), interacting
+  with physics engines for rigid-body dynamics and contact.
+inputs_you_can_change:
+- World/SDF model definitions (links, joints, inertias, collisions)
+- Physics engine and parameters (gravity, step size, solver iterations)
+- Sensor configurations (camera resolution, LiDAR range, noise)
+- Joint commands / actuator force and velocity setpoints
+- Environment objects, terrain, and lighting
+outputs_you_can_observe:
+- Robot pose, joint states, and trajectories over time
+- Simulated sensor streams (images, point clouds, IMU readings)
+- Contact forces and collision events
+- Rendered 3D scene and visualization plots
+runtime_required: Gazebo (Jetty current; Harmonic LTS) on Linux/macOS; commonly paired with ROS 2 via
+  ros_gz
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative simulation has dozens of bodies/joints across one or more multi-link
+    robots plus environment objects (commonly 25-100+ links/joints)
+  grouping: Models group into nested SDF models, links, joints, and plugins; worlds group multiple models
+  notes: Counts scale with world complexity
+maintenance_status:
+  status: active
+  latest_version: Jetty
+  latest_release_date: 2025-09
+access_link: https://gazebosim.org
+suitability: Robotics researchers and engineers developing and testing navigation, manipulation, and perception
+  in simulation before hardware deployment
+executability_justification: Changing joint commands, physics parameters, or sensor settings yields observably
+  different robot trajectories, contact behavior, and sensor outputs in the running simulation.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://gazebosim.org/docs/latest/releases/
+  latest_release_date: https://gazebosim.org/docs/latest/releases/
+  license: https://gazebosim.org/docs/latest/releases/
+  access_link: https://gazebosim.org
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Jetty released Sept 2025; Kura release reported for Aug 2026. Gazebo versions by codename; individual
+    library versions vary per collection.
+tags:
+- gazebo
+- simulator
+- sdf
+- physics
+- ros

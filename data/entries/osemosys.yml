@@ -1,0 +1,56 @@
+id: osemosys
+name: OSeMOSYS
+gloss: OSeMOSYS (Open Source Energy Modelling System), a long-term energy system optimization model generator
+  for capacity expansion and energy planning.
+domain: power-energy
+system_represented: National or regional energy systems represented as a network of technologies, fuels
+  (energy carriers), and demands across time slices and years, used to compute least-cost investment and
+  operation pathways.
+inputs_you_can_change:
+- technology set, costs, and efficiencies
+- fuel/commodity definitions and resource limits
+- demand projections by year and time slice
+- emission limits and penalties
+- discount rate and planning horizon
+outputs_you_can_observe:
+- optimal new capacity and total installed capacity by technology
+- energy production/use by technology and fuel
+- total discounted system cost
+- emissions trajectories
+- dispatch across time slices
+runtime_required: GNU MathProg (GLPK) implementation, or Pyomo/PuLP/GAMS variants in Python; an LP/MILP
+  solver
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: Models typically include dozens to hundreds of technologies and fuels across multiple
+    years and time slices; derived models like OSeMOSYS Global cover global power systems with many nodes.
+  grouping: Sets grouped into technologies, fuels, emissions, regions, time slices, and years.
+  notes: Multiple language implementations (MathProg, Pyomo, PuLP, GAMS).
+maintenance_status:
+  status: maintained
+  latest_version: no formal tagged release; repo updated 2025-10-22
+  latest_release_date: unstated — needs direct verification
+access_link: https://github.com/OSeMOSYS/OSeMOSYS
+suitability: Energy planners, governments, and researchers building national/regional least-cost energy
+  transition pathways.
+executability_justification: Users set technologies, costs, demands, and emission limits, then solve to
+  observe changed capacities, generation mix, costs, and emissions. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/OSeMOSYS/OSeMOSYS
+  latest_release_date: https://github.com/OSeMOSYS/OSeMOSYS
+  license: https://github.com/OSeMOSYS/OSeMOSYS
+  access_link: https://github.com/OSeMOSYS/OSeMOSYS
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  - latest_release_date
+  notes: GitHub API returned 404 for /releases/latest, indicating no formal tagged release; project activity
+    confirmed via search (repo updated 2025-10-22). License Apache-2.0 confirmed via project description.
+tags:
+- capacity-expansion
+- energy-planning
+- optimization
+- osemosys

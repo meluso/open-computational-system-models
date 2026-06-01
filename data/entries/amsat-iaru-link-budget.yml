@@ -1,0 +1,56 @@
+id: amsat-iaru-link-budget
+name: AMSAT/IARU Satellite Link Budget Spreadsheet
+gloss: A satellite radio link-budget Excel spreadsheet (the Jan King AMSAT/IARU workbook) that computes
+  uplink/downlink signal-to-noise and link margin from RF system parameters.
+domain: parametric-spreadsheets
+system_represented: 'Models a satellite communications RF link as an end-to-end chain: transmitter power,
+  antenna gains, free-space and atmospheric losses, receiver noise, and required signal-to-noise, for
+  both uplink and downlink of an amateur/CubeSat-class spacecraft.'
+inputs_you_can_change:
+- Transmit power and transmitter/feed losses
+- Transmit and receive antenna gains
+- Frequency and slant range / orbit geometry
+- Receiver system noise temperature/figure
+- Required Eb/No and data rate / modulation
+outputs_you_can_observe:
+- Free-space path loss
+- Received signal power / carrier-to-noise (C/N)
+- Eb/No achieved
+- Link margin (dB) for uplink and downlink
+- Pass/fail against required threshold
+runtime_required: Microsoft Excel (or LibreOffice Calc) — .xls workbook with formulas
+access_type: permissive-open
+license: unstated — needs direct verification
+scale:
+  element_count: Several dozen interlinked spreadsheet cells/parameters forming the uplink and downlink
+    budget chains
+  grouping: Groups into uplink and downlink sections, each with transmit, path-loss, and receive subsections
+  notes: A worked engineering spreadsheet; element count is the set of parameter/result cells; license
+    stated free for amateur/non-commercial use
+maintenance_status:
+  status: dormant
+  latest_version: Rev 1
+  latest_release_date: '2003'
+access_link: https://www.amsat.org/amsat/ftp/software/spreadsheet/AMSAT-IARU_Link_Budget_Rev1.xls
+suitability: CubeSat/amateur-satellite teams, RF/comms students designing ground-to-space links
+executability_justification: Users change RF parameters (power, gains, frequency, range, noise) and Excel
+  immediately recomputes path loss, C/N, Eb/No, and link margin — varied inputs produce observably different
+  outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://www.amsat.org/tools-for-calculating-spacecraft-communications-link-budgets-and-other-design-issues/
+  latest_release_date: https://www.amsat.org/amsat/ftp/software/spreadsheet/AMSAT-IARU_Link_Budget_Rev1.xls
+  license: https://www.amsat.org/tools-for-calculating-spacecraft-communications-link-budgets-and-other-design-issues/
+  access_link: https://www.amsat.org/amsat/ftp/software/spreadsheet/AMSAT-IARU_Link_Budget_Rev1.xls
+verification_confidence:
+  overall: high
+  unverified:
+  - license
+  notes: URL confirmed to download a real 71 KB Excel (Composite Document) file authored by "jking" with
+    create date 2003; the .xls embedded metadata gives Rev1/2003. Formal license terms ("free for non-commercial
+    use") not in a machine-readable license file.
+tags:
+- link-budget
+- satellite
+- rf
+- spreadsheet

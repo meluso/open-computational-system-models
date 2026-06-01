@@ -1,0 +1,53 @@
+id: modelica-buildings-library
+name: Modelica Buildings Library
+gloss: Free Modelica library from Lawrence Berkeley National Laboratory for modeling building energy and
+  control systems, district energy, and HVAC.
+domain: equation-based-physical
+system_represented: The Modelica Buildings Library (LBNL) provides Modelica components for whole-building
+  energy and control simulation—HVAC equipment, fluid loops, heat exchangers, controls (including ASHRAE
+  Guideline 36 sequences), and district heating/cooling networks. Modelers assemble these into runnable
+  building-system models.
+inputs_you_can_change:
+- Equipment sizing and component parameters (e.g., chiller capacity, fan curves)
+- Control sequence parameters and setpoints
+- Weather/boundary input files
+- Fluid loop topology and connections
+- Initial conditions and simulation horizon
+outputs_you_can_observe:
+- Building/system energy use time-series
+- Zone and fluid temperatures
+- Equipment power and flow rates
+- Control signal trajectories
+- Heat-exchanger and loop performance
+runtime_required: A Modelica tool (OpenModelica, Dymola); library plus optional BuildingsPy/Spawn tooling
+access_type: permissive-open
+license: BSD 3-Clause
+scale:
+  element_count: Library has thousands of models; a representative building-system model wires dozens
+    to hundreds of components
+  grouping: Organized into domain packages (Fluid, HeatTransfer, Controls, DHC, etc.)
+  notes: Widely used reference building-systems library
+maintenance_status:
+  status: active
+  latest_version: 13.0.0
+  latest_release_date: '2026-05-04'
+access_link: https://github.com/lbl-srg/modelica-buildings
+suitability: Building-energy researchers and engineers, control-sequence developers, and district-energy
+  modelers.
+executability_justification: Users vary equipment parameters, control setpoints, and weather inputs in
+  a Modelica tool and observe changed energy/temperature/power outputs. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://simulationresearch.lbl.gov/modelica/library-release/2026/05/04/releases-11.1.1-12.1.1-13.0.0.html
+  latest_release_date: https://simulationresearch.lbl.gov/modelica/library-release/2026/05/04/releases-11.1.1-12.1.1-13.0.0.html
+  license: https://github.com/lbl-srg/modelica-buildings
+  gloss: https://github.com/lbl-srg/modelica-buildings
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: v13.0.0 release date confirmed via LBNL Simulation Research announcement.
+tags:
+- modelica
+- buildings
+- hvac
+- open-source

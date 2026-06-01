@@ -1,0 +1,53 @@
+id: pypsa
+name: PyPSA
+gloss: PyPSA (Python for Power System Analysis), an open toolbox for simulating and optimizing modern
+  electric power and integrated energy systems.
+domain: power-energy
+system_represented: Electric power systems and sector-coupled energy systems represented as networks of
+  buses, lines, links, transformers, generators, storage units, and loads, supporting power flow and linear
+  optimal investment/dispatch (capacity expansion) over time series.
+inputs_you_can_change:
+- network components (buses, lines, links, generators, storage)
+- generator capacities, costs, and capacity-factor time series
+- load (demand) time series per bus
+- line/link capacities and reactances
+- optimization objective, constraints, and CO2/emissions limits
+outputs_you_can_observe:
+- optimal generation/dispatch per generator over time
+- line/link power flows and loading
+- nodal/bus voltage angles (power flow) and marginal prices
+- storage state of charge over time
+- total system cost and optimal capacities
+runtime_required: Python 3 (pip install pypsa); an LP/MILP solver (HiGHS, Gurobi, CPLEX, etc.)
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: Example networks range from small (a few buses) to detailed country/continent models
+    with hundreds to thousands of buses and lines.
+  grouping: Components grouped into component classes (Bus, Line, Link, Generator, StorageUnit, Load);
+    buses can be tagged into countries/zones/carriers.
+  notes: Underpins large models such as PyPSA-Eur.
+maintenance_status:
+  status: active
+  latest_version: 1.2.2
+  latest_release_date: '2026-05-25'
+access_link: https://pypi.org/project/pypsa/
+suitability: Energy system modelers and researchers doing capacity expansion, dispatch optimization, and
+  sector coupling studies.
+executability_justification: Users set demand, generator costs and capacities, and constraints, then run
+  network.optimize() or power flow and observe changed dispatch, flows, prices, and total system cost.
+  Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/pypsa/json
+  latest_release_date: https://pypi.org/pypi/pypsa/json
+  license: https://pypi.org/pypi/pypsa/json
+  access_link: https://pypi.org/project/pypsa/
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- capacity-expansion
+- optimization
+- sector-coupling
+- python

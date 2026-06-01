@@ -1,0 +1,57 @@
+id: cheddar-aadl-scheduling
+name: Cheddar
+gloss: An open-source real-time scheduling simulator and analyzer that takes task sets described in AADL
+  (Architecture Analysis and Design Language) or its own language and computes schedulability, response
+  times, and processor utilization.
+domain: architecture-description-langs
+system_represented: Real-time embedded systems described as processors/cores, software tasks (periodic,
+  aperiodic, sporadic, multiframe), shared resources, and networks-on-chip, modeled in AADL or CheddarADL.
+inputs_you_can_change:
+- task periods, capacities, deadlines, offsets, and jitters
+- scheduling policy (RM, DM, EDF, preemptive/non-preemptive, multiprocessor, hierarchical)
+- number of processors/cores and architecture
+- shared-resource access protocols
+- task activation patterns
+outputs_you_can_observe:
+- schedulability result (feasible / deadlines missed)
+- worst/best/average task response times
+- processor utilization factor
+- preemption and context-switch counts
+- resource blocking times and deadlock detection
+runtime_required: Cheddar desktop application (compiled for Linux/Windows/Solaris); integrates with OSATE2,
+  TASTE, and Ocarina
+access_type: copyleft-open
+license: GPL
+scale:
+  element_count: Tool — a representative task set has tens of tasks across one or more processors plus
+    shared resources and buses.
+  grouping: Tasks group onto processors/cores; processors compose into multiprocessor or hierarchical
+    architectures.
+  notes: An element is a task, processor/core, shared resource, or network link.
+maintenance_status:
+  status: maintained
+  latest_version: '3.3'
+  latest_release_date: '2023-09-25'
+access_link: http://beru.univ-brest.fr/cheddar/
+suitability: Suits real-time systems engineers, students, and researchers prototyping scheduling policies;
+  the scheduling-theory domain makes it more expert-oriented, though it is also used for teaching.
+executability_justification: A user changes task timing parameters and the scheduling policy, runs the
+  analyzer/simulator, and observes changed schedulability verdicts, response times, utilization, and timeline
+  traces.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: http://beru.univ-brest.fr/cheddar/
+  latest_release_date: http://beru.univ-brest.fr/cheddar/
+  license: http://beru.univ-brest.fr/cheddar/
+  access_link: http://beru.univ-brest.fr/cheddar/
+verification_confidence:
+  overall: medium
+  unverified: []
+  notes: Latest release on the official site is 3.3 (2023); no newer release observed, so judged maintained
+    rather than highly active. Tool listed alongside AADL/OSATE as its primary ADL input.
+tags:
+- aadl
+- real-time
+- scheduling
+- analysis
+- cheddar

@@ -1,0 +1,53 @@
+id: pybullet
+name: PyBullet
+gloss: PyBullet provides Python bindings to the Bullet physics engine for real-time rigid- and soft-body
+  simulation of robots, used widely for robotics control and reinforcement learning.
+domain: robotics-multibody
+system_represented: Simulates robots and mechanisms (manipulators, mobile robots, humanoids, grippers)
+  loaded from URDF/SDF/MJCF as articulated multibody systems with collision, contact, and constraint dynamics,
+  plus deformables.
+inputs_you_can_change:
+- URDF/SDF/MJCF model files and their parameters
+- Joint control modes and setpoints (torque, position, velocity)
+- Physics parameters (gravity, time step, solver iterations, friction, restitution)
+- Initial poses and base position/orientation
+- Applied external forces/torques
+outputs_you_can_observe:
+- Joint states (positions, velocities, reaction forces)
+- Link/base poses and trajectories
+- Contact points and contact forces
+- Synthetic camera images and depth/segmentation buffers
+runtime_required: Python 3 (pip "pybullet"); cross-platform
+access_type: permissive-open
+license: zlib
+scale:
+  element_count: A representative humanoid or quadruped URDF in PyBullet has dozens of links/joints (25-40+);
+    multi-robot scenes scale higher
+  grouping: Bodies group into multibody objects with link/joint trees; scenes group multiple bodies
+  notes: Counts scale with loaded models
+maintenance_status:
+  status: maintained
+  latest_version: 3.2.7
+  latest_release_date: '2025-01-30'
+access_link: https://pybullet.org
+suitability: Robotics and RL researchers and educators wanting lightweight, scriptable physics simulation
+  with easy URDF import
+executability_justification: Varying joint commands, physics parameters, or initial poses and stepping
+  the simulation yields observably different trajectories, contact forces, and rendered images.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/pybullet/json
+  latest_release_date: https://pypi.org/pypi/pybullet/json
+  license: https://pypi.org/pypi/pybullet/json
+  access_link: https://pybullet.org
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI v3.2.7 uploaded 2025-01-30; license field "zlib". Release cadence is slow but project is
+    part of actively maintained Bullet ecosystem; marked maintained.
+tags:
+- pybullet
+- bullet
+- physics
+- reinforcement-learning
+- multibody

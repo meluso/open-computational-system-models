@@ -1,0 +1,52 @@
+id: xyce
+name: Xyce
+gloss: Xyce is Sandia National Laboratories' open-source, parallel, SPICE-compatible circuit simulator
+  built for very large analog/mixed-signal circuits.
+domain: circuits-electronics
+system_represented: Models electronic circuits (netlists of devices, sources, and subcircuits) like SPICE,
+  but designed to solve extremely large circuits on parallel/HPC platforms for DC, AC, transient, and
+  other analyses.
+inputs_you_can_change:
+- Circuit netlist topology and component values
+- Analysis type and parameters (.dc, .ac, .tran sweeps)
+- Device model cards and parameters
+- Source/stimulus definitions
+- Parallel-solver and runtime options
+outputs_you_can_observe:
+- Node voltages and branch currents vs time/frequency
+- Transient and AC analysis waveforms (CSV/PRN/raw output)
+- DC sweep results
+- Measured quantities (.measure)
+- Solver/performance diagnostics
+runtime_required: Xyce binary (Linux/macOS/Windows); supports MPI for parallel runs
+access_type: copyleft-open
+license: GPLv3
+scale:
+  element_count: Per-netlist; built specifically for large circuits (thousands to millions of devices),
+    far exceeding 25 interacting elements
+  grouping: Groups into devices and hierarchical subcircuits connected at nodes; partitioned across parallel
+    processors
+  notes: Element count depends on the user's circuit
+maintenance_status:
+  status: active
+  latest_version: Release 7.10
+  latest_release_date: '2025-07-21'
+access_link: https://xyce.sandia.gov/
+suitability: Engineers and researchers simulating very large circuits, especially needing HPC/parallel
+  SPICE
+executability_justification: Users supply/modify netlists and analysis directives; the parallel solver
+  recomputes circuit responses, producing observably different outputs for different inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/Xyce/Xyce/releases/latest
+  latest_release_date: https://github.com/Xyce/Xyce/releases/latest
+  license: https://xyce.sandia.gov/
+  access_link: https://xyce.sandia.gov/
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- spice
+- parallel
+- circuit-simulation
+- sandia

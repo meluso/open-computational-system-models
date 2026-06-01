@@ -1,0 +1,55 @@
+id: calliope
+name: Calliope
+gloss: Calliope, a multi-scale energy systems modeling framework for building and optimizing energy supply
+  and demand models.
+domain: power-energy
+system_represented: Energy systems represented as a set of technologies (supply, demand, storage, conversion,
+  transmission) at nodes connected by links, used to find least-cost (or other objective) capacity and
+  operation across high-resolution time series.
+inputs_you_can_change:
+- technology definitions, costs, and efficiencies (YAML)
+- node and link (transmission) topology
+- demand and resource (e.g. renewable) time series
+- objective function and constraints (e.g. emissions caps)
+- spatial/temporal resolution
+outputs_you_can_observe:
+- optimal installed capacity per technology and node
+- energy flows and dispatch over time
+- storage state of charge
+- total system cost
+- import/export and curtailment
+runtime_required: Python 3 (pip install calliope); an LP/MILP solver (GLPK, CBC, Gurobi, etc.)
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: Models range from single-node examples to national models with dozens of nodes and technologies
+    and thousands of time steps.
+  grouping: Technologies grouped by type (supply, demand, storage, conversion, transmission); nodes grouped
+    into the model's spatial structure.
+  notes: 0.7 line is in active development (pre-release dev builds on PyPI).
+maintenance_status:
+  status: active
+  latest_version: 0.6.10 (stable); 0.7.0.dev7 (development)
+  latest_release_date: 2023-01-18 (0.6.10 stable); 2025-09-07 (0.7.0.dev7)
+access_link: https://pypi.org/project/calliope/
+suitability: Energy system researchers and students building custom multi-scale optimization models with
+  flexible configuration.
+executability_justification: Users define technologies, demand/resource time series, and constraints in
+  YAML, then run the model to observe changed capacities, flows, and system cost. Passes the inclusion
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/calliope/json
+  latest_release_date: https://pypi.org/pypi/calliope/json
+  license: https://pypi.org/pypi/calliope/json
+  access_link: https://pypi.org/project/calliope/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Stable line (0.6.10) is from 2023; active development continues on the 0.7 line with dev releases
+    (latest 0.7.0.dev7, 2025-09-07).
+tags:
+- energy-system
+- optimization
+- multi-scale
+- python

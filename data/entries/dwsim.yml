@@ -1,0 +1,52 @@
+id: dwsim
+name: DWSIM
+gloss: DWSIM (an open-source steady-state and dynamic chemical process simulator) builds flowsheets of
+  unit operations and computes mass/energy balances and stream properties.
+domain: process-chemical
+system_represented: Models a chemical or petrochemical process plant as a flowsheet of interconnected
+  unit operations (reactors, distillation columns, heat exchangers, pumps, separators, etc.) with material
+  and energy streams. Used for design and analysis of full process flowsheets.
+inputs_you_can_change:
+- Feed stream composition, flow rate, temperature, and pressure
+- Choice of thermodynamic property package (e.g. Peng-Robinson, NRTL)
+- Unit operation specifications (column reflux ratio, reactor conversion, heat duty)
+- Recycle and connectivity topology of the flowsheet
+- Reaction set definitions and kinetics
+outputs_you_can_observe:
+- Outlet stream compositions, flow rates, temperatures, pressures
+- Energy duties (reboiler/condenser/heater loads)
+- Column stage profiles (temperature, composition per stage)
+- Phase equilibrium and property tables
+- Convergence/mass-energy balance reports
+runtime_required: DWSIM desktop application (Windows/Linux/macOS, .NET); also scriptable via Python/IronPython
+  inside the app
+access_type: copyleft-open
+license: GPLv3 (desktop versions); DTL thermodynamics library is LGPLv3
+scale:
+  element_count: Dozens to hundreds of objects per flowsheet (unit operations + material/energy streams);
+    typical engineered flowsheets readily exceed 25 interacting elements
+  grouping: Groups into unit operations connected by material and energy streams; supports nested flowsheets/sub-flowsheets
+  notes: Element count is per-model, not fixed; large flowsheets are common
+maintenance_status:
+  status: active
+  latest_version: v9.0.5
+  latest_release_date: '2025-10-03'
+access_link: https://dwsim.org/
+suitability: Chemical/process engineers, students, and researchers needing a free full-featured process
+  simulator
+executability_justification: Users build/modify flowsheets and change feed conditions, thermodynamic models,
+  and unit specs; the solver recomputes stream and energy results, so varied inputs produce observably
+  different outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/DanWBR/dwsim/releases/latest
+  latest_release_date: https://github.com/DanWBR/dwsim/releases/latest
+  license: https://dwsim.org/wiki/index.php?title=Licensing
+  access_link: https://dwsim.org/
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- process-simulation
+- flowsheet
+- thermodynamics

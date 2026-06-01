@@ -1,0 +1,54 @@
+id: matsim
+name: MATSim
+gloss: Multi-Agent Transport Simulation (MATSim), an open-source Java framework for large-scale activity-based,
+  agent-based transport simulation with co-evolutionary plan optimization.
+domain: des-abm
+system_represented: Whole-day travel demand and traffic in a city or region, where each synthetic traveler
+  executes a daily activity-and-trip plan on a road/transit network, iteratively adjusting routes, departure
+  times, and mode choices.
+inputs_you_can_change:
+- Synthetic population size and agent daily plans (activities, trips)
+- Network supply (links, capacities, free-speed) and transit schedules
+- Scoring/utility function parameters (value of time, mode constants)
+- Replanning strategies and their weights (reroute, time mutation, mode choice)
+- Number of co-evolutionary iterations and random seed
+outputs_you_can_observe:
+- Link traffic volumes and congestion patterns over the day
+- Per-agent scores and travel times
+- Mode share and departure-time distributions
+- Convergence of average scores across iterations
+- Event logs and visualizable network states (via VIA/SimWrapper)
+runtime_required: Java (JVM); run from JAR/Maven; large scenarios benefit from substantial RAM
+access_type: copyleft-open
+license: GPL-2.0
+scale:
+  element_count: A representative scenario simulates tens-of-thousands to millions of agents on a network
+    of thousands-to-hundreds-of-thousands of links
+  grouping: Organized into a population of agents (with plans), a transport network, transit schedules,
+    and configurable modules/contribs
+  notes: Element count scales with population sampling rate and network size
+maintenance_status:
+  status: active
+  latest_version: MATSim 2026 (Spring)
+  latest_release_date: '2026-04-10'
+access_link: https://matsim.org
+suitability: Transport planners and researchers running large-scale activity-based travel-demand and traffic
+  simulations
+executability_justification: Users vary population, network, scoring, and replanning strategies and observe
+  changed link volumes, mode shares, and agent scores, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/matsim-org/matsim-libs/releases
+  latest_release_date: https://github.com/matsim-org/matsim-libs/releases
+  license: https://github.com/matsim-org/matsim-libs/blob/master/matsim/LICENSE
+  access_link: https://matsim.org
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Core MATSim is GPLv2 (per the matsim/LICENSE file); some contribs/example projects carry GPLv2
+    or GPLv3+.
+tags:
+- transport-simulation
+- agent-based
+- travel-demand
+- java

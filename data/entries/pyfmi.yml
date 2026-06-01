@@ -1,0 +1,49 @@
+id: pyfmi
+name: PyFMI
+gloss: Python package for loading and interacting with FMI-compliant models (FMUs), including simulation
+  and co-simulation master algorithms.
+domain: heterogeneous-digital-twin
+system_represented: PyFMI (Modelon community) is a Python package for working with dynamic models compliant
+  with the Functional Mock-up Interface—loading FMUs, simulating them, and running co-simulation master
+  algorithms to couple multiple FMUs into a runnable heterogeneous system.
+inputs_you_can_change:
+- FMU parameters and start values
+- Input trajectories supplied to the FMU
+- Solver options and step size (via Assimulo integration)
+- Simulation start/final time
+- Master-algorithm coupling options for multiple FMUs
+outputs_you_can_observe:
+- Output and state variable time-series from simulation results
+- Coupled signals across connected FMUs
+- Diagnostics from the simulation run
+- Result objects for plotting/analysis
+runtime_required: Python (pip/conda install PyFMI); depends on Assimulo for solvers
+access_type: copyleft-open
+license: LGPL v3
+scale:
+  element_count: A simulated FMU/composite represents a system with many internal elements; model-dependent
+  grouping: FMUs as units; multiple FMUs coupled via master algorithm
+  notes: Library/runtime, not itself a model; active development on GitHub (PyPI listing is stale)
+maintenance_status:
+  status: active
+  latest_version: 2.21.0
+  latest_release_date: '2025-03-19'
+access_link: https://github.com/modelon-community/PyFMI
+suitability: Python users coupling FMUs into co-simulations, especially those using Assimulo solvers.
+executability_justification: Users set FMU parameters/inputs and run simulate() to obtain changed output
+  trajectories. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/modelon-community/PyFMI/releases
+  latest_release_date: https://github.com/modelon-community/PyFMI/releases
+  license: https://github.com/modelon-community/PyFMI/blob/master/LICENSE
+  gloss: https://github.com/modelon-community/PyFMI
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI shows stale 2.5 (2018); current 2.21.0 (2025-03-19) confirmed via GitHub releases.
+tags:
+- fmi
+- python
+- co-simulation
+- open-source

@@ -1,0 +1,59 @@
+id: fex-vehicle-dynamics-14dof
+name: Vehicle Dynamics, 14 DOF Model in Simscape Multibody (File Exchange)
+gloss: A File Exchange 14-degree-of-freedom (DOF) full-vehicle dynamics model in Simscape Multibody, with
+  heave and roll at front and rear axles and a multibody tire model, exercised by several driving maneuvers.
+domain: mathworks-mbd
+system_represented: A full passenger vehicle modeled in Simscape Multibody with 14 degrees of freedom
+  (including heave and roll at both front and rear axles) and the Simscape Multibody Tire model, used
+  to study ride and handling across maneuvers and road/surface conditions.
+inputs_you_can_change:
+- driving maneuver (step steer, plateau, parking lot, slalom on a hill, rough road, icy surface)
+- road surface / friction conditions
+- steering input profile
+- vehicle speed and braking input
+- suspension and tire parameters
+outputs_you_can_observe:
+- vehicle lateral dynamics (yaw, roll)
+- body heave/pitch/roll motion
+- response to road slope and rough/icy surfaces
+- braking and low-speed/reverse behavior
+runtime_required: MATLAB + Simulink + Simscape + Simscape Multibody (versions provided for R2022a through
+  R2025b)
+access_type: campus-or-employer-licensed
+license: BSD-style license with an added MathWorks-products-only restriction (clause 3); Copyright 2021-2022
+  The MathWorks, Inc. (NOT pure BSD-3-Clause — files licensed solely for use with MathWorks products)
+scale:
+  element_count: 14 degrees of freedom; full multibody vehicle assembly (bodies, joints, tires) well over
+    25 elements; exact block count unstated — needs direct verification
+  grouping: Sprung-mass body, four-corner suspensions, multibody tire models, and maneuver/road-input
+    drivers.
+maintenance_status:
+  status: active
+  latest_version: 26.1.1.3
+  latest_release_date: '2026-05-16'
+access_link: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+suitability: Suits vehicle-dynamics engineers and students; files are free to download from File Exchange/GitHub
+  (author Steve Miller, MathWorks) but require a licensed MATLAB + Simscape Multibody to run.
+executability_justification: The user selects a maneuver and road/surface condition, adjusts suspension/tire
+  parameters, runs the simulation, and observes the vehicle's roll, heave, yaw, and braking response change
+  with the inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+  system_represented: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+  inputs_you_can_change: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+  runtime_required: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+  license: https://raw.githubusercontent.com/mathworks/Vehicle-Dynamics-14DOF-Simscape-Multibody/master/LICENSE.md
+  maintenance_status.latest_version: https://www.mathworks.com/matlabcentral/fileexchange/110350-vehicle-dynamics-14-dof-model-in-simscape-multibody
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+  notes: License text read directly from GitHub (master/LICENSE.md) — BSD-form with MathWorks-products-only
+    restriction, not unrestricted BSD-3-Clause.
+tags:
+- simulink
+- simscape-multibody
+- vehicle-dynamics
+- file-exchange
+- automotive

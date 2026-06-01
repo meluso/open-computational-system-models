@@ -1,0 +1,56 @@
+id: openfast
+name: OpenFAST
+gloss: OpenFAST is NREL's open-source aeroelastic simulation tool for wind turbines, coupling aerodynamics,
+  structural dynamics, hydrodynamics, and control to predict whole-turbine loads and response.
+domain: wind-marine-energy
+system_represented: 'Models a complete horizontal-axis wind turbine (and, via FAST.Farm, wind farms) as
+  a coupled multiphysics system: aerodynamic rotor, flexible blades and tower, drivetrain, nacelle, controller,
+  and (for offshore) floating/fixed substructure and mooring.'
+inputs_you_can_change:
+- Turbine geometry and structural properties (blades, tower, drivetrain)
+- Inflow/wind conditions and turbulence
+- Aerodynamic model settings (BEM/OLAF, airfoil data)
+- Controller parameters (pitch, torque, via DISCON/ROSCO)
+- Hydrodynamic and mooring properties (offshore)
+outputs_you_can_observe:
+- Blade and tower loads, deflections, and stresses
+- Rotor speed, power, and thrust time series
+- Platform motions and mooring tensions (offshore)
+- Generator/drivetrain torque and electrical power
+runtime_required: OpenFAST executable (C/C++/Fortran), Linux/Windows/macOS; Python via pyOpenFAST/openfast_toolbox
+  for I/O
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative turbine model comprises dozens of interacting elements/DOFs across modules
+    (blade/tower distributed nodes, drivetrain, control, substructure); FAST.Farm scales to dozens of
+    turbines
+  grouping: 'Modules group into subsystems: AeroDyn, ElastoDyn/BeamDyn, ServoDyn, HydroDyn, SubDyn, MoorDyn,
+    InflowWind, coupled by glue code'
+  notes: FAST.Farm aggregates many turbines
+maintenance_status:
+  status: active
+  latest_version: v5.0.0
+  latest_release_date: '2026-03-12'
+access_link: https://github.com/OpenFAST/openfast
+suitability: Wind energy researchers and engineers performing turbine load analysis, design certification
+  studies, and controls development
+executability_justification: Varying wind conditions, structural properties, or controller parameters
+  and running a simulation produces observably different load, motion, and power time series.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/OpenFAST/openfast/releases/latest
+  latest_release_date: https://api.github.com/repos/OpenFAST/openfast/releases/latest
+  license: https://github.com/OpenFAST/openfast
+  access_link: https://github.com/OpenFAST/openfast
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Latest release v5.0.0 published 2026-03-12; adds SoilDyn and implicit tight-coupling solver.
+    Apache-2.0 confirmed via repo.
+tags:
+- openfast
+- wind-turbine
+- aeroelastic
+- nrel
+- fast-farm

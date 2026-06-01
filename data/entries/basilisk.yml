@@ -1,0 +1,55 @@
+id: basilisk
+name: Basilisk
+gloss: Basilisk is an open-source astrodynamics simulation framework for high-fidelity spacecraft dynamics,
+  attitude, and flight software simulation.
+domain: aerospace-space
+system_represented: Models spacecraft as multi-body dynamical systems with orbital and rotational dynamics,
+  environment effects, actuators (reaction wheels, thrusters), sensors, and onboard flight-software/control
+  algorithms, enabling closed-loop guidance, navigation, and control (GNC) simulation.
+inputs_you_can_change:
+- Spacecraft mass properties and initial orbital/attitude state
+- Actuator configuration (reaction wheels, thrusters) and parameters
+- Sensor models and noise settings
+- Flight-software/control algorithm modules and gains
+- Environment and disturbance models (gravity, SRP, drag)
+outputs_you_can_observe:
+- Attitude and angular-rate time histories
+- Orbital state/trajectory
+- Actuator commands and states (wheel speeds, thruster firings)
+- Control errors and pointing performance
+- Power/energy and sensor measurements
+runtime_required: Python 3 front end with C/C++ simulation modules; built from source (AVSLab/basilisk);
+  optional Vizard visualization
+access_type: permissive-open
+license: ISC
+scale:
+  element_count: A representative attitude-control scenario wires together many simulation and flight-software
+    modules (dynamics, environment, sensors, actuators, controllers) via the messaging system, exceeding
+    25 interacting elements.
+  grouping: Organized as modules connected through a message-passing architecture, separated into dynamics/environment
+    simulation tasks and flight-software (GNC) tasks within task groups.
+  notes: Element count scales with the number of modules instantiated in a scenario.
+maintenance_status:
+  status: active
+  latest_version: v2.10.2
+  latest_release_date: '2026-05-08'
+access_link: https://github.com/AVSLab/basilisk
+suitability: Spacecraft GNC engineers and researchers building and testing attitude/orbit control and
+  flight-software algorithms.
+executability_justification: Users vary spacecraft properties, actuators, sensors, and control algorithms
+  and run the simulation; attitude, orbit, and control-performance outputs change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/AVSLab/basilisk/releases/latest
+  latest_release_date: https://api.github.com/repos/AVSLab/basilisk/releases/latest
+  license: https://api.github.com/repos/AVSLab/basilisk
+  access_link: https://github.com/AVSLab/basilisk
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: v2.10.2 (May 2026) and ISC license confirmed via GitHub API.
+tags:
+- spacecraft
+- attitude-control
+- gnc
+- simulation

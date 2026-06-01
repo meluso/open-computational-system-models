@@ -1,0 +1,57 @@
+id: rcaide
+name: RCAIDE
+gloss: RCAIDE (Research Community Aerospace Interdisciplinary Design Environment) is an open-source Python
+  platform for aircraft design, analysis, and optimization, serving as the modernized successor to SUAVE.
+domain: mdo
+system_represented: Models complete aircraft (from commercial airliners to UAVs and hybrid-electric designs)
+  for interdisciplinary conceptual/preliminary design, integrating mission analysis, aerodynamics, propulsion/energy
+  networks, weights estimation, and performance evaluation with validated engineering methods.
+inputs_you_can_change:
+- Vehicle geometry and configuration
+- Energy/propulsion network and component parameters (fuel, electric, hybrid)
+- Mission profile and segment definitions
+- Analysis method/fidelity selection
+- Optimization design variables, objectives, and constraints
+outputs_you_can_observe:
+- Weight and mass-component breakdown
+- Mission fuel/energy use
+- Aerodynamic performance (lift, drag, L/D)
+- Mission/performance state histories
+- Optimized design variable values
+runtime_required: Python 3; installed via pip ("RCAIDE-LEADS") or cloned from GitHub (leadsgroup/RCAIDE_LEADS)
+access_type: copyleft-open
+license: AGPL-3.0
+scale:
+  element_count: A representative configured aircraft mission assembles many interacting analysis modules,
+    energy-network components, and mission segments, exceeding 25 interacting elements.
+  grouping: Organized into a vehicle with components and energy networks, an analyses container, and a
+    mission composed of segments.
+  notes: Element count scales with configuration and mission complexity.
+maintenance_status:
+  status: active
+  latest_version: 1.2.1
+  latest_release_date: '2025-04-10'
+access_link: https://github.com/leadsgroup/RCAIDE_LEADS
+suitability: Aircraft conceptual/preliminary designers and researchers, including those migrating from
+  SUAVE and working on electric/hybrid configurations.
+executability_justification: Users vary geometry, energy networks, mission, and design variables and run
+  analysis/optimization; weight, energy use, and performance outputs change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/RCAIDE-LEADS/json
+  latest_release_date: https://pypi.org/pypi/RCAIDE-LEADS/json
+  license: https://pypi.org/pypi/RCAIDE-LEADS/json
+  access_link: https://github.com/leadsgroup/RCAIDE_LEADS
+  system_represented: https://github.com/leadsgroup/RCAIDE_LEADS
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI package is "RCAIDE-LEADS" v1.2.1 (Apr 2025), AGPL-3.0. GitHub repo (leadsgroup/RCAIDE_LEADS)
+    shows no tagged releases but was pushed Jun 2026, so judged active; the latest_version reflects the
+    PyPI release.
+tags:
+- aircraft-design
+- conceptual-design
+- mdo
+- python
+- electric-aircraft

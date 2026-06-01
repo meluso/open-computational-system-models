@@ -1,0 +1,58 @@
+id: osate-aadl
+name: OSATE (Open Source AADL Tool Environment)
+gloss: An Eclipse-based toolset for the Architecture Analysis and Design Language (AADL) that runs quantitative
+  analyses such as flow latency, scheduling, resource budgeting, bus load, weight, and fault/safety analysis
+  on a system architecture model.
+domain: architecture-description-langs
+system_represented: Embedded and real-time hardware/software systems (e.g. avionics, automotive control)
+  described in AADL as threads, processes, processors, buses, memory, devices, and their bindings and
+  flows.
+inputs_you_can_change:
+- thread periods, execution times, and dispatch protocols
+- processor/bus binding of software components
+- flow specifications and end-to-end flow latencies
+- component weight and resource (memory, MIPS) properties
+- error model / fault propagation definitions
+outputs_you_can_observe:
+- end-to-end flow latency results
+- scheduling feasibility / processor utilization
+- resource budget (memory, bandwidth, MIPS) surplus or overflow
+- bus load utilization
+- system weight roll-up and fault-tree / safety analysis results
+runtime_required: OSATE 2 (Eclipse-based desktop application, Java); analysis plugins built in
+access_type: weak-copyleft-open
+license: EPL-2.0
+scale:
+  element_count: Tool — a representative AADL model has dozens to hundreds of components (threads, processes,
+    processors, buses, memory, devices) plus connections, bindings, and flows.
+  grouping: Components nest into systems/processes; software components bind to hardware components; flows
+    chain across components.
+  notes: An element is an AADL component instance, connection, binding, or flow.
+maintenance_status:
+  status: active
+  latest_version: 2.18.0
+  latest_release_date: '2026-03-05'
+access_link: https://osate.org/
+suitability: Suits embedded/real-time systems and safety engineers who need quantitative architecture
+  analysis; AADL's property-rich language has a learning curve, so it is more expert-oriented than casual.
+executability_justification: A user changes thread timing, bindings, weights, or flow specs and runs the
+  analysis plugins; flow latency, schedulability, resource budgets, bus load, weight, and fault results
+  change observably.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://osate.org/osate-releases.html
+  latest_release_date: https://osate.org/osate-releases.html
+  license: https://github.com/osate/osate2
+  access_link: https://osate.org/
+  maintenance_status: https://api.github.com/repos/osate/osate2/commits?per_page=1
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Active confirmed by most recent commit 2026-05-20; latest tagged/documented release 2.18.0 (2026-03-05).
+tags:
+- aadl
+- adl
+- embedded
+- real-time
+- safety-analysis
+- osate

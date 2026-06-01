@@ -1,0 +1,54 @@
+id: pandapower
+name: pandapower
+gloss: Power system analysis tool in Python (built on the pandas data library) for steady-state modeling,
+  power flow, and optimization of electric transmission and distribution networks.
+domain: power-energy
+system_represented: Electric power grids modeled as networks of buses, lines, transformers, loads, generators,
+  switches, and other elements. Supports balanced and unbalanced steady-state analysis of transmission
+  and distribution systems.
+inputs_you_can_change:
+- network topology (buses, lines, transformers, switches)
+- load active/reactive power (MW/MVAr) at each bus
+- generator/static generator setpoints and limits
+- line/transformer impedances and ratings
+- solver/algorithm choice (Newton-Raphson, BFSW, etc.) and slack bus
+outputs_you_can_observe:
+- bus voltage magnitudes and angles
+- line/transformer loading percentage and power flows
+- active/reactive power losses
+- generator dispatch and slack injection
+- optimal power flow objective and constraint results
+runtime_required: Python 3 (pip install pandapower); optional Julia/PowerModels.jl, lightsim2grid backends
+access_type: permissive-open
+license: BSD 3-Clause
+scale:
+  element_count: Ships with standard test cases including IEEE cases and synthetic grids; e.g. the CIGRE
+    and IEEE 118-bus networks, and built-in cases up to thousands of buses (e.g. synthetic ~3000+ bus
+    power cases).
+  grouping: Elements grouped into element tables (bus, line, trafo, load, gen, sgen, switch) within a
+    single pandapowerNet; networks can be partitioned by zones/areas.
+  notes: Distribution and transmission both supported.
+maintenance_status:
+  status: active
+  latest_version: 3.4.0
+  latest_release_date: '2026-02-09'
+access_link: https://pypi.org/project/pandapower/
+suitability: Power systems researchers, distribution/transmission planners, and educators who want scriptable,
+  automated grid analysis in Python.
+executability_justification: Users define or load a network, change loads, generation, and topology, then
+  run pp.runpp/runopp and observe changed bus voltages, line loadings, and losses. Passes the inclusion
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/pandapower/json
+  latest_release_date: https://pypi.org/pypi/pandapower/json
+  license: https://pypi.org/pypi/pandapower/json
+  access_link: https://pypi.org/project/pandapower/
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- power-flow
+- distribution
+- transmission
+- python

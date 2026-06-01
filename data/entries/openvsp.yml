@@ -1,0 +1,56 @@
+id: openvsp
+name: OpenVSP
+gloss: OpenVSP (Open Vehicle Sketch Pad) is NASA's open-source parametric aircraft geometry tool with
+  integrated analysis capabilities.
+domain: aerospace-space
+system_represented: Models aircraft (and other vehicle) outer-mold-line geometry parametrically, then
+  supports analyses including aerodynamic predictions (VSPAERO vortex-lattice/panel solver), mass properties,
+  wetted areas, and structural/parasite-drag estimation on the generated geometry.
+inputs_you_can_change:
+- Geometry component parameters (wing span, chord, sweep, airfoil, fuselage shape)
+- Component layout and configuration
+- Flight/analysis conditions (Mach, angle of attack, Reynolds number)
+- VSPAERO solver settings (vortex lattice vs panel, wake iterations)
+- Mass and material/structural inputs
+outputs_you_can_observe:
+- Aerodynamic coefficients (lift, drag, moment) and polars
+- Wetted area and reference geometry
+- Mass properties / center of gravity
+- Parasite drag buildup
+- 3D geometry and degenerate-geometry exports
+runtime_required: OpenVSP desktop application (Windows/Linux/macOS) with GUI, plus AngelScript and Python
+  API; includes VSPAERO solver
+access_type: permissive-open
+license: NASA Open Source Agreement (NOSA) v1.3
+scale:
+  element_count: A representative aircraft model assembles many geometry components (wings, fuselage,
+    nacelles, control surfaces) whose discretized surfaces feed a VSPAERO solve over many panels/vortices,
+    exceeding 25 interacting elements.
+  grouping: Organized into a vehicle composed of geometry components arranged in a parent/child tree,
+    with analysis modules (VSPAERO, mass properties, parasite drag) operating on the assembly.
+  notes: Element count scales with number of geometry components and panel/vortex discretization.
+maintenance_status:
+  status: active
+  latest_version: 3.50.3
+  latest_release_date: '2026-05-15'
+access_link: https://openvsp.org/
+suitability: Aircraft conceptual designers and researchers needing rapid parametric geometry plus integrated
+  aerodynamic and mass analysis.
+executability_justification: Users vary geometry parameters and flight conditions and run VSPAERO or mass-property
+  analyses; aerodynamic coefficients, drag, and mass outputs change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://openvsp.org/blogs/announcements
+  latest_release_date: https://openvsp.org/blogs/announcements
+  license: https://github.com/OpenVSP/OpenVSP
+  access_link: https://openvsp.org/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: 3.50.3 (May 15, 2026) confirmed via openvsp.org announcements; NOSA 1.3 license confirmed via
+    GitHub repo. The GitHub repo does not use GitHub Releases; binaries are distributed via openvsp.org.
+tags:
+- aircraft-geometry
+- aerodynamics
+- nasa
+- cad

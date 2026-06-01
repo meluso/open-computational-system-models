@@ -1,0 +1,57 @@
+id: project-chrono
+name: Project Chrono
+gloss: Project Chrono is an open-source high-performance C++ library (with a Python module, PyChrono)
+  for multiphysics and multibody dynamics simulation, covering rigid/flexible bodies, contact, vehicles,
+  and terramechanics.
+domain: robotics-multibody
+system_represented: Simulates complex mechanical systems such as ground vehicles, robots, granular terrain
+  interaction, and mechanisms as large multibody assemblies with joints, contacts, and finite-element
+  flexible parts.
+inputs_you_can_change:
+- Body masses, inertias, and joint/constraint definitions
+- Contact and friction models and parameters
+- Actuator/motor inputs and applied loads
+- Solver and time-stepper settings (timestep, iterations)
+- Terrain/granular and FEA mesh parameters
+outputs_you_can_observe:
+- Body trajectories, positions, and velocities over time
+- Joint reaction and contact forces
+- Deformation/stress in flexible (FEA) components
+- Visualizations and exported simulation data
+runtime_required: C++ build, or Python via PyChrono (conda package "pychrono"); cross-platform
+access_type: permissive-open
+license: BSD-3-Clause
+scale:
+  element_count: A representative wheeled/tracked vehicle (Chrono::Vehicle) or robot model has dozens
+    of bodies and joints (25-100+); granular/FEA scenes scale to thousands of elements
+  grouping: Bodies and links group into ChSystem assemblies and subsystems (e.g., Chrono::Vehicle chassis,
+    suspensions, driveline, tires)
+  notes: Highly scalable
+maintenance_status:
+  status: active
+  latest_version: 10.0.0
+  latest_release_date: '2026-04-07'
+access_link: https://projectchrono.org
+suitability: Vehicle dynamics, robotics, and engineering researchers needing high-fidelity multibody and
+  multiphysics simulation including terramechanics and FEA
+executability_justification: Changing body/joint parameters, contact models, or actuator inputs and running
+  a simulation produces observably different trajectories, forces, and deformations.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/projectchrono/chrono/releases/latest
+  latest_release_date: https://github.com/projectchrono/chrono/releases/latest
+  license: https://github.com/projectchrono/chrono
+  access_link: https://github.com/projectchrono/chrono
+verification_confidence:
+  overall: high
+  unverified:
+  - access_link
+  notes: GitHub release tag 10.0.0 published 2026-04-07; BSD-3-Clause confirmed via repo. The PyPI package
+    named "pychrono" is an unrelated project; PyChrono module distributed via conda. access_link projectchrono.org
+    not directly fetched.
+tags:
+- chrono
+- multibody
+- multiphysics
+- vehicle-dynamics
+- fea

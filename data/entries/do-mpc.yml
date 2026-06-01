@@ -1,0 +1,51 @@
+id: do-mpc
+name: do-mpc
+gloss: Python toolbox for nonlinear and robust Model Predictive Control (MPC) and Moving Horizon Estimation
+  (MHE), built on the CasADi symbolic framework.
+domain: controls-dynamics-python
+system_represented: Nonlinear dynamic engineered systems controlled in closed loop, e.g., chemical reactors,
+  batteries, building HVAC, or robotic systems. Users define the plant model, an MPC controller, an estimator,
+  and a simulator and run the closed-loop interaction.
+inputs_you_can_change:
+- Model equations, states, inputs, and uncertain parameters
+- Prediction and control horizon lengths and time step
+- Objective terms (stage/terminal cost) and input penalties
+- Constraints and bounds on states/inputs
+- Robust multi-stage scenario tree and uncertainty values
+outputs_you_can_observe:
+- Closed-loop state and control trajectories over time
+- Predicted (open-loop) trajectories at each step
+- Cost/objective evolution
+- Estimated states from the moving-horizon estimator
+- Constraint satisfaction/violation behavior
+runtime_required: Python 3 with CasADi (pip install do-mpc); IPOPT solver
+access_type: weak-copyleft-open
+license: LGPL-3.0
+scale:
+  element_count: A representative nonlinear MPC problem (e.g., a CSTR or building model) spans several
+    states/inputs across a prediction horizon of tens of steps, producing hundreds to thousands of decision
+    variables per solve
+  grouping: Organized into Model, MPC controller, Estimator (MHE/EKF), and Simulator components
+  notes: Element count scales with model dimension, horizon, and robust scenario branches
+maintenance_status:
+  status: active
+  latest_version: 5.1.1
+  latest_release_date: '2025-10-31'
+access_link: https://www.do-mpc.com
+suitability: Control researchers and engineers implementing nonlinear/robust MPC and state estimation
+executability_justification: Users vary model, horizon, costs, and constraints and observe changed closed-loop
+  trajectories and predicted outputs, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/do-mpc/json
+  latest_release_date: https://pypi.org/pypi/do-mpc/json
+  license: https://pypi.org/pypi/do-mpc/json
+  access_link: https://pypi.org/pypi/do-mpc/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- mpc
+- model-predictive-control
+- state-estimation
+- python

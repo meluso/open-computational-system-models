@@ -1,0 +1,57 @@
+id: anylogic
+name: AnyLogic
+gloss: Commercial multi-method simulation platform supporting discrete-event, agent-based, and system-dynamics
+  modeling, with a free Personal Learning Edition (PLE).
+domain: des-abm
+system_represented: Large-scale operational systems including supply chains, manufacturing, transportation
+  networks, pedestrian/crowd dynamics, healthcare, and markets, modeled with agents, process flows, and
+  stock-and-flow dynamics.
+inputs_you_can_change:
+- Number and behavior rules of agents
+- Process-flow block parameters (capacities, delays, resources)
+- Arrival rates and demand/input distributions
+- System-dynamics stocks, flows, and feedback parameters
+- Experiment settings (optimization, parameter variation, Monte Carlo), run length, seed
+outputs_you_can_observe:
+- Throughput, utilization, and queue/wait statistics
+- Agent population dynamics over time
+- Stock/flow level trajectories
+- Spatial/animated state and dashboards
+- Optimization and parameter-sweep results
+runtime_required: AnyLogic desktop application (Java-based); Windows/macOS/Linux
+access_type: freemium
+license: Proprietary (free Personal Learning Edition; paid Professional/University editions)
+scale:
+  element_count: Commercial editions support large models with thousands-to-millions of agents; the free
+    PLE caps at 10 agent types and 50,000 dynamically created agents
+  grouping: Organized into agent types, process flowcharts, and system-dynamics diagrams composed hierarchically
+  notes: PLE has agent-type, population, block-count, and run-time limits; paid editions remove them
+maintenance_status:
+  status: active
+  latest_version: 8.9.8
+  latest_release_date: '2026-02-26'
+access_link: https://www.anylogic.com/downloads/
+suitability: Modelers and consultants needing a professional multi-method GUI simulation tool; PLE suits
+  students and learners
+executability_justification: Users vary agent rules, process parameters, and demand inputs and observe
+  changed throughput, populations, and dynamics, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://www.anylogic.com/downloads/
+  latest_release_date: https://www.anylogic.com/downloads/
+  license: https://www.anylogic.com/downloads/personal-learning-edition-download/
+  access_link: https://www.anylogic.com/downloads/
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  - latest_release_date
+  notes: Version 8.9.8 (2026-02-26) reported via web search of AnyLogic pages; the downloads page returned
+    HTTP 403 and was not directly fetched, so the exact current build should be confirmed on the vendor
+    site.
+tags:
+- multi-method-simulation
+- agent-based
+- discrete-event
+- system-dynamics
+- commercial

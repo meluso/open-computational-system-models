@@ -1,0 +1,53 @@
+id: eclipse-sumo
+name: Eclipse SUMO
+gloss: Simulation of Urban MObility (SUMO), an open-source microscopic, multi-modal traffic simulation
+  suite for modeling individual vehicles, pedestrians, and public transport on road networks.
+domain: des-abm
+system_represented: Urban and highway road traffic, where each vehicle is simulated individually with
+  car-following, lane-changing, and intersection/traffic-light logic across a city-scale network of streets
+  and junctions.
+inputs_you_can_change:
+- Road network topology (edges, lanes, junctions) and traffic-light programs
+- Vehicle demand (routes, flows, departure times) and number of vehicles
+- Vehicle types and car-following/lane-change model parameters
+- Simulation step length and total duration
+- Random seed and routing/rerouting settings
+outputs_you_can_observe:
+- Per-vehicle and aggregate travel times and delays
+- Edge/lane flows, densities, and mean speeds
+- Queue lengths and congestion at intersections
+- Emissions and fuel-consumption estimates
+- Trip/route statistics and time-series detector outputs
+runtime_required: SUMO suite (C++ binaries with Python TraCI/libsumo bindings); pip install eclipse-sumo;
+  Windows/macOS/Linux
+access_type: copyleft-open
+license: EPL-2.0 OR GPL-2.0-or-later
+scale:
+  element_count: A representative city network has thousands of edges/lanes and junctions with thousands-to-tens-of-thousands
+    of vehicles simulated per scenario
+  grouping: Organized into a network (edges, lanes, junctions, traffic lights), route/demand definitions,
+    and additional infrastructure files
+  notes: Element count scales with network size and demand volume
+maintenance_status:
+  status: active
+  latest_version: 1.27.0
+  latest_release_date: '2026-05-21'
+access_link: https://eclipse.dev/sumo/
+suitability: Traffic engineers and researchers simulating road networks, traffic control, and connected/automated
+  vehicles
+executability_justification: Users vary network, demand, vehicle parameters, and signal timing and observe
+  changed travel times, flows, and congestion, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/eclipse-sumo/json
+  latest_release_date: https://pypi.org/pypi/eclipse-sumo/json
+  license: https://pypi.org/pypi/eclipse-sumo/json
+  access_link: https://pypi.org/pypi/eclipse-sumo/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- traffic-simulation
+- microscopic
+- multi-modal
+- mobility

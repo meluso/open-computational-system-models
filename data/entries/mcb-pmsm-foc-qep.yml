@@ -1,0 +1,56 @@
+id: mcb-pmsm-foc-qep
+name: Field-Oriented Control of PMSM Using Quadrature Encoder
+gloss: A field-oriented control (FOC) algorithm that regulates the speed of a three-phase permanent magnet
+  synchronous motor (PMSM) using rotor-position feedback from a quadrature encoder.
+domain: mathworks-mbd
+system_represented: A three-phase PMSM drive with an inverter and a quadrature-encoder position sensor,
+  controlled by a field-oriented (vector) control algorithm. The example includes simulation and deployable
+  target models (for TI C2000 boards such as F28069M / F28379D LaunchPads) plus a host model for serial
+  monitoring.
+inputs_you_can_change:
+- motor parameters (from datasheet or parameter-estimation tool)
+- reference speed command (via the host model)
+- inverter parameters and ADC offset values
+- quadrature-encoder index offset and counts-per-slit settings
+- current/speed PI controller gains
+outputs_you_can_observe:
+- motor speed (tracking the reference)
+- estimated rotor position
+- d/q-axis and phase currents
+- debug signals on the host-model Time Scope
+runtime_required: MATLAB + Simulink + Motor Control Blockset (+ Fixed-Point Designer; Embedded Coder and
+  C2000 Microcontroller Blockset for deployment)
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Plant (PMSM + inverter), FOC controller (Clarke/Park transforms, current and speed PI loops,
+    SVPWM), encoder decoding, and a host monitoring model.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Motor Control Blockset; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+suitability: Suits motor-control / power-electronics engineers; requires licensed MATLAB + Motor Control
+  Blockset to run, and additional coder products to deploy to hardware.
+executability_justification: The user sets motor parameters and a reference speed, runs the closed-loop
+  simulation, and observes the motor speed converging to the reference and the corresponding current and
+  rotor-position waveforms changing.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+  system_represented: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+  inputs_you_can_change: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+  outputs_you_can_observe: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+  runtime_required: https://www.mathworks.com/help/mcb/gs/foc-pmsm-using-quadrature-encoder.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- motor-control-blockset
+- pmsm
+- foc

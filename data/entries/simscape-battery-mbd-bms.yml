@@ -1,0 +1,63 @@
+id: simscape-battery-mbd-bms
+name: Use Model-Based Design to Build a Battery Management System
+gloss: A complete model-based-design project for a Battery Management System (BMS) governing a 27 Ah Nickel-Manganese-Cobalt
+  (NMC) lithium-ion battery pack, covering state estimation, protection, and cell balancing.
+domain: mathworks-mbd
+system_represented: A lithium-ion battery pack built from 27 Ah NMC cells together with its full battery
+  management system, developed through a model-based-design workflow with requirements, system architecture,
+  plant model (Simscape Battery/Electrical), and BMS control logic (Stateflow) at unit, subsystem, and
+  system levels.
+inputs_you_can_change:
+- load / charge-discharge current profile
+- initial cell states of charge (to create imbalance)
+- cell-balancing algorithm parameters (e.g. bleed-resistor sizing)
+- protection thresholds (over/under voltage, current, temperature)
+- cell/pack chemistry and capacity parameters
+outputs_you_can_observe:
+- estimated cell/pack state of charge (SOC)
+- cell voltages and balancing behavior over time
+- protection / fault state transitions
+- pack current and temperature response
+runtime_required: MATLAB + Simulink + Simscape + Simscape Battery + Simscape Electrical + Stateflow +
+  System Composer + Requirements Toolbox + Simulink Test
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Requirements and architecture (System Composer), battery plant (Simscape Battery/Electrical),
+    BMS supervisory logic (Stateflow), and test harnesses (Simulink Test), organized as a MATLAB/Simulink
+    Project.
+  notes: Inputs/outputs partially inferred from general Simscape Battery BMS capabilities; exact harness
+    signals not enumerated on the landing page.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Simulink/Simscape Battery docs; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/simulink/ug/use-mbd-to-build-bms.html
+suitability: Suits battery-systems and controls engineers running a full MBD toolchain; requires a licensed
+  MATLAB plus many toolboxes. Substantial, not a starter example.
+executability_justification: The user changes the current profile, initial SOC imbalance, balancing parameters,
+  and protection thresholds, runs the simulation, and observes SOC convergence, cell-voltage balancing,
+  and protection state changes.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/simulink/ug/use-mbd-to-build-bms.html
+  system_represented: https://www.mathworks.com/help/simulink/ug/use-mbd-to-build-bms.html
+  runtime_required: https://www.mathworks.com/help/simulink/ug/use-mbd-to-build-bms.html
+  inputs_you_can_change: https://www.mathworks.com/help/simscape-battery/bms-block-libraries.html
+  outputs_you_can_observe: https://www.mathworks.com/help/simscape-battery/bms-block-libraries.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+  - inputs_you_can_change
+  - outputs_you_can_observe
+  notes: Cell chemistry (27 Ah NMC) and product list verified on the example page; specific inputs/outputs
+    generalized from Simscape Battery BMS documentation.
+tags:
+- simulink
+- simscape-battery
+- bms
+- stateflow

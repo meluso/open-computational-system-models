@@ -1,0 +1,50 @@
+id: omsimulator
+name: OMSimulator
+gloss: OpenModelica's FMI-based simulation and co-simulation tool for composing and running connected
+  FMUs into heterogeneous system models.
+domain: heterogeneous-digital-twin
+system_represented: OMSimulator (OpenModelica project) imports Functional Mock-up Units (FMUs) and connects
+  them into composite system models, running model-exchange and co-simulation with master algorithms and
+  solvers. It lets models from different tools be wired together into one runnable digital-twin-style
+  system.
+inputs_you_can_change:
+- FMU parameters and start values (system parameter bindings)
+- Connections between FMUs in the composite system
+- Solver choice (e.g., CVODE) and step size
+- Simulation time span
+- Signal filtering / output selection
+outputs_you_can_observe:
+- Time-series of FMU output variables
+- Coupling signals between connected FMUs
+- State and time event detection
+- System-level result files for plotting
+runtime_required: OMSimulator (C/C++ with Python and Lua APIs); bundled with OpenModelica, also standalone
+access_type: copyleft-open
+license: OSMC Public License
+scale:
+  element_count: Representative composite models connect dozens of FMUs/components
+  grouping: FMUs grouped into systems/subsystems within a composite model
+  notes: FMI-based co-simulation engine
+maintenance_status:
+  status: active
+  latest_version: 2.1.3
+  latest_release_date: '2024-11-22'
+access_link: https://github.com/OpenModelica/OMSimulator
+suitability: Engineers and researchers assembling multi-tool FMU co-simulations / digital twins, especially
+  within the OpenModelica ecosystem.
+executability_justification: Users bind FMU parameters/inputs, connect FMUs, and run co-simulation to
+  observe changed output trajectories. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/OpenModelica/OMSimulator/releases
+  latest_release_date: https://github.com/OpenModelica/OMSimulator/releases/tag/v2.1.3
+  license: https://github.com/OpenModelica/OMSimulator
+  gloss: https://github.com/OpenModelica/OMSimulator
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- fmi
+- co-simulation
+- open-source
+- digital-twin

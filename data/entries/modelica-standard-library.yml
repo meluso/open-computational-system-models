@@ -1,0 +1,51 @@
+id: modelica-standard-library
+name: Modelica Standard Library (MSL)
+gloss: Free component library of reusable physical and control building blocks used to assemble runnable
+  Modelica system models.
+domain: equation-based-physical
+system_represented: The Modelica Standard Library (MSL) is the canonical free library of acausal physical
+  components—electrical, mechanical (translational/rotational/multibody), thermal, fluid, magnetic—plus
+  blocks and math. A modeler wires these components inside any Modelica tool to construct a runnable system
+  model (e.g., a motor-drive, an HVAC loop, a vehicle drivetrain).
+inputs_you_can_change:
+- Parameters of each instantiated component (e.g., resistance, inertia, heat capacity)
+- Source/boundary blocks (voltage, force, temperature, flow inputs)
+- Connections/topology among components
+- Initial values of component states
+- Choice of components/variants from the library
+outputs_you_can_observe:
+- Potential/flow variables at each connector (voltages, currents, forces, flows)
+- Time-series of component state variables
+- Power and energy balances across the assembled system
+- Transient and steady-state system response
+runtime_required: Any Modelica-compliant tool (OpenModelica, Dymola, etc.); MSL is a library, not a standalone
+  runtime
+access_type: permissive-open
+license: BSD 3-Clause (MSL itself); documentation under CC-BY
+scale:
+  element_count: Library contains thousands of models/blocks; a representative assembled system model
+    uses dozens of them
+  grouping: Organized into domain packages (Electrical, Mechanics, Thermal, Fluid, Blocks, etc.)
+  notes: Frame is the runnable component library used to build system models
+maintenance_status:
+  status: active
+  latest_version: 4.1.0
+  latest_release_date: '2025-05-23'
+access_link: https://github.com/modelica/ModelicaStandardLibrary
+suitability: Anyone building Modelica system models; foundational dependency for OpenModelica, Dymola,
+  and other tools.
+executability_justification: Components carry equations and parameters; assembled into a model and simulated
+  in a Modelica tool, varying parameters/inputs yields observably different outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/modelica/ModelicaStandardLibrary/releases
+  latest_release_date: https://github.com/modelica/ModelicaStandardLibrary/releases
+  license: https://github.com/modelica/ModelicaStandardLibrary/releases
+  gloss: https://github.com/modelica/ModelicaStandardLibrary
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- modelica
+- component-library
+- open-source

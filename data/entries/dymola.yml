@@ -1,0 +1,55 @@
+id: dymola
+name: Dymola
+gloss: Commercial Modelica-based environment (Dynamic Modeling Laboratory) for modeling and simulating
+  integrated multi-domain physical systems.
+domain: equation-based-physical
+system_represented: Dymola (Dassault Systemes) models complex engineered systems combining mechanical,
+  electrical, electronic, hydraulic, thermal, control, and electric-power components in a single Modelica
+  system model—any physical component describable by ordinary differential and algebraic equations. Common
+  in automotive, aerospace, and robotics.
+inputs_you_can_change:
+- Component parameters within the drag-and-drop model
+- Variables for parameter sweeps across multiple simulations
+- Model topology and custom component designs
+- Simulation settings (solver, time span)
+- Input/boundary signal sources
+outputs_you_can_observe:
+- Simulation results as 2D or 3D plots
+- System behavior under different scenarios
+- Time trajectories of model variables
+- Hardware-in-the-loop validation results
+runtime_required: Dymola (commercial desktop application, Windows/Linux)
+access_type: commercial
+license: unstated — needs direct verification
+scale:
+  element_count: A representative Modelica system model in Dymola wires dozens to hundreds of library
+    components; model-dependent
+  grouping: Hierarchical Modelica components/connectors grouped into subsystems
+  notes: Based on the Modelica language; uses MSL and commercial libraries
+maintenance_status:
+  status: active
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.3ds.com/products/catia/dymola
+suitability: Industrial engineers needing a high-performance commercial Modelica environment with strong
+  solver and library ecosystem.
+executability_justification: Users change component parameters and run sweeps/scenarios, observing changed
+  plotted outputs—satisfies the inclusion test. Access type (commercial) is recorded, not a reason to
+  exclude.
+last_verified: '2026-06-01'
+source_per_field:
+  gloss: https://www.3ds.com/products/catia/dymola
+  system_represented: https://www.3ds.com/products/catia/dymola
+  inputs_you_can_change: https://www.3ds.com/products/catia/dymola
+  outputs_you_can_observe: https://www.3ds.com/products/catia/dymola
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: Vendor page does not publish version numbers or license terms; marked unstated per rules.
+tags:
+- modelica
+- commercial
+- multi-domain

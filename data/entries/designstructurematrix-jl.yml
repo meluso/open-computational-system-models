@@ -1,0 +1,50 @@
+id: designstructurematrix-jl
+name: DesignStructureMatrix.jl
+gloss: A Julia package for Design Structure Matrix (DSM) analysis that clusters and sequences a dependency
+  matrix to reveal modules and minimize feedback, with plotting.
+domain: computing-dsm
+system_represented: The dependency/interaction structure of a complex system or process, encoded as a
+  square DSM whose elements (components or tasks) and off-diagonal entries (dependencies) define the architecture
+  or process flow.
+inputs_you_can_change:
+- the input adjacency/dependency matrix
+- element labels
+- clustering algorithm parameters
+- choice of operation (cluster vs sequence)
+outputs_you_can_observe:
+- clustered (reordered) matrix grouping related elements
+- sequenced ordering that minimizes feedback/loops
+- reorganized element labels
+- DSM heatmap-style plot
+runtime_required: Julia (uses Luxor.jl for rendering)
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: Operates on a DSM of arbitrary size; representative DSMs have tens to hundreds of elements.
+  grouping: The clustering/sequencing routines compute the grouping/ordering of elements.
+  notes: An element is one row/column (a component or task) of the matrix.
+maintenance_status:
+  status: dormant
+  latest_version: 0.3.0
+  latest_release_date: '2022-01-25'
+access_link: https://github.com/Otepipi/DesignStructureMatrix.jl
+suitability: Suits Julia users and researchers analyzing system/process architecture; lightweight and
+  scriptable but not a polished GUI, so newcomers must write a little Julia.
+executability_justification: A user supplies a dependency matrix and parameters, runs clustering or sequencing,
+  and observes a reordered/clustered matrix and changed ordering that respond to the inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/Otepipi/DesignStructureMatrix.jl
+  latest_release_date: https://github.com/Otepipi/DesignStructureMatrix.jl
+  license: https://github.com/Otepipi/DesignStructureMatrix.jl
+  access_link: https://github.com/Otepipi/DesignStructureMatrix.jl
+verification_confidence:
+  overall: medium
+  unverified: []
+  notes: Latest release 0.3.0 (2022), judged dormant. Computes clustering and sequencing (not change propagation).
+tags:
+- dsm
+- clustering
+- sequencing
+- julia
+- modularity

@@ -1,0 +1,55 @@
+id: openmodelica
+name: OpenModelica
+gloss: Open-source Modelica-based modeling and simulation environment for building and running multi-domain
+  physical system models.
+domain: equation-based-physical
+system_represented: A full integrated environment (compiler, solvers, OMEdit graphical editor) for equation-based
+  modeling of engineered physical systems—electrical, mechanical, thermal, fluid, and control—described
+  as differential-algebraic equations. Users wire together library components (e.g., the Modelica Standard
+  Library) into system models and simulate their dynamics.
+inputs_you_can_change:
+- Component parameters (resistances, masses, gains, time constants)
+- Initial conditions of state variables
+- Simulation interval, step size, and solver/integrator selection
+- Model topology (wiring of components in OMEdit)
+- Input signal sources (steps, ramps, tables)
+outputs_you_can_observe:
+- Time-series trajectories of any model variable (plotted in OMEdit)
+- State variable evolution over the simulation horizon
+- Derived energy/power flows between components
+- Event timings (state and time events)
+- Steady-state and transient response curves
+runtime_required: OpenModelica (OMEdit / OMC compiler); cross-platform desktop application
+access_type: copyleft-open
+license: OSMC-PL (OpenModelica) / GPL dual; see project license
+scale:
+  element_count: A representative system model wires dozens to hundreds of standard-library components;
+    element count is model-dependent
+  grouping: Hierarchical components and connectors grouped into subsystems/packages
+  notes: Built on the Modelica language; uses pluggable libraries such as MSL
+maintenance_status:
+  status: active
+  latest_version: 1.26.7
+  latest_release_date: '2025-05-02'
+access_link: https://openmodelica.org
+suitability: Engineers, researchers, and students wanting a free environment for system-level physical
+  modeling without a commercial Modelica license.
+executability_justification: Users vary component parameters, initial conditions, and inputs in OMEdit
+  and observe changed time-series outputs on simulation—directly satisfying the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/OpenModelica/OpenModelica/releases
+  latest_release_date: https://github.com/OpenModelica/OpenModelica/releases
+  gloss: https://openmodelica.org
+  domain: https://openmodelica.org
+verification_confidence:
+  overall: high
+  unverified:
+  - license
+  notes: License dual-scheme (OSMC-PL/GPL) stated on project pages but exact SPDX not directly fetched
+    this session.
+tags:
+- modelica
+- open-source
+- system-simulation
+- equation-based

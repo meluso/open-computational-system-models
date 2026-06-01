@@ -1,0 +1,54 @@
+id: aeroblks-hl20-airframe
+name: NASA HL-20 Lifting Body Airframe
+gloss: A six-degree-of-freedom (6DOF) flight model of NASA's HL-20 lifting-body reentry vehicle airframe
+  with its flight controller, a low-cost complement concept to the Space Shuttle orbiter.
+domain: mathworks-mbd
+system_represented: The airframe and flight controller of the NASA HL-20 lifting body during the approach/reentry
+  phase, modeled as a rigid-body 6DOF vehicle with aerodynamic coefficient lookup tables, environmental
+  (atmosphere/gravity/wind) models, and control-surface actuation. The model assumes constant mass properties
+  and lateral symmetry and excludes landing-gear effects.
+inputs_you_can_change:
+- control-surface deflections (elevator, ailerons, body flaps, rudder)
+- environmental conditions (altitude, wind shear, gusts, turbulence)
+- vehicle state initialization
+- aerodynamic coefficient / lookup-table data
+outputs_you_can_observe:
+- vehicle position and attitude (Euler angles)
+- velocity and body angular rates
+- aerodynamic forces and moments
+- flight-instrument indications
+runtime_required: MATLAB + Simulink + Aerospace Blockset
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Five core subsystems — 6DOF (Euler Angles) equations of motion, Environmental Models, Alpha/Beta/Mach
+    computation, Aerodynamic Coefficients, and Forces and Moments.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Aerospace Blockset; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+suitability: Suits aerospace GNC / flight-controls engineers and advanced students; requires licensed
+  MATLAB + Aerospace Blockset (FlightGear/Unreal optional for visualization).
+executability_justification: The user changes control-surface inputs, wind/turbulence settings, or initial
+  conditions, runs the 6DOF simulation, and observes changed attitude, trajectory, and aerodynamic force/moment
+  time histories.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+  system_represented: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+  inputs_you_can_change: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+  outputs_you_can_observe: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+  runtime_required: https://www.mathworks.com/help/aeroblks/nasa-hl-20-lifting-body-airframe.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- aerospace-blockset
+- flight-control
+- 6dof

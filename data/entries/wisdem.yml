@@ -1,0 +1,56 @@
+id: wisdem
+name: WISDEM
+gloss: WISDEM (Wind-Plant Integrated System Design and Engineering Model) is NREL's open-source Python
+  framework for multidisciplinary systems engineering and cost analysis of wind turbines and plants.
+domain: wind-marine-energy
+system_represented: Models a complete wind turbine and plant as coupled engineering subsystems (rotor/blades,
+  drivetrain, tower/structure, balance-of-system, costs) to perform integrated design optimization and
+  levelized cost of energy analysis.
+inputs_you_can_change:
+- Turbine geometry and design variables (blade chord/twist, tower dimensions)
+- Material and structural properties
+- Drivetrain and generator configuration
+- Site/wind resource and plant layout assumptions
+- Cost model and optimization objectives/constraints
+outputs_you_can_observe:
+- Component masses and turbine/plant capital cost
+- Annual energy production (AEP)
+- Levelized cost of energy (LCOE)
+- Structural performance metrics (loads, deflections, stresses)
+- Optimized design variable values
+runtime_required: Python 3 (built on OpenMDAO); installable via conda/pip; cross-platform
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative analysis couples dozens of disciplinary components/models (blade structural
+    sections, tower segments, drivetrain, BOS, cost modules) within an OpenMDAO model
+  grouping: Components group into OpenMDAO groups/subsystems (RotorSE, DrivetrainSE, TowerSE, PlantFinanceSE,
+    etc.)
+  notes: Component count scales with model fidelity
+maintenance_status:
+  status: active
+  latest_version: v4.2.1
+  latest_release_date: '2026-04-19'
+access_link: https://github.com/WISDEM/WISDEM
+suitability: Wind energy systems engineers and researchers performing turbine/plant design optimization
+  and techno-economic analysis
+executability_justification: Changing design variables, site assumptions, or cost models and running the
+  analysis produces observably different masses, AEP, and LCOE outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/WISDEM/WISDEM/releases/latest
+  latest_release_date: https://api.github.com/repos/WISDEM/WISDEM/releases/latest
+  license: https://github.com/WISDEM/WISDEM
+  access_link: https://github.com/WISDEM/WISDEM
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Latest release v4.2.1 published 2026-04-19; Apache-2.0 confirmed via repo. Built on OpenMDAO
+    framework.
+tags:
+- wisdem
+- wind-turbine
+- systems-engineering
+- optimization
+- lcoe
+- nrel

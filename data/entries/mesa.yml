@@ -1,0 +1,49 @@
+id: mesa
+name: Mesa
+gloss: Apache-licensed Python framework for agent-based modeling (ABM), providing agent schedulers, spatial
+  grids/networks, data collection, and browser-based visualization.
+domain: des-abm
+system_represented: Complex adaptive systems of many interacting agents such as epidemics, traffic, economic
+  markets, segregation, and ecological models, built from dozens-to-thousands of agents on grids or networks.
+inputs_you_can_change:
+- Number of agents in the model
+- Agent behavior rule parameters and thresholds
+- Space type and size (grid dimensions, network topology)
+- Scheduling/activation order
+- Number of simulation steps and random seed
+outputs_you_can_observe:
+- Agent and model-level variables collected over steps (DataCollector)
+- Spatial visualization of agent positions/states
+- Time-series plots and charts in the browser interface
+- Batch-run parameter-sweep results as DataFrames
+- Aggregate metrics (counts, means) per step
+runtime_required: Python 3.12+ (pip install mesa); Solara/browser for visualization
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative model (e.g., Schelling segregation or epidemic) runs hundreds-to-thousands
+    of agents on a grid of hundreds-to-thousands of cells
+  grouping: Agents are managed in an AgentSet/scheduler; space organized as grids or NetworkX graphs within
+    a Model
+  notes: Element count scales with agent population and grid/network size
+maintenance_status:
+  status: active
+  latest_version: 3.5.1
+  latest_release_date: '2026-03-15'
+access_link: https://mesa.readthedocs.io
+suitability: Researchers, students, and data scientists building and analyzing agent-based models in Python
+executability_justification: Users vary agent counts, rule parameters, and space size and observe changed
+  collected metrics, spatial states, and time-series plots, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/mesa/json
+  latest_release_date: https://pypi.org/pypi/mesa/3.5.1/json
+  license: https://pypi.org/pypi/mesa/json
+  access_link: https://pypi.org/pypi/mesa/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- agent-based-modeling
+- python
+- complex-systems

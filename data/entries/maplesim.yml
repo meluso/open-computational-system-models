@@ -1,0 +1,52 @@
+id: maplesim
+name: MapleSim
+gloss: Commercial multidomain system-level modeling and simulation platform from Maplesoft, with symbolic
+  model generation.
+domain: equation-based-physical
+system_represented: MapleSim (Maplesoft) is a system-level modeling and simulation tool for multidomain
+  machine design, combining mechanical, electrical, control, robotics, vehicle-dynamics, and web-handling
+  components into virtual prototypes. It integrates with PLC systems for virtual commissioning and digital-twin
+  applications.
+inputs_you_can_change:
+- Component parameters within the model diagram
+- System topology / component connections
+- Control laws and signal inputs
+- Simulation/solver settings
+- Boundary and operating conditions
+outputs_you_can_observe:
+- Time-series simulation results of model variables
+- System dynamic behavior across scenarios
+- Real-time / HIL simulation responses
+- Exported FMU and C-code behavior
+runtime_required: MapleSim (commercial desktop application)
+access_type: commercial
+license: unstated — needs direct verification
+scale:
+  element_count: Representative system models wire dozens of library components; model-dependent
+  grouping: Hierarchical components grouped into subsystems
+  notes: Generates governing equations symbolically via the Maple engine
+maintenance_status:
+  status: active
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.maplesoft.com/products/maplesim/
+suitability: Engineers wanting symbolic system modeling, plant models for control design, and FMU/code
+  export for virtual commissioning.
+executability_justification: Users adjust component parameters and inputs and observe changed simulation
+  outputs; FMU/real-time export confirms runnability. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  gloss: https://www.maplesoft.com/products/maplesim/
+  system_represented: https://www.maplesoft.com/products/maplesim/
+  outputs_you_can_observe: https://www.maplesoft.com/products/maplesim/
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: Vendor page omits version/license; marked unstated.
+tags:
+- commercial
+- multi-domain
+- system-simulation

@@ -14,7 +14,7 @@ brings its source code, its documentation, its issue threads, its tutorials, and
 the many public projects built on top of it. A commercial tool reached only
 through a license leaves a thin public trace by comparison. So the very openness
 that lets a human run a model for free is the same openness that taught the A I how
-that model works. Of the 1 models in this catalog, 1 are open source, and
+that model works. Of the 89 models in this catalog, 70 are open source, and
 it is no accident that those are the same traditions where A I assistance is
 strongest.
 

@@ -1,0 +1,58 @@
+id: eclipse-capella
+name: Eclipse Capella
+gloss: An open-source Model-Based Systems Engineering (MBSE) tool implementing the Arcadia method, with
+  add-ons that make mode/state machines executable and viewpoints that compute mass, cost, and latency.
+domain: executable-mbse
+system_represented: Arbitrary engineered systems (the Arcadia method targets complex systems and software
+  architectures); a representative model spans operational, system, logical, and physical architecture
+  layers with functions, components, exchanges, and state machines.
+inputs_you_can_change:
+- mass and cost property values on components (Mass/Cost viewpoints)
+- latency values along functional chains (Latency viewpoint)
+- state-machine structure and triggers (DESS add-on)
+- functional/component decomposition and exchanges
+- simulation inputs/events driving the executable state machines
+outputs_you_can_observe:
+- rolled-up system mass and cost
+- end-to-end functional-chain latency
+- executed state-machine state sequence / recorded scenario
+- simulation traces of mode/state transitions
+runtime_required: Capella workbench (Java / Eclipse RCP application) plus add-ons such as DESS (Dynamic
+  Execution and System Simulation) and the basic Mass/Cost/Latency viewpoints
+access_type: weak-copyleft-open
+license: EPL-2.0
+scale:
+  element_count: Tool — a representative Arcadia model contains dozens to hundreds of functions, components,
+    exchanges, and states across four architecture layers.
+  grouping: Operational / System / Logical / Physical architecture layers; components decompose hierarchically;
+    functions allocate to components.
+  notes: An element is an Arcadia function, component, exchange, state, or actor.
+maintenance_status:
+  status: active
+  latest_version: 7.0.1
+  latest_release_date: '2025-03-21'
+access_link: https://mbse-capella.org/
+suitability: Suits systems engineers wanting a free, structured method-driven tool; the core is approachable
+  for newcomers, while executable simulation and analysis viewpoints require installing add-ons and some
+  method familiarity.
+executability_justification: A user changes mass/cost/latency property values and runs the analysis viewpoints
+  to see updated roll-ups, or drives the DESS-executable state machines to observe changed state sequences
+  and recorded scenarios.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/eclipse-capella/capella/tags
+  latest_release_date: https://github.com/eclipse-capella/capella/tags
+  license: https://projects.eclipse.org/projects/polarsys.capella/governance
+  access_link: https://mbse-capella.org/
+  executability_justification: https://mbse-capella.org/addons.html
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Executability is via add-ons (DESS) and demonstration analysis viewpoints, not the bare structural
+    editor.
+tags:
+- mbse
+- arcadia
+- capella
+- eclipse
+- simulation

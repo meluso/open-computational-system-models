@@ -1,0 +1,52 @@
+id: python-control
+name: Python Control Systems Library
+gloss: Python library for analysis and design of feedback control systems (linear time-invariant systems,
+  frequency response, state-space and transfer-function models).
+domain: controls-dynamics-python
+system_represented: Feedback control systems such as motor speed controllers, aircraft pitch dynamics,
+  or chemical-process loops. Users build interconnected block diagrams of plants, sensors, and controllers
+  as state-space or transfer-function models and analyze closed-loop behavior.
+inputs_you_can_change:
+- State-space matrices (A, B, C, D) or transfer-function numerator/denominator coefficients
+- Controller gains (e.g., PID terms, LQR weighting matrices Q and R)
+- Reference/input signals and simulation time vector for time-response functions
+- Interconnection/feedback topology via append, connect, feedback
+- Sampling time for discrete-time system conversion
+outputs_you_can_observe:
+- Step, impulse, and forced time responses
+- Bode, Nyquist, and root-locus plots
+- Pole/zero locations and stability margins (gain/phase margin)
+- Closed-loop frequency response and bandwidth
+- Controllability/observability and computed optimal gains
+runtime_required: Python 3 with NumPy, SciPy, and Matplotlib (optional SLICOT/slycot for some routines)
+access_type: permissive-open
+license: BSD 3-Clause
+scale:
+  element_count: A representative interconnected model (e.g., a multi-loop flight or process control system)
+    comprises dozens to hundreds of states, inputs, outputs, and interconnected blocks
+  grouping: Subsystems are LTI objects (StateSpace/TransferFunction) composed via series, parallel, feedback,
+    and interconnect operations
+  notes: Element count scales with the user-defined system order and number of interconnected blocks
+maintenance_status:
+  status: active
+  latest_version: 0.10.2
+  latest_release_date: '2025-07-05'
+access_link: https://python-control.readthedocs.io
+suitability: Control engineers, researchers, and students doing classical and modern control design and
+  analysis in Python
+executability_justification: Users change system matrices, gains, and input signals and observe changed
+  time responses, frequency plots, and stability metrics, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/control/json
+  latest_release_date: https://pypi.org/pypi/control/json
+  license: https://pypi.org/pypi/control/json
+  access_link: https://pypi.org/pypi/control/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- control-systems
+- python
+- lti
+- simulation

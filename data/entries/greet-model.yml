@@ -1,0 +1,60 @@
+id: greet-model
+name: GREET Model (Excel)
+gloss: GREET (Greenhouse gases, Regulated Emissions, and Energy use in Technologies) is Argonne National
+  Laboratory's Excel life-cycle model of vehicle fuel pathways and energy/emissions.
+domain: parametric-spreadsheets
+system_represented: Models the full well-to-wheels life cycle of vehicle/fuel systems — fuel production
+  pathways, vehicle operation, and the energy use and emissions across many feedstock-to-vehicle combinations
+  — as a multidimensional Excel workbook with macros and a GUI.
+inputs_you_can_change:
+- Vehicle/fuel pathway selection (e.g. gasoline ICE, EV, hydrogen, biofuel)
+- Fuel-economy / vehicle efficiency assumptions
+- Feedstock and process energy mix / electricity grid mix
+- Analysis year and parameter scenarios
+- Upstream process energy and emission factors
+outputs_you_can_observe:
+- Well-to-wheels energy use per mile/unit
+- Greenhouse-gas emissions (CO2-equivalent)
+- Criteria/regulated pollutant emissions
+- Petroleum/fossil energy consumption
+- Comparative results across pathways
+runtime_required: Microsoft Excel (with macros enabled); GUI packaged with the download
+access_type: free-closed
+license: unstated — needs direct verification
+scale:
+  element_count: Hundreds of interlinked cells/parameters spanning dozens of fuel pathways and process
+    stages — far exceeds 25 interacting elements
+  grouping: Groups into fuel-cycle (well-to-pump) and vehicle-cycle (pump-to-wheels) modules, by feedstock,
+    process, and vehicle type
+  notes: A large multidimensional engineering/LCA workbook; free download from Argonne, DOECode-hosted
+    Excel editions exist per release year
+maintenance_status:
+  status: active
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://greet.es.anl.gov/greet_excel_model
+suitability: Transportation, energy, and life-cycle-analysis engineers and policy researchers
+executability_justification: Users select pathways and change efficiency, grid-mix, and process assumptions;
+  the workbook recomputes energy use and emissions, producing observably different outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://greet.es.anl.gov/greet.models
+  latest_release_date: https://www.osti.gov/doecode/biblio/80997
+  license: https://greet.es.anl.gov/greet_excel_model
+  access_link: https://greet.es.anl.gov/greet_excel_model
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: greet.es.anl.gov returned HTTP 403 to the automated fetcher (likely a User-Agent block); page
+    exists and is the canonical download. Annual Excel editions (2019-2022) confirmed on DOECode/OSTI;
+    R&D GREET 2024 documented in Argonne publications. Exact current Excel version, release date, and
+    formal license require registration/direct download.
+tags:
+- life-cycle-analysis
+- fuel-economy
+- vehicle
+- emissions
+- spreadsheet

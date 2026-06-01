@@ -1,0 +1,57 @@
+id: openmbee-tmt-sysml-model
+name: Open-MBEE Thirty Meter Telescope SysML Model
+gloss: A SysML (Systems Modeling Language) model of the Thirty Meter Telescope observatory with parametric
+  analyses computing power, mass, and operational-duration roll-ups.
+domain: executable-mbse
+system_represented: The Thirty Meter Telescope, an altitude-azimuth Ritchey-Chretien observatory with
+  a 492-segment 30-meter primary mirror, active secondary, articulated tertiary, and an alignment-and-phasing
+  wavefront-sensing system, along with its operational scenarios.
+inputs_you_can_change:
+- per-component power draw values
+- per-component mass values
+- operational-state / scenario selection
+- durations of operational use cases
+- parametric constraint equation parameters
+outputs_you_can_observe:
+- state-dependent power roll-up per operational scenario
+- total mass roll-up
+- operational use-case duration
+- requirement satisfaction (pass/fail) against the design
+runtime_required: MagicDraw / Cameo Systems Modeler (Cameo 2022xR1) with the Model Development Kit (MDK)
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: Full observatory model spanning hundreds of parts, requirements, and parametric constraints
+    across structural, behavioral, and parametric diagrams.
+  grouping: Hierarchical SysML block decomposition (telescope, optics, alignment/phasing system, support
+    subsystems) with analysis design patterns.
+  notes: An element is a SysML block, requirement, or parametric constraint.
+maintenance_status:
+  status: dormant
+  latest_version: unstated — needs direct verification
+  latest_release_date: '2023-09-12'
+access_link: https://github.com/Open-MBEE/TMT-SysML-Model
+suitability: Suits MBSE practitioners with access to Cameo/MagicDraw who want a real engineered-system
+  example of executable parametric analysis; the commercial-tool dependency makes it less accessible to
+  casual newcomers.
+executability_justification: A user changes per-component power/mass values and selects operational scenarios,
+  runs the SysML parametric analyses, and observes changed power and mass roll-ups, durations, and requirement-satisfaction
+  results.
+last_verified: '2026-06-01'
+source_per_field:
+  license: https://github.com/Open-MBEE/TMT-SysML-Model
+  latest_release_date: https://github.com/Open-MBEE/TMT-SysML-Model
+  access_link: https://github.com/Open-MBEE/TMT-SysML-Model
+  runtime_required: https://github.com/Open-MBEE/TMT-SysML-Model
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  notes: No tagged release version; latest activity is a 2023 Cameo migration, so judged dormant. Requires
+    commercial modeling tool to execute.
+tags:
+- sysml
+- mbse
+- telescope
+- parametrics
+- open-mbee

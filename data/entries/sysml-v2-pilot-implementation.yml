@@ -1,0 +1,54 @@
+id: sysml-v2-pilot-implementation
+name: SysML v2 Pilot Implementation
+gloss: The reference pilot implementation of the SysML v2 (Systems Modeling Language version 2) textual
+  notation, with a Jupyter kernel that evaluates expressions, calc defs, and constraints in a model.
+domain: executable-mbse
+system_represented: Arbitrary engineered systems modeled in SysML v2; a representative runnable model
+  is an executable SysML v2 system (e.g. a vehicle or spacecraft) with dozens of part defs, calc defs,
+  and constraint/analysis cases whose values are computed by the kernel.
+inputs_you_can_change:
+- attribute/parameter values on parts and items
+- bindings and expressions in calc defs
+- constraint def parameters
+- analysis case inputs
+- which expressions/queries are evaluated in the kernel
+outputs_you_can_observe:
+- evaluated numeric results of calc defs and expressions
+- constraint satisfaction (true/false) results
+- analysis case computed outputs
+- validation results against SysML v2 rules
+runtime_required: Java plus JupyterLab 4.x with the SysML v2 Jupyter kernel (or Eclipse-based deployment)
+access_type: weak-copyleft-open
+license: EPL-2.0
+scale:
+  element_count: Tooling — a representative executable model assembles dozens to hundreds of part/calc/constraint
+    definitions and usages.
+  grouping: Elements group into packages; parts decompose into nested part usages; calc/constraint defs
+    compose into analysis cases.
+  notes: An element is a SysML v2 definition or usage.
+maintenance_status:
+  status: active
+  latest_version: 2026-04
+  latest_release_date: '2026-05-13'
+access_link: https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation
+suitability: Suits MBSE tool developers, standards followers, and advanced practitioners who want to actually
+  evaluate SysML v2 models; the Jupyter/Java setup is heavier than a polished commercial tool for a newcomer.
+executability_justification: A user changes attribute values and calc/constraint inputs in a SysML v2
+  model and evaluates them in the Jupyter kernel; computed expression results and constraint pass/fail
+  outcomes change observably.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/releases
+  latest_release_date: https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/releases
+  license: https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation/releases
+  access_link: https://github.com/Systems-Modeling/SysML-v2-Pilot-Implementation
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: License changed from LGPL to EPL as of the 2026-04 release.
+tags:
+- sysml-v2
+- mbse
+- jupyter
+- omg
+- reference-implementation

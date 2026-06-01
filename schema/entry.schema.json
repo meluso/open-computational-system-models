@@ -142,6 +142,10 @@
         "latest_release_date": {
           "type": "string",
           "description": "Latest release date (ISO or year), or the unstated sentinel."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional clarification of how maintenance status / version was judged."
         }
       }
     },

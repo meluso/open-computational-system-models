@@ -1,0 +1,52 @@
+id: gekko
+name: GEKKO
+gloss: Python package for machine learning and dynamic optimization of differential-algebraic-equation
+  (DAE) systems, including model predictive control and nonlinear/mixed-integer programming.
+domain: controls-dynamics-python
+system_represented: Dynamic engineered systems formulated as optimization or control problems, e.g., process
+  control loops, energy systems, and chemical processes. Users declare variables, equations, and an objective,
+  and GEKKO solves simulation, estimation, or control modes via large-scale solvers.
+inputs_you_can_change:
+- Model equations and DAE dynamics
+- Variable bounds, manipulated/controlled variable tuning, and objective terms
+- Solver mode (steady-state, dynamic simulation, estimation, control)
+- Time horizon and discretization (collocation nodes)
+- Solver selection (e.g., APOPT, IPOPT) and options
+outputs_you_can_observe:
+- Optimized variable and control trajectories over time
+- Objective function value
+- Parameter/state estimates
+- Solver status and convergence diagnostics
+- Predicted plant responses for MPC
+runtime_required: Python 3 (pip install gekko); uses APMonitor backend solvers
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: A representative dynamic optimization (e.g., an MPC or estimation problem) discretizes
+    a multi-equation DAE over tens-to-hundreds of time nodes, producing hundreds to thousands of variables
+    and equations
+  grouping: Organized into variables, parameters, equations, and objective within a GEKKO model object
+  notes: Element count scales with the number of equations, variables, and time nodes
+maintenance_status:
+  status: active
+  latest_version: 1.3.2
+  latest_release_date: '2025-12-31'
+access_link: https://gekko.readthedocs.io
+suitability: Engineers and researchers doing dynamic optimization, parameter estimation, and MPC in Python
+executability_justification: Users vary equations, bounds, objective, and horizon and observe changed
+  optimized trajectories and objective values, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/gekko/json
+  latest_release_date: https://pypi.org/pypi/gekko/json
+  license: https://pypi.org/pypi/gekko/json
+  access_link: https://gekko.readthedocs.io
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Latest release date (2025-12-31) read from PyPI JSON.
+tags:
+- dynamic-optimization
+- mpc
+- dae
+- python

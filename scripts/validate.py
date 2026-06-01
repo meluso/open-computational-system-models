@@ -91,6 +91,9 @@ def main(argv: list[str]) -> int:
         #    actually unstated, and any unstated volatile field should be listed.
         vc = clean.get("verification_confidence", {}) or {}
         declared_unverified = set(vc.get("unverified", []) or [])
+        # Accept either dotted names ("maintenance_status.latest_version") or the
+        # bare leaf ("latest_version") in the unverified list.
+        declared_leaves = {d.split(".")[-1] for d in declared_unverified}
         # Detect unstated sentinels in common volatile fields.
         unstated_fields = set()
         if is_unstated(clean.get("license")):
@@ -104,7 +107,7 @@ def main(argv: list[str]) -> int:
         if is_unstated(ms.get("latest_release_date")):
             unstated_fields.add("maintenance_status.latest_release_date")
         for f in unstated_fields:
-            if f not in declared_unverified:
+            if f not in declared_unverified and f.split(".")[-1] not in declared_leaves:
                 warnings.append(
                     f"{path}: field '{f}' is unstated but not listed in "
                     f"verification_confidence.unverified"

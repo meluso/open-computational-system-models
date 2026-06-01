@@ -1,0 +1,52 @@
+id: energyplus
+name: EnergyPlus
+gloss: EnergyPlus, the US Department of Energy's whole-building energy simulation engine for modeling
+  heating, cooling, lighting, ventilation, and energy/water use.
+domain: power-energy
+system_represented: Whole buildings and their energy systems, modeled as thermal zones with surfaces,
+  HVAC (heating, ventilation, and air-conditioning) systems, plant loops, lighting, and equipment, simulated
+  against weather data using sub-hourly heat-balance physics.
+inputs_you_can_change:
+- building geometry, zones, and construction/material properties
+- HVAC system and plant configuration and setpoints
+- weather file (location/climate)
+- internal loads (occupancy, lighting, equipment) and schedules
+- simulation timestep and run period
+outputs_you_can_observe:
+- zone air temperatures and comfort metrics
+- heating/cooling energy and peak loads
+- total site/source energy use by end use
+- HVAC equipment energy and water consumption
+- surface heat flows and unmet load hours
+runtime_required: EnergyPlus engine (Windows/macOS/Linux); IDF/epJSON input files
+access_type: permissive-open
+license: BSD-style (with US DOE government rights and trademark clause)
+scale:
+  element_count: Building models routinely contain dozens to hundreds of zones, surfaces, and HVAC components;
+    DOE reference/prototype buildings define many zones plus hundreds of surfaces and schedules.
+  grouping: Objects grouped into zones, surfaces, HVAC air/plant loops, schedules, and output groups within
+    an IDF.
+  notes: Often driven via OpenStudio or other front ends.
+maintenance_status:
+  status: active
+  latest_version: v26.1.0
+  latest_release_date: '2026-03-31'
+access_link: https://github.com/NREL/EnergyPlus
+suitability: Building energy modelers, mechanical engineers, and researchers performing detailed whole-building
+  energy analysis and code compliance.
+executability_justification: Users change geometry, HVAC, weather, and schedules in the IDF and run the
+  engine to observe changed zone temperatures, energy use, and loads. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/NREL/EnergyPlus/releases/latest
+  latest_release_date: https://api.github.com/repos/NREL/EnergyPlus/releases/latest
+  license: https://github.com/NREL/EnergyPlus/blob/develop/LICENSE.txt
+  access_link: https://github.com/NREL/EnergyPlus
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- building-energy
+- hvac
+- simulation
+- doe

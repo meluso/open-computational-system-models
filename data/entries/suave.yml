@@ -1,0 +1,54 @@
+id: suave
+name: SUAVE
+gloss: SUAVE (Stanford University Aerospace Vehicle Environment) is an open-source Python aircraft conceptual
+  design and analysis toolbox supporting conventional and unconventional configurations.
+domain: mdo
+system_represented: Models a complete aircraft for conceptual design and mission analysis, integrating
+  geometry, aerodynamics, propulsion (including electric and hybrid), weights, and mission/energy networks,
+  enabling multi-fidelity analysis and optimization across diverse vehicle configurations.
+inputs_you_can_change:
+- Vehicle geometry and configuration definition
+- Propulsion/energy network selection and parameters (turbofan, electric, hybrid)
+- Mission profile and segments
+- Aerodynamics and weights method/fidelity selection
+- Design variables and optimization setup
+outputs_you_can_observe:
+- Aircraft weight breakdown
+- Fuel/energy consumption over the mission
+- Aerodynamic performance (lift, drag, L/D)
+- Mission state histories (altitude, speed, range)
+- Optimized design variables
+runtime_required: Python with the SUAVE package; cloned from GitHub (suavecode/SUAVE)
+access_type: weak-copyleft-open
+license: LGPL-2.1
+scale:
+  element_count: A representative configured aircraft mission (e.g. the Boeing 737 tutorial) assembles
+    many interacting analysis modules and mission segments, exceeding 25 interacting elements.
+  grouping: Organized into a vehicle with components, an analyses container (aerodynamics, energy, weights,
+    etc.), and a mission composed of segments.
+  notes: Element count varies with configuration and mission complexity.
+maintenance_status:
+  status: dormant
+  latest_version: 2.5.2
+  latest_release_date: '2022-03-17'
+access_link: https://github.com/suavecode/SUAVE
+suitability: Aircraft conceptual designers and researchers; note that new users are generally directed
+  toward its successor RCAIDE.
+executability_justification: Users vary vehicle geometry, propulsion, mission, and design variables and
+  run analysis/optimization; weight, fuel, and performance outputs change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/suavecode/SUAVE
+  latest_release_date: https://github.com/suavecode/SUAVE
+  license: https://api.github.com/repos/suavecode/SUAVE
+  access_link: https://github.com/suavecode/SUAVE
+verification_confidence:
+  overall: medium
+  unverified: []
+  notes: Last release 2.5.2 (Mar 2022); last repository push Feb 2024 per GitHub API, so judged dormant.
+    RCAIDE is the modernization path; no explicit deprecation notice on the repo.
+tags:
+- aircraft-design
+- conceptual-design
+- mdo
+- python

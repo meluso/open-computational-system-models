@@ -1,0 +1,62 @@
+id: biomodels-kholodenko1999-egfr
+name: Kholodenko1999 EGFR Signaling (BIOMD0000000048)
+gloss: A curated BioModels SBML (Systems Biology Markup Language) kinetic model of epidermal growth factor
+  receptor (EGFR) signaling, runnable as a system of ODEs.
+domain: systems-biology-sbml
+system_represented: Models the short-term intracellular signal-transduction network downstream of the
+  EGF receptor — receptor dimerization, phosphorylation, and recruitment of adaptor proteins (Grb2, Shc,
+  SOS, PLC-gamma) — as a network of biochemical species and reactions, framed as a runnable multi-element
+  biochemical system.
+inputs_you_can_change:
+- Initial EGF / receptor concentrations
+- Kinetic rate constants for reactions
+- Total protein/adaptor concentrations
+- Simulation duration and time resolution
+- Solver/analysis type (time-course, steady state, parameter scan)
+outputs_you_can_observe:
+- Time-courses of phosphorylated receptor and complexes
+- Concentrations of Grb2/Shc/SOS/PLC-gamma complexes over time
+- Steady-state species levels
+- Response sensitivity to parameter changes
+- Dose-response to EGF input
+runtime_required: An SBML simulator such as COPASI, libRoadRunner/Tellurium (Python), or JWS Online
+access_type: permissive-open
+license: CC0 (BioModels curated models released to public domain)
+scale:
+  element_count: 23 species and 25 reactions (commonly cited counts for this model) — exceeds 25 interacting
+    elements
+  grouping: Groups into receptor-level reactions and downstream adaptor/effector binding reactions within
+    one compartment
+  notes: Species/reaction counts are widely cited for BIOMD0000000048 but were not machine-confirmed from
+    the SBML file during verification
+maintenance_status:
+  status: maintained
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.ebi.ac.uk/biomodels/BIOMD0000000048
+suitability: Systems-biology researchers, modelers, and students learning SBML simulation
+executability_justification: Users change initial concentrations and rate constants and run the SBML model
+  in COPASI/Tellurium; the ODE solver produces different species time-courses, so varied inputs give observably
+  different outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://www.ebi.ac.uk/biomodels/BIOMD0000000048
+  latest_release_date: https://www.ebi.ac.uk/biomodels/BIOMD0000000048
+  license: https://www.ebi.ac.uk/biomodels/BIOMD0000000048
+  access_link: https://www.ebi.ac.uk/biomodels/BIOMD0000000048
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - scale.element_count
+  - latest_version
+  - latest_release_date
+  notes: Entry confirmed curated and available in SBML L2V1 (with Matlab/Octave exports) via biomodels.org
+    page fetch. Exact species/reaction counts (23/25) are from cited references, not directly read from
+    the SBML; the live page preview showed at least 10 species and 10 reactions before truncation. BioModels
+    curated models are generally CC0 but per-model license should be checked.
+tags:
+- sbml
+- signaling
+- egfr
+- systems-biology

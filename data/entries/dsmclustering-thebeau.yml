@@ -1,0 +1,52 @@
+id: dsmclustering-thebeau
+name: DSM Clustering Algorithm (Thebeau)
+gloss: A MATLAB/Octave implementation of Ronnie Thebeau's Design Structure Matrix (DSM) clustering algorithm
+  that reorganizes a dependency matrix into modules by minimizing a coordination-cost objective.
+domain: computing-dsm
+system_represented: The dependency structure of a complex product or system, encoded as a square Design
+  Structure Matrix where rows/columns are elements (components, parameters, or tasks) and off-diagonal
+  entries are interactions.
+inputs_you_can_change:
+- the input DSM (interaction matrix)
+- cluster-cost / coordination-cost weighting parameters
+- bid power and other clustering algorithm parameters
+- number of iterations / random seed
+outputs_you_can_observe:
+- clustered (reordered) DSM with module blocks
+- total coordination cost of the clustering
+- cluster membership assignments per element
+- visual matrix plot of the clustered DSM
+runtime_required: MATLAB (also runs in GNU Octave)
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: Operates on a DSM of arbitrary size; representative academic DSMs commonly have tens
+    to a few hundred elements (well above 25).
+  grouping: The algorithm itself computes the grouping — assigning elements to clusters (modules).
+  notes: An element is one row/column of the DSM (a component, parameter, or task).
+maintenance_status:
+  status: dormant
+  latest_version: unstated — needs direct verification
+  latest_release_date: '2023-01-16'
+access_link: https://github.com/davidelasi/dsmclustering
+suitability: Suits researchers and students of system architecture/modularity comfortable with MATLAB/Octave;
+  not a packaged GUI tool, so a newcomer must edit and run scripts.
+executability_justification: A user supplies a DSM and changes cost/bid parameters, runs the clustering,
+  and observes a different clustered matrix, cluster assignments, and total coordination cost.
+last_verified: '2026-06-01'
+source_per_field:
+  license: https://github.com/davidelasi/dsmclustering
+  latest_release_date: https://github.com/davidelasi/dsmclustering/commits/master
+  access_link: https://github.com/davidelasi/dsmclustering
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  notes: No tagged releases; latest commit 2023-01-16, judged dormant. Implements the well-known Thebeau
+    (2001) MIT clustering algorithm.
+tags:
+- dsm
+- clustering
+- matlab
+- modularity
+- architecture

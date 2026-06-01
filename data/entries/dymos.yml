@@ -1,0 +1,58 @@
+id: dymos
+name: Dymos
+gloss: Open-source framework for optimal control and trajectory optimization of dynamical systems, built
+  on the OpenMDAO (OpenMDAO = open-source Multidisciplinary Design Analysis and Optimization) framework.
+domain: mdo
+system_represented: Models time-evolving engineered dynamical systems (e.g. aircraft and spacecraft trajectories,
+  electric powertrains, chemical processes) as ordinary-differential-equation systems and solves optimal
+  control problems over them using pseudospectral transcription. Couples the dynamics ODE to design/optimization
+  variables so trajectories can be optimized subject to constraints.
+inputs_you_can_change:
+- ODE state and control variable definitions for the dynamic system
+- Phase transcription type and number of segments/collocation nodes
+- Boundary and path constraints (initial/final states, bounds)
+- Objective function (e.g. minimize time, fuel, energy)
+- Design parameters fed to the underlying OpenMDAO model
+outputs_you_can_observe:
+- Optimized state and control time histories
+- Objective value (e.g. minimum time-to-climb, minimum fuel)
+- Constraint satisfaction / collocation defect residuals
+- Phase timing and event values
+- Derivatives/sensitivities of outputs to design variables
+runtime_required: Python 3 with OpenMDAO; installed via pip ("dymos"); a supported optimizer (SciPy SLSQP,
+  or pyOptSparse/SNOPT/IPOPT) recommended
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative model (e.g. the supersonic minimum-time-to-climb or two-burn orbit-raising
+    examples) couples dozens of interconnected OpenMDAO components across the ODE, transcription nodes,
+    and constraint subsystems, well exceeding 25 interacting elements.
+  grouping: Organized into trajectories containing phases; each phase contains an ODE system decomposed
+    into OpenMDAO components/groups plus transcription and constraint subsystems.
+  notes: Element count scales with number of phases, ODE complexity, and collocation node count.
+maintenance_status:
+  status: active
+  latest_version: 1.15.1
+  latest_release_date: '2026-03-12'
+access_link: https://github.com/OpenMDAO/dymos
+suitability: Researchers and engineers in aerospace and other domains doing trajectory optimization and
+  optimal control coupled to multidisciplinary design models.
+executability_justification: Users define an ODE, controls, constraints, and objective, then run an optimization;
+  changing controls, bounds, transcription, or design parameters produces observably different optimized
+  trajectories and objective values.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/dymos/json
+  latest_release_date: https://pypi.org/pypi/dymos/json
+  license: https://github.com/OpenMDAO/dymos
+  access_link: https://github.com/OpenMDAO/dymos
+  gloss: https://pypi.org/pypi/dymos/json
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Version, date, and license confirmed via PyPI JSON and GitHub repo.
+tags:
+- optimal-control
+- trajectory-optimization
+- openmdao
+- python

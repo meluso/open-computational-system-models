@@ -1,0 +1,54 @@
+id: tennessee-eastman-tep2py
+name: Tennessee Eastman Process (tep2py)
+gloss: tep2py is a Python interface to the original Fortran Tennessee Eastman (TE) chemical-plant control
+  benchmark, simulating a five-unit process with normal and fault scenarios.
+domain: process-chemical
+system_represented: 'Models the Tennessee Eastman challenge chemical plant: a gas-phase reactor, product
+  condenser, vapor-liquid separator, recycle compressor, and product stripper producing two liquid products
+  from four gaseous reactants. A standard benchmark for process control and fault detection.'
+inputs_you_can_change:
+- Disturbance/fault number (21 predefined fault scenarios, IDV 1-20 plus none)
+- Simulation duration and sampling interval
+- Which disturbances are active over time (disturbance matrix)
+- Random seed for measurement noise
+outputs_you_can_observe:
+- 41 measured process variables (XMEAS 1-41)
+- 12 manipulated variable trajectories (XMV 1-12)
+- Time-series of reactor/separator/stripper levels, pressures, temperatures
+- Composition measurements of streams
+runtime_required: Python 3 with NumPy and a Fortran compiler (the Fortran TE source is compiled via f2py)
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: 5 major unit operations; 41 measured variables, 12 manipulated variables, 8 chemical
+    components — well over 25 interacting elements
+  grouping: Groups into the five plant units (reactor, condenser, separator, compressor, stripper) linked
+    by recycle and product streams
+  notes: Counts reflect the canonical Downs & Vogel TE process implemented by Braatz group Fortran code
+maintenance_status:
+  status: dormant
+  latest_version: unstated — needs direct verification
+  latest_release_date: '2021-09-28'
+access_link: https://github.com/camaramm/tep2py
+suitability: Process-control, fault-detection, and machine-learning researchers needing a runnable, MATLAB-free
+  TE simulator
+executability_justification: Users select fault scenarios, durations, and seeds; the compiled Fortran
+  core simulates the plant and returns different 41-variable time-series, clearly varying outputs from
+  varied inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/camaramm/tep2py
+  latest_release_date: https://github.com/camaramm/tep2py
+  license: https://github.com/camaramm/tep2py
+  access_link: https://github.com/camaramm/tep2py
+verification_confidence:
+  overall: high
+  unverified:
+  - latest_version
+  notes: Repo has no tagged releases; latest_release_date taken from last push date. Variable counts (41
+    XMEAS, 12 XMV) cross-confirmed from multiple TE references. Last commit Sept 2021; the underlying
+    TE Fortran model is a stable, long-standing benchmark.
+tags:
+- benchmark
+- process-control
+- fault-detection

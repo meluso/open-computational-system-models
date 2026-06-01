@@ -1,0 +1,58 @@
+id: sldemo-fuelsys
+name: Modeling a Fault-Tolerant Fuel Control System (sldemo_fuelsys)
+gloss: The classic Simulink/Stateflow model of a gasoline-engine fuel control system that detects individual
+  sensor failures and dynamically reconfigures to keep running.
+domain: mathworks-mbd
+system_represented: 'A fuel control system for a gasoline engine that computes air-fuel ratio (air mass
+  flow divided by injected fuel mass flow, targeting stoichiometric 14.6:1) and remains robust to sensor
+  faults: a single Stateflow chart with six parallel states monitors four sensors and reconfigures the
+  fuel-injection mode (normal, rich, or shutdown) when failures occur.'
+inputs_you_can_change:
+- throttle angle (e.g. ramp 10-20 degrees)
+- engine speed (normal vs high-speed)
+- throttle-sensor fault injection (Dashboard switch)
+- engine-speed-sensor fault injection
+- oxygen (EGO) sensor fault injection
+- manifold-absolute-pressure (MAP) sensor fault injection
+outputs_you_can_observe:
+- fuel flow rate
+- air-fuel mixture ratio
+- system operating mode (normal / rich / disabled)
+- Stateflow state activity during faults
+runtime_required: MATLAB + Simulink + Stateflow
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: Six parallel Stateflow states (four sensor monitors, one failure counter, one fuel-mode
+    state) plus the Simulink subsystems; total blocks well over 25.
+  grouping: Dashboard, fuel_rate_control (the Stateflow logic), Engine Gas Dynamics, and Mixing & Combustion
+    subsystems.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Long-standing shipping Simulink/Stateflow example; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+suitability: Suits newcomers learning Stateflow supervisory logic as well as controls engineers; only
+  base Simulink + Stateflow needed (lower toolbox barrier than other entries), but still requires a licensed
+  MATLAB.
+executability_justification: The user ramps throttle/engine speed and toggles sensor-fault switches, runs
+  the model, and observes the fuel rate, air-fuel ratio, and the Stateflow mode switching to rich/shutdown
+  as faults are introduced and cleared.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+  system_represented: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+  inputs_you_can_change: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+  outputs_you_can_observe: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+  scale.element_count: https://www.mathworks.com/help/simulink/slref/modeling-a-fault-tolerant-fuel-control-system.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- simulink
+- stateflow
+- fault-tolerant
+- supervisory-control
+- automotive

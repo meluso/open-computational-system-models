@@ -1,0 +1,55 @@
+id: mujoco
+name: MuJoCo
+gloss: MuJoCo (Multi-Joint dynamics with Contact) is a fast physics engine for simulating articulated
+  rigid-body systems with contacts, widely used in robotics and reinforcement learning, maintained by
+  Google DeepMind.
+domain: robotics-multibody
+system_represented: Simulates articulated mechanisms such as robot arms, humanoids, quadrupeds, and hands
+  as bodies connected by joints with tendons, actuators, and rich contact dynamics, defined in MJCF or
+  URDF models.
+inputs_you_can_change:
+- MJCF/URDF model definitions (bodies, joints, geoms, inertias)
+- Actuator control signals (torques, position/velocity targets)
+- Contact and friction parameters (solref, solimp, friction coefficients)
+- Simulation timestep and solver/integrator settings
+- Initial qpos/qvel state
+outputs_you_can_observe:
+- Joint positions, velocities, and accelerations over time
+- Contact forces and constraint outputs
+- 'Sensor readings (defined sensors: accelerometer, force, etc.)'
+- Rendered frames of the simulated scene
+runtime_required: Python 3 (pip "mujoco") or C; cross-platform
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative humanoid model has on the order of 25-35 bodies and joints with dozens
+    of geoms and actuators; hand/quadruped models similarly have dozens of elements
+  grouping: Bodies form a kinematic tree; elements group into bodies, joints, tendons, actuators, and
+    sensors within a model
+  notes: Counts scale with model
+maintenance_status:
+  status: active
+  latest_version: 3.9.0
+  latest_release_date: '2026-05-27'
+access_link: https://mujoco.org
+suitability: Robotics and RL researchers needing fast, accurate contact-rich multibody simulation for
+  control, learning, and benchmarking
+executability_justification: Changing control inputs, contact parameters, or initial state and stepping
+  the simulation produces observably different joint trajectories, contact forces, and sensor outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/mujoco/json
+  latest_release_date: https://github.com/google-deepmind/mujoco/releases/latest
+  license: https://github.com/google-deepmind/mujoco
+  access_link: https://mujoco.org
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI v3.9.0 uploaded 2026-05-27; GitHub release tag 3.9.0 published 2026-05-27. License Apache-2.0
+    confirmed via repo.
+tags:
+- mujoco
+- physics
+- contact
+- reinforcement-learning
+- multibody

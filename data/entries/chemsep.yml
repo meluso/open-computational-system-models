@@ -1,0 +1,56 @@
+id: chemsep
+name: ChemSep
+gloss: ChemSep is a column simulator for distillation, absorption, and extraction, combining equilibrium-stage
+  and rate-based (nonequilibrium) models.
+domain: process-chemical
+system_represented: Models multistage separation columns (distillation, absorption, stripping, extraction)
+  as a cascade of equilibrium or rate-based stages with feeds, draws, condensers, and reboilers, against
+  a database of ~400+ chemical components.
+inputs_you_can_change:
+- Number of stages and feed/draw stage locations
+- Component selection and feed composition/flow/thermal state
+- Operating pressure and pressure profile
+- Reflux ratio, reboiler duty, or product specifications
+- Equilibrium vs nonequilibrium (rate-based) model choice
+- Thermodynamic/property models (K-values, activity coefficients)
+outputs_you_can_observe:
+- Stage-by-stage temperature, composition, and flow profiles
+- Product stream compositions and purities
+- Condenser and reboiler duties
+- Column internals/loading diagnostics
+- McCabe-Thiele and profile plots
+runtime_required: ChemSep desktop application (Windows); also bundled with COCO simulator (CAPE-OPEN)
+access_type: free-closed
+license: unstated — needs direct verification
+scale:
+  element_count: Up to 300 equilibrium stages and 40 components in the free LITE edition; a typical column
+    model has dozens of interacting stages
+  grouping: Groups into stages within a column, plus condenser/reboiler and feed/product streams
+  notes: Full (non-LITE) version raises the component/stage limits; ChemSep-LITE is free (no cost)
+maintenance_status:
+  status: maintained
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: http://www.chemsep.org/
+suitability: Separation-process engineers, students, and educators studying distillation/absorption design
+executability_justification: Users change stage counts, feeds, pressures, and reflux/duty specs; the solver
+  recomputes full stage profiles and product purities, yielding observably different outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: http://www.chemsep.org/
+  latest_release_date: http://www.chemsep.org/
+  license: http://www.chemsep.org/
+  access_link: http://www.chemsep.org/
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: chemsep.org intermittently refused connections during verification; LITE free-download status
+    and 40-component/300-stage limit confirmed via search results and download/info pages, but exact current
+    version and formal license text were not directly fetched.
+tags:
+- distillation
+- separation
+- column-simulation

@@ -1,0 +1,63 @@
+id: fex-microgrid-design-simscape
+name: Microgrid Design with Simscape (File Exchange)
+gloss: A File Exchange project of configurable microgrid models (remote, industrial, and techno-economic)
+  with diesel generators, battery storage, photovoltaics, loads, protection, and supervisory control,
+  built in Simscape Electrical.
+domain: mathworks-mbd
+system_represented: Standardized building-block microgrid models combining distributed energy resources
+  (solar, wind, diesel generators), battery energy storage, protection logic, and supervisory/dispatch
+  control with configurable topology. Three scenario models cover a remote microgrid, an industrial (dual-grid-connection)
+  microgrid, and a techno-economic optimization study.
+inputs_you_can_change:
+- microgrid topology / component sizing
+- operating scenario (feeder switch, diesel trip, planned islanding, black start, resynchronization)
+- supervisory / energy-management dispatch settings
+- renewable resource profiles (solar, wind)
+- battery energy-storage parameters
+outputs_you_can_observe:
+- bus voltages and frequency
+- power flows among DERs, storage, and loads
+- diesel fuel consumption / renewable utilization
+- islanding and resynchronization transients
+- techno-economic cost metrics
+runtime_required: MATLAB + Simulink + Simscape + Simscape Electrical + Stateflow + Optimization Toolbox
+  + Parallel Computing Toolbox (project supports R2022b through R2025b; current FX version requires R2025b
+  or later)
+access_type: campus-or-employer-licensed
+license: BSD-style license with an added MathWorks-products-only restriction (clause 3); Copyright 2022
+  The MathWorks, Inc. (NOT pure BSD-3-Clause — files licensed solely for use with MathWorks products)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Reusable DER, storage, protection, and supervisory-control blocks composed into remote, industrial,
+    and techno-economic scenario models.
+maintenance_status:
+  status: active
+  latest_version: 25.2.1.0
+  latest_release_date: '2026-03-02'
+access_link: https://www.mathworks.com/matlabcentral/fileexchange/123865-microgrid-design-with-simscape
+suitability: Suits power-systems engineers and researchers; files are free to download from File Exchange/GitHub
+  but require a licensed MATLAB plus several toolboxes to run.
+executability_justification: The user reconfigures the microgrid, selects a scenario (e.g. planned islanding
+  or diesel trip), changes dispatch/resource settings, runs the simulation, and observes voltage/frequency
+  transients, power flows, and fuel/cost metrics change.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/matlabcentral/fileexchange/123865-microgrid-design-with-simscape
+  system_represented: https://github.com/simscape/Microgrid-Simscape
+  inputs_you_can_change: https://www.mathworks.com/matlabcentral/fileexchange/123865-microgrid-design-with-simscape
+  runtime_required: https://www.mathworks.com/matlabcentral/fileexchange/123865-microgrid-design-with-simscape
+  license: https://raw.githubusercontent.com/simscape/Microgrid-Simscape/master/License.md
+  maintenance_status.latest_version: https://www.mathworks.com/matlabcentral/fileexchange/123865-microgrid-design-with-simscape
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+  - outputs_you_can_observe
+  notes: License text read directly from GitHub (master/License.md) — it is a BSD-form license with a
+    MathWorks-products-only restriction, not unrestricted BSD-3-Clause. Some output signals generalized.
+tags:
+- simulink
+- simscape-electrical
+- microgrid
+- file-exchange
+- power-systems

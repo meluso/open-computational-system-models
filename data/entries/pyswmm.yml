@@ -1,0 +1,51 @@
+id: pyswmm
+name: pyswmm
+gloss: pyswmm, a Python interface to the EPA SWMM5 (Storm Water Management Model) engine enabling scripted,
+  step-by-step control and analysis of stormwater/sewer simulations.
+domain: infrastructure-networks
+system_represented: Urban drainage and sewer systems (the SWMM model of subcatchments, nodes, conduits,
+  storage, pumps) driven programmatically from Python, allowing interactive/step-wise simulation and real-time
+  control logic.
+inputs_you_can_change:
+- SWMM input model (.inp) parameters loaded into the simulation
+- rainfall and inflow time series
+- node/link/subcatchment attributes set during the run
+- control logic applied step-by-step (e.g. pump/orifice settings)
+- simulation step size and reporting
+outputs_you_can_observe:
+- node depth, head, and flooding over time
+- link flow and capacity
+- subcatchment runoff
+- system routing/continuity statistics
+- values queried at each simulation step for control
+runtime_required: Python 3 (pip install pyswmm); bundled SWMM5 engine
+access_type: permissive-open
+license: BSD-2-Clause
+scale:
+  element_count: Operates on SWMM models ranging from small examples to networks with thousands of subcatchments,
+    nodes, and conduits.
+  grouping: Elements grouped into subcatchments, nodes, and links, as in SWMM; accessible as Python objects/collections.
+  notes: Enables real-time-control and optimization workflows on SWMM.
+maintenance_status:
+  status: active
+  latest_version: 2.1.0
+  latest_release_date: '2025-09-09'
+access_link: https://pypi.org/project/pyswmm/
+suitability: Stormwater engineers and researchers who need scripted, step-wise control of SWMM for real-time
+  control, optimization, or coupling with other tools.
+executability_justification: Users load a SWMM model, change parameters and apply step-wise control, and
+  run the simulation to observe changed node depths, flows, and flooding. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/pyswmm/json
+  latest_release_date: https://pypi.org/pypi/pyswmm/json
+  license: https://pypi.org/pypi/pyswmm/json
+  access_link: https://pypi.org/project/pyswmm/
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- stormwater
+- sewer
+- swmm
+- python

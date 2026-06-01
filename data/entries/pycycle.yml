@@ -1,0 +1,55 @@
+id: pycycle
+name: pyCycle
+gloss: Thermodynamic gas-turbine engine cycle modeling library built on the OpenMDAO (open-source Multidisciplinary
+  Design Analysis and Optimization) framework.
+domain: mdo
+system_represented: Models the thermodynamic cycle of gas turbine / jet engines (turbofans, turbojets,
+  etc.) by assembling components such as inlets, compressors, burners, turbines, and nozzles with chemical-equilibrium
+  thermodynamics, enabling on- and off-design cycle analysis and gradient-based optimization.
+inputs_you_can_change:
+- Engine architecture / component connectivity (inlet, compressor, burner, turbine, nozzle)
+- Component design parameters (pressure ratios, efficiencies, bleed/cooling flows)
+- Flight condition (Mach number, altitude) and design point
+- Fuel and combustor settings
+- Design variables and optimization objectives
+outputs_you_can_observe:
+- Net thrust and specific fuel consumption
+- Station temperatures, pressures, and mass flows
+- Component work and efficiency
+- Overall pressure ratio and bypass ratio
+- Sensitivities/derivatives for optimization
+runtime_required: Python 3 with OpenMDAO; cloned from GitHub (OpenMDAO/pyCycle); optimizer such as SciPy
+  or pyOptSparse recommended
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative turbofan model (e.g. the high-bypass turbofan example) chains many engine-element
+    components plus per-element thermodynamic property calculations as OpenMDAO components, well over
+    25 interacting elements.
+  grouping: Built from element components (inlet, compressor, combustor, turbine, nozzle, shaft) assembled
+    into a cycle group, each element internally composed of thermodynamic property subsystems.
+  notes: Element count grows with number of engine stations and components in the architecture.
+maintenance_status:
+  status: active
+  latest_version: 4.4.0
+  latest_release_date: '2025-10-15'
+access_link: https://github.com/OpenMDAO/pyCycle
+suitability: Propulsion engineers and researchers doing engine cycle analysis and engine/airframe co-optimization.
+executability_justification: Users change engine architecture, component parameters, and flight conditions
+  and run the model; thrust, SFC, and station conditions change observably with inputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/OpenMDAO/pyCycle/releases/latest
+  latest_release_date: https://api.github.com/repos/OpenMDAO/pyCycle/releases/latest
+  license: https://raw.githubusercontent.com/OpenMDAO/pyCycle/master/LICENSE.txt
+  access_link: https://github.com/OpenMDAO/pyCycle
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: GitHub reports license as NOASSERTION but the LICENSE.txt file is Apache-2.0; latest release
+    4.4.0 (Oct 2025), repo pushed May 2026.
+tags:
+- propulsion
+- gas-turbine
+- openmdao
+- python

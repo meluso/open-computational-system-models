@@ -1,0 +1,56 @@
+id: wntr
+name: WNTR
+gloss: WNTR (Water Network Tool for Resilience), a Python package built on EPANET for simulating and analyzing
+  the resilience of water distribution networks.
+domain: infrastructure-networks
+system_represented: Drinking-water distribution networks (the same junction/pipe/pump/tank model as EPANET)
+  extended to simulate disruptive events such as pipe breaks, power outages, contamination, and earthquakes,
+  and to compute resilience metrics.
+inputs_you_can_change:
+- network model (imported EPANET .inp) topology and properties
+- disruptive events (pipe leaks/breaks, outages, fire flows)
+- nodal demands and demand-driven vs. pressure-driven analysis
+- control rules and repair/recovery strategies
+- simulation duration and water-quality parameters
+outputs_you_can_observe:
+- node pressures and demand satisfaction over time
+- pipe flows and velocities
+- tank levels and water age/quality
+- resilience metrics (e.g. water service availability, population impacted)
+- effects of leaks/outages on system performance
+runtime_required: Python 3 (pip install wntr); bundled EPANET engine
+access_type: permissive-open
+license: Revised BSD (BSD 3-Clause)
+scale:
+  element_count: Works with EPANET networks from small examples (Net1/Net2/Net3) to real systems with
+    thousands of pipes and junctions.
+  grouping: Elements grouped into nodes (junctions, tanks, reservoirs) and links (pipes, pumps, valves);
+    supports network partitioning for analysis.
+  notes: Adds resilience/disaster analysis on top of EPANET hydraulics.
+maintenance_status:
+  status: active
+  latest_version: 1.4.0
+  latest_release_date: unstated — needs direct verification
+access_link: https://pypi.org/project/wntr/
+suitability: Water utilities and resilience researchers assessing distribution-system performance under
+  disruptions and planning mitigation.
+executability_justification: Users load a network, inject events (leaks, outages), and run hydraulic/water-quality
+  simulation to observe changed pressures, demand satisfaction, and resilience metrics. Passes the inclusion
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/wntr/json
+  latest_release_date: https://pypi.org/pypi/wntr/json
+  license: https://pypi.org/pypi/wntr/json
+  access_link: https://pypi.org/project/wntr/
+verification_confidence:
+  overall: high
+  unverified:
+  - latest_release_date
+  notes: PyPI JSON confirmed latest version 1.4.0 and Revised BSD license; the precise release date for
+    1.4.0 was not returned in the fetched metadata.
+tags:
+- water-distribution
+- resilience
+- epanet
+- python

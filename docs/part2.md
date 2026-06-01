@@ -52,8 +52,8 @@ So the most credible near-term A I help in systems engineering is not the grand
 vision but the narrow one. Generate the textual SysML version two for a constraint
 or an analysis, and let the engineer check it.
 
-A pattern emerges across the catalog. Of the 1 models recorded here, 1
-are open source and 0 are reached through a commercial, freemium, or
+A pattern emerges across the catalog. Of the 89 models recorded here, 70
+are open source and 17 are reached through a commercial, freemium, or
 institutional license. Generative A I helps most with the open, text-based,
 widely-used tools, because those are the ones whose code filled the training data.
 It helps least with the closed, visual, or niche tools, because those left little

@@ -1,0 +1,58 @@
+id: adas-highway-lane-following
+name: Highway Lane Following
+gloss: An Advanced Driver Assistance System (ADAS) test bench that steers a vehicle to stay in its lane
+  and keep a safe distance, combining camera/radar sensor fusion, lane detection, decision logic, and
+  control in a 3D simulation.
+domain: mathworks-mbd
+system_represented: A highway lane-following automated-driving system integrating vision-based lane-marker
+  and vehicle detectors, camera/radar forward-vehicle sensor fusion, lateral/longitudinal decision logic,
+  and a model-predictive lane-following controller, simulated against a photorealistic Unreal Engine 3D
+  scenario with synthetic camera and radar sensor models.
+inputs_you_can_change:
+- test scenario (nine straight/curved road and traffic variants)
+- set (desired cruising) velocity
+- camera intrinsics / lens parameters
+- time-gap safety threshold (default 0.8 s)
+outputs_you_can_observe:
+- lane boundary detections and lateral deviation from lane center
+- steering-angle commands
+- relative distance and relative velocity to the lead vehicle
+- acceleration/deceleration commands
+- annotated video with overlaid detections
+runtime_required: MATLAB + Simulink + Automated Driving Toolbox + Model Predictive Control Toolbox + Sensor
+  Fusion and Tracking Toolbox + Deep Learning Toolbox + Simulink 3D Animation
+access_type: campus-or-employer-licensed
+license: Proprietary (MathWorks)
+scale:
+  element_count: unstated — needs direct verification
+  grouping: Eight subsystems — Simulation 3D Scenario, Lane Marker Detector, Vehicle Detector, Forward
+    Vehicle Sensor Fusion, Lane Following Decision Logic, Lane Following Controller, Vehicle Dynamics,
+    and Metrics Assessment.
+maintenance_status:
+  status: active
+  latest_version: R2026a
+  latest_release_date: 2026-04
+  notes: Ships in current Automated Driving Toolbox; per-example version not separately stated.
+access_link: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+suitability: Suits ADAS / autonomy engineers comfortable with Simulink and multiple toolboxes; heavy product
+  dependency and requires a licensed MATLAB install plus 3D simulation support. Not for newcomers.
+executability_justification: The user picks a scenario, set velocity, and camera/time-gap parameters,
+  runs the simulation, and observes the steering and acceleration commands, lateral deviation, and lead-vehicle
+  distance change in response.
+last_verified: '2026-06-01'
+source_per_field:
+  access_link: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+  system_represented: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+  inputs_you_can_change: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+  outputs_you_can_observe: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+  runtime_required: https://www.mathworks.com/help/driving/ug/highway-lane-following.html
+  maintenance_status.latest_version: https://www.mathworks.com/products/new_products/latest_features.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - scale.element_count
+tags:
+- simulink
+- automated-driving-toolbox
+- adas
+- sensor-fusion

@@ -1,0 +1,55 @@
+id: swmm
+name: SWMM
+gloss: SWMM (Storm Water Management Model), the US Environmental Protection Agency's dynamic rainfall-runoff
+  simulation model for stormwater, sanitary, and combined sewer systems.
+domain: infrastructure-networks
+system_represented: Urban drainage and sewer systems represented as subcatchments, junctions (nodes),
+  conduits (links), storage units, pumps, weirs, and outfalls, simulating runoff generation and routing
+  plus water quality during single events or long-term continuous periods.
+inputs_you_can_change:
+- subcatchment area, imperviousness, and infiltration parameters
+- rainfall time series / design storms
+- conduit geometry, slope, and roughness
+- node/storage and outfall configuration
+- pump curves, weirs, and control rules
+outputs_you_can_observe:
+- subcatchment runoff hydrographs
+- node depths, flooding, and surcharge
+- conduit flows and velocities over time
+- system inflow/outflow and continuity
+- pollutant loads/concentrations (water quality)
+runtime_required: EPA SWMM Windows GUI, or the SWMM5 computational engine (C) usable from Python via pyswmm
+access_type: permissive-open
+license: public domain (US EPA); pyswmm wrapper under BSD-2-Clause
+scale:
+  element_count: Example and real networks contain dozens to thousands of subcatchments, nodes, and conduits.
+  grouping: Elements grouped into subcatchments, nodes (junctions, storage, outfalls), and links (conduits,
+    pumps, weirs); often organized by drainage area.
+  notes: Standard model for urban drainage worldwide.
+maintenance_status:
+  status: active
+  latest_version: 5.2.x (EPA SWMM; e.g. 5.2.3)
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.epa.gov/water-research/storm-water-management-model-swmm
+suitability: Stormwater and wastewater engineers, municipalities, and researchers designing and analyzing
+  urban drainage and sewer systems.
+executability_justification: Users change rainfall, subcatchment properties, and conduit/node configuration
+  and run a simulation to observe changed runoff, flows, depths, and flooding. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/USEPA/Stormwater-Management-Model
+  latest_release_date: https://www.epa.gov/water-research/storm-water-management-model-swmm
+  license: https://www.epa.gov/water-research/storm-water-management-model-swmm
+  access_link: https://www.epa.gov/water-research/storm-water-management-model-swmm
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  - latest_release_date
+  notes: EPA SWMM is documented at version 5.2.x (5.2.3 referenced); exact current build number and release
+    date on the EPA/GitHub repo were not pinned this session.
+tags:
+- stormwater
+- sewer
+- hydrology
+- epa

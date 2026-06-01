@@ -1,0 +1,55 @@
+id: webots
+name: Webots
+gloss: Webots is an open-source robot simulator providing a complete environment to model, program, and
+  simulate robots, vehicles, and mechanical systems with physics and sensor emulation, developed by Cyberbotics.
+domain: robotics-multibody
+system_represented: Simulates robots and mechatronic systems (wheeled and legged robots, manipulators,
+  drones, vehicles) as articulated bodies with motors and sensors operating in 3D physics-based worlds,
+  controllable via multiple programming languages and ROS 2.
+inputs_you_can_change:
+- 'World file (.wbt) definitions: nodes, bodies, joints, physics'
+- Motor/actuator commands and PID parameters in controllers
+- Sensor configurations (camera, LiDAR, distance sensors, GPS, IMU)
+- Physics parameters (basicTimeStep, gravity, contact properties)
+- Environment objects, terrain, and robot placement
+outputs_you_can_observe:
+- Robot pose and joint/motor positions over time
+- Simulated sensor measurements (images, ranges, IMU)
+- Contact and collision behavior
+- 3D rendered scene and recorded movies
+runtime_required: Webots application (R2025a) on Windows/Linux/macOS; controllers in C/C++/Python/Java/MATLAB
+  or via ROS 2
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative humanoid or articulated robot world has dozens of solids/joints (25-60+);
+    multi-robot worlds scale higher
+  grouping: Scene-tree nodes group into robots (Solid/Joint hierarchies), devices, and environment objects
+    within a world
+  notes: Counts scale with world
+maintenance_status:
+  status: maintained
+  latest_version: R2025a
+  latest_release_date: '2025-02-04'
+access_link: https://cyberbotics.com
+suitability: Robotics educators, researchers, and developers wanting an integrated, multi-language simulator
+  with a large built-in robot/sensor library
+executability_justification: Changing motor commands, sensor settings, or physics parameters and running
+  the world produces observably different robot trajectories, sensor readings, and contact behavior.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/cyberbotics/webots/releases/latest
+  latest_release_date: https://github.com/cyberbotics/webots/releases/latest
+  license: https://github.com/cyberbotics/webots
+  access_link: https://cyberbotics.com
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Latest GitHub release tag R2025a published 2025-02-04. Repo is open-source (Apache-2.0); Cyberbotics
+    funds via paid support; status marked maintained.
+tags:
+- webots
+- simulator
+- cyberbotics
+- ros
+- education

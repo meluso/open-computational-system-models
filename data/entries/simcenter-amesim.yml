@@ -1,0 +1,54 @@
+id: simcenter-amesim
+name: Simcenter Amesim
+gloss: Commercial 1D multi-domain mechatronic system simulation platform from Siemens for virtually assessing
+  and optimizing system performance.
+domain: equation-based-physical
+system_represented: Simcenter Amesim (Siemens) is a 1D multi-domain system-simulation platform covering
+  fluid (hydraulic/pneumatic), mechanical, electrical/electromechanical, thermal, and propulsion systems.
+  Engineers assemble validated component libraries into system models for powertrain, thermal management,
+  actuation, and vehicle energy studies before building physical prototypes.
+inputs_you_can_change:
+- Component specifications/parameters from physical libraries
+- System configuration and topology
+- Control laws
+- Environmental / operating conditions
+- Input signal and boundary sources
+outputs_you_can_observe:
+- Dynamic behavior time-series of system variables
+- Energy flows (graphically visualized)
+- Power generation and consumption metrics
+- Emissions and performance assessments
+- Optimization results
+runtime_required: Simcenter Amesim (commercial desktop application); supports FMI and Simulink co-simulation
+access_type: commercial
+license: unstated — needs direct verification
+scale:
+  element_count: Representative system models wire dozens to hundreds of library components; model-dependent
+  grouping: Sketch-mode components grouped into supercomponents/subsystems
+  notes: 1D lumped-parameter approach
+maintenance_status:
+  status: active
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+suitability: Industrial system engineers in automotive/aerospace doing 1D multi-domain performance and
+  energy analysis with MIL/SIL/HIL workflows.
+executability_justification: Users vary component parameters/conditions and observe changed dynamic outputs
+  and energy flows; supports MIL/SIL/HIL. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  gloss: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+  system_represented: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+  inputs_you_can_change: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+  outputs_you_can_observe: https://www.siemens.com/en-us/products/simcenter/systems-simulation/amesim/
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: Vendor page omits version/license; marked unstated.
+tags:
+- commercial
+- 1d-simulation
+- mechatronics

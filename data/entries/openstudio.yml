@@ -1,0 +1,53 @@
+id: openstudio
+name: OpenStudio
+gloss: OpenStudio, NREL's open-source software development kit (SDK) for building energy modeling that
+  wraps and orchestrates EnergyPlus (and Radiance).
+domain: power-energy
+system_represented: Whole-building energy models (geometry, constructions, HVAC, loads, schedules) that
+  are translated to and simulated by EnergyPlus, with workflows for measures, parametric studies, and
+  results processing.
+inputs_you_can_change:
+- building geometry and space/zone definitions
+- HVAC systems and plant loops via the model API
+- constructions, materials, and internal loads
+- OpenStudio Measures (scripted parametric modifications)
+- weather file and run period
+outputs_you_can_observe:
+- annual and timeseries energy use by end use
+- zone temperatures and comfort
+- heating/cooling loads and equipment sizing
+- utility cost and (via measures) emissions
+- EnergyPlus error/warning and unmet-hour reports
+runtime_required: OpenStudio SDK/CLI (C++ with Ruby/Python bindings); bundled EnergyPlus engine
+access_type: permissive-open
+license: BSD 3-Clause
+scale:
+  element_count: Models contain dozens to hundreds of spaces/zones, surfaces, and HVAC components, mirroring
+    the underlying EnergyPlus model.
+  grouping: Objects grouped into spaces, thermal zones, stories, HVAC loops, and constructions within
+    the OpenStudio Model.
+  notes: Acts as an SDK/front end around EnergyPlus.
+maintenance_status:
+  status: active
+  latest_version: v3.11.0
+  latest_release_date: '2026-01-15'
+access_link: https://github.com/NREL/OpenStudio
+suitability: Building energy modelers and developers who want a scriptable API and measures workflow on
+  top of EnergyPlus.
+executability_justification: Users modify the building model or apply measures and run the workflow, observing
+  changed energy use, loads, and comfort from the EnergyPlus simulation. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/NREL/OpenStudio/releases/latest
+  latest_release_date: https://api.github.com/repos/NREL/OpenStudio/releases/latest
+  license: https://github.com/NREL/OpenStudio
+  access_link: https://github.com/NREL/OpenStudio
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: License BSD 3-Clause per NREL OpenStudio project; SPDX file not re-fetched this session.
+tags:
+- building-energy
+- sdk
+- energyplus
+- nrel

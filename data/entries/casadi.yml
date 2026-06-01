@@ -1,0 +1,52 @@
+id: casadi
+name: CasADi
+gloss: Open-source symbolic framework for algorithmic differentiation and numerical optimization, widely
+  used to build nonlinear optimal-control and model-predictive-control problems.
+domain: controls-dynamics-python
+system_represented: Dynamic engineered systems posed as optimal-control problems, e.g., robot trajectory
+  optimization, vehicle path planning, or chemical reactor control. Users symbolically express ODE/DAE
+  dynamics, constraints, and cost functions, then solve them with integrated NLP and integrator solvers.
+inputs_you_can_change:
+- Symbolic system dynamics (ODE/DAE equations) and number of states/controls
+- Cost (objective) function and weighting terms
+- Path and boundary constraints and variable bounds
+- Discretization scheme and horizon length (shooting/collocation intervals)
+- Solver choice and options (e.g., IPOPT, SQP) and initial guesses
+outputs_you_can_observe:
+- Optimal state and control trajectories
+- Objective/cost value at the solution
+- Constraint and Lagrange-multiplier values
+- Solver convergence status and iteration counts
+- Sensitivities/derivatives via automatic differentiation
+runtime_required: Python (or C++, MATLAB/Octave); pip install casadi; bundles IPOPT and SUNDIALS
+access_type: weak-copyleft-open
+license: LGPL-3.0-or-later
+scale:
+  element_count: A representative direct-collocation optimal-control problem discretizes a multi-state
+    system over tens-to-hundreds of intervals, yielding hundreds to thousands of optimization variables
+    and constraints
+  grouping: Problems are organized into dynamics functions, objective, constraint sets, and an NLP/Opti
+    structure
+  notes: Element count scales with horizon length and state/control dimension
+maintenance_status:
+  status: active
+  latest_version: 3.7.2
+  latest_release_date: '2025-09-10'
+access_link: https://web.casadi.org
+suitability: Researchers and engineers formulating nonlinear optimization, optimal control, and MPC problems
+executability_justification: Users vary dynamics, costs, constraints, and horizon, then observe changed
+  optimal trajectories and objective values, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/casadi/json
+  latest_release_date: https://pypi.org/pypi/casadi/3.7.2/json
+  license: https://pypi.org/pypi/casadi/json
+  access_link: https://pypi.org/pypi/casadi/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- optimal-control
+- optimization
+- automatic-differentiation
+- mpc

@@ -1,0 +1,56 @@
+id: airbus-apollo-11-sysml-v2
+name: Airbus Apollo 11 SysML v2 Model
+gloss: An open SysML v2 (Systems Modeling Language version 2) reference model of the Apollo 11 lunar mission,
+  including executable calc and analysis definitions such as delta-V and power-margin calculations.
+domain: executable-mbse
+system_represented: The Apollo 11 lunar mission as a system-of-systems (Saturn V launch vehicle, Command/Service
+  Module, Lunar Module, ground/mission elements), decomposed across purpose, operational, functional,
+  logical, and technical layers using Airbus's CoSMA framework.
+inputs_you_can_change:
+- stage mass and propellant parameters feeding the Tsiolkovsky calculateDeltaV calc def
+- power-consumption and supply values feeding the SystemPowerAnalysis
+- reliability values feeding MissionReliabilityAnalysis
+- cost values feeding MissionCostAnalysis
+- structural decomposition / part definitions in the model packages
+outputs_you_can_observe:
+- computed delta-V budget per stage / mission segment
+- system power margin (surplus or deficit)
+- rolled-up mission cost
+- mission reliability figure
+runtime_required: Any standards-compliant SysML v2 tool able to parse and evaluate the textual notation
+  (e.g. the SysML v2 Pilot Implementation Jupyter kernel)
+access_type: weak-copyleft-open
+license: MPL-2.0
+scale:
+  element_count: 30+ packages and 200+ defined model elements
+  grouping: Five CoSMA layers (Purpose, Operational, Functional, Logical, Technical), each organized into
+    domain packages (Requirements, Functions, Technical Components, Analysis, etc.)
+  notes: An element is a SysML v2 definition/usage (part def, requirement, calc def, analysis case, etc.)
+maintenance_status:
+  status: active
+  latest_version: 0.0.1
+  latest_release_date: '2026-02-23'
+access_link: https://github.com/airbus/apollo-11-sysml-v2
+suitability: Suits MBSE practitioners and students learning SysML v2 on a non-trivial, real-world reference
+  model; the layered structure and calc/analysis defs make it a useful executable benchmark rather than
+  a beginner's first model.
+executability_justification: A user edits the inputs to calc defs (e.g. stage masses, power values) and
+  runs the AnalysisPackage analyses; the computed delta-V, power margin, cost, and reliability roll-ups
+  change observably in response.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/airbus/apollo-11-sysml-v2
+  latest_release_date: https://github.com/airbus/apollo-11-sysml-v2
+  license: https://github.com/airbus/apollo-11-sysml-v2/blob/main/LICENSE.md
+  access_link: https://github.com/airbus/apollo-11-sysml-v2
+  element_count: https://github.com/airbus/apollo-11-sysml-v2
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Version 0.0.1 reflects an early public research artifact; "active" judged by Feb 2026 publication.
+tags:
+- sysml-v2
+- mbse
+- aerospace
+- airbus
+- reference-model

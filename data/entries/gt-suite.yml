@@ -1,0 +1,54 @@
+id: gt-suite
+name: GT-SUITE
+gloss: Commercial multi-physics system simulation platform from Gamma Technologies for engine, vehicle,
+  and broader system modeling.
+domain: equation-based-physical
+system_represented: GT-SUITE (Gamma Technologies) is an enterprise multi-physics platform built on physics
+  libraries for flow, acoustics, thermal, mechanical, electrical/electromagnetic, chemistry, controls,
+  and 3D CFD/FE. Applications include engines, vehicles, batteries, fuel cells, heat exchangers, and mechanical
+  systems across the product-development cycle.
+inputs_you_can_change:
+- Design parameters within optimization/DOE studies
+- Component/library specifications and geometry
+- Operating and boundary conditions
+- Control signals and maps
+- Input distributions for Monte Carlo / variability studies
+outputs_you_can_observe:
+- Performance predictions (e.g., engine power, efficiency)
+- System behavior under varied conditions
+- Sensitivity and optimization results
+- Variability/Monte Carlo output distributions
+- Time-series of flow/thermal/mechanical variables
+runtime_required: GT-SUITE (commercial desktop application)
+access_type: commercial
+license: unstated — needs direct verification
+scale:
+  element_count: Representative system models contain dozens to hundreds of connected elements; model-dependent
+  grouping: Multi-physics components grouped into subsystems/templates
+  notes: Eight fundamental physics libraries
+maintenance_status:
+  status: active
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://www.gtisoft.com/gt-suite/
+suitability: Powertrain, vehicle, and thermal/fluid system engineers needing detailed multi-physics system
+  simulation and optimization.
+executability_justification: Users modify design parameters and run DOE/optimization/Monte Carlo studies,
+  observing changed performance outputs. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  gloss: https://www.gtisoft.com/gt-suite/
+  system_represented: https://www.gtisoft.com/gt-suite/
+  inputs_you_can_change: https://www.gtisoft.com/gt-suite/
+  outputs_you_can_observe: https://www.gtisoft.com/gt-suite/
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: Vendor page omits version/license; marked unstated.
+tags:
+- commercial
+- multi-physics
+- engine-vehicle-simulation

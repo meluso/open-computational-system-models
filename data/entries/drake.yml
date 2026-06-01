@@ -1,0 +1,56 @@
+id: drake
+name: Drake
+gloss: Drake is a C++/Python toolbox for model-based design, simulation, and verification of robots, providing
+  multibody dynamics, optimization, and systems modeling developed by MIT and Toyota Research Institute
+  (TRI).
+domain: robotics-multibody
+system_represented: Models robots and dynamical systems as multibody plants (manipulators, mobile robots,
+  humanoids) with rigid/deformable bodies, contact, and actuators, plus controllers and estimators composed
+  in a systems framework for simulation and trajectory/optimization-based design.
+inputs_you_can_change:
+- URDF/SDFormat model files and their link/joint parameters
+- Contact model and solver parameters (e.g., hydroelastic vs point contact)
+- Controller gains and trajectory optimization constraints/costs
+- Initial conditions and actuation inputs
+- Simulation time step and integrator settings
+outputs_you_can_observe:
+- State trajectories (positions, velocities) of the multibody system
+- Contact forces and constraint outputs
+- Optimization/trajectory solutions and feasibility
+- Visualizations via Meshcat
+runtime_required: Python 3 (pip "drake") or C++; Linux/macOS
+access_type: permissive-open
+license: BSD-3-Clause (with some third-party components under other licenses)
+scale:
+  element_count: A representative MultibodyPlant with a manipulator or humanoid loaded from URDF/SDFormat
+    has dozens of bodies and joints (25-60+)
+  grouping: Bodies and joints group into MultibodyPlant model instances; systems group into a Diagram
+    of interconnected subsystems
+  notes: Diagrams compose many subsystems (plant, controller, sensors)
+maintenance_status:
+  status: active
+  latest_version: 1.53.0
+  latest_release_date: '2026-05-15'
+access_link: https://drake.mit.edu
+suitability: Robotics and controls researchers needing rigorous multibody dynamics, contact modeling,
+  and optimization-based design and verification
+executability_justification: Varying model parameters, controller gains, or initial conditions and running
+  a simulation produces observably different state trajectories and contact forces; optimization inputs
+  change computed solutions.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/drake/json
+  latest_release_date: https://pypi.org/pypi/drake/json
+  license: https://drake.mit.edu
+  access_link: https://drake.mit.edu
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI license field reads "Various" (BSD + some other/proprietary third-party); core is BSD-3-Clause.
+    Version 1.53.0 uploaded 2026-05-15.
+tags:
+- drake
+- multibody
+- optimization
+- controls
+- simulation

@@ -1,0 +1,53 @@
+id: simpy
+name: SimPy
+gloss: Process-based discrete-event simulation (DES) framework in pure Python, using generator functions
+  to model active components competing for shared resources.
+domain: des-abm
+system_represented: Operational systems with queueing and resource contention, e.g., a manufacturing line,
+  a hospital emergency department, a call center, or a car wash with dozens of servers, machines, and
+  concurrent process flows.
+inputs_you_can_change:
+- Number and capacity of resources (servers, machines, beds)
+- Arrival/interarrival time distributions and rates
+- Service/processing time distributions
+- Number of entities/processes and simulation duration
+- Random seed and process routing logic
+outputs_you_can_observe:
+- Entity wait times and time-in-system
+- Resource utilization and queue lengths over time
+- Throughput / number of entities served
+- Event timestamps and process traces
+- Distribution statistics across replications
+runtime_required: Python 3 (pip install simpy); pure Python, no dependencies
+access_type: permissive-open
+license: MIT
+scale:
+  element_count: A representative model (e.g., a hospital or factory) involves dozens of resources and
+    hundreds-to-thousands of concurrently simulated entity processes
+  grouping: Organized into Environment, Resource/Container/Store objects, and generator-based process
+    functions
+  notes: Element count scales with entities generated and resources defined
+maintenance_status:
+  status: active
+  latest_version: 4.1.2
+  latest_release_date: '2026-05-24'
+access_link: https://simpy.readthedocs.io
+suitability: Operations researchers, industrial engineers, and analysts modeling queueing and resource
+  systems in Python
+executability_justification: Users vary resource counts, arrival/service distributions, and run length
+  and observe changed wait times, utilization, and throughput, satisfying the input-to-output variation
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/simpy/json
+  latest_release_date: https://pypi.org/pypi/simpy/json
+  license: https://pypi.org/pypi/simpy/json
+  access_link: https://pypi.org/pypi/simpy/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- discrete-event-simulation
+- queueing
+- python
+- operations-research

@@ -1,0 +1,56 @@
+id: wec-sim
+name: WEC-Sim
+gloss: WEC-Sim (Wave Energy Converter SIMulator) is an open-source time-domain code from NREL and Sandia
+  for simulating the dynamics and power performance of wave energy converters in operational waves.
+domain: wind-marine-energy
+system_represented: Models a wave energy converter as a multibody system of floating bodies connected
+  by joints, mooring, and power-take-off (PTO) mechanisms, subject to hydrodynamic wave forces, to predict
+  motions and absorbed/electrical power.
+inputs_you_can_change:
+- Body geometry and hydrodynamic coefficients (BEM data)
+- Wave conditions (regular/irregular spectra, height, period)
+- PTO type and parameters (damping, stiffness, control)
+- Mooring and constraint/joint definitions
+- Simulation time and solver settings
+outputs_you_can_observe:
+- Body motions (heave, surge, pitch) time series
+- PTO forces and absorbed/electrical power
+- Mooring and constraint forces
+- Response amplitude and power matrices across sea states
+runtime_required: MATLAB/Simulink with Simscape Multibody (WEC-Sim runs as MATLAB/Simulink code); MATLAB
+  is required
+access_type: campus-or-employer-licensed
+license: Apache-2.0
+scale:
+  element_count: A representative WEC model has multiple bodies, joints, PTOs, and moorings; full array/farm
+    studies combine many such units to exceed dozens of interacting elements
+  grouping: Elements group into bodies, constraints/joints, PTOs, moorings, and cables within a Simulink
+    model; arrays group multiple devices
+  notes: Single-device models are small; array studies and multibody PTOs raise element counts
+maintenance_status:
+  status: active
+  latest_version: v7.0.0
+  latest_release_date: '2025-08-26'
+access_link: https://github.com/WEC-Sim/WEC-Sim
+suitability: Marine/wave energy researchers and engineers evaluating WEC dynamics, PTO control, and power
+  performance
+executability_justification: Changing wave conditions, PTO parameters, or body properties and running
+  the Simulink model produces observably different body motions, forces, and power outputs.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/WEC-Sim/WEC-Sim/releases/latest
+  latest_release_date: https://api.github.com/repos/WEC-Sim/WEC-Sim/releases/latest
+  license: https://github.com/WEC-Sim/WEC-Sim
+  access_link: https://github.com/WEC-Sim/WEC-Sim
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Code is open (Apache-2.0) but the runtime depends on MATLAB/Simulink + Simscape Multibody, which
+    are commercial and typically campus-or-employer-licensed. access_type reflects the runtime requirement;
+    the code license is Apache-2.0. Latest release v7.0.0 published 2025-08-26.
+tags:
+- wec-sim
+- wave-energy
+- matlab
+- simulink
+- multibody

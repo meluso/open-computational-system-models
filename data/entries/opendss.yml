@@ -1,0 +1,57 @@
+id: opendss
+name: OpenDSS (with OpenDSSDirect.py / DSS-Python)
+gloss: OpenDSS (Open Distribution System Simulator), EPRI's electric power distribution system simulator,
+  usable from Python via the OpenDSSDirect.py and DSS-Python interfaces.
+domain: power-energy
+system_represented: Electric power distribution feeders and systems represented as buses, lines, transformers,
+  capacitors, regulators, loads, PV systems, storage, and other distribution components, supporting unbalanced
+  multi-phase steady-state and quasi-static time-series analysis.
+inputs_you_can_change:
+- feeder topology and circuit element definitions (lines, transformers, loads)
+- load shapes and time-series load/generation profiles
+- PV system and storage device parameters
+- regulator/capacitor control settings
+- solution mode (snapshot, daily, yearly, fault study)
+outputs_you_can_observe:
+- node/bus voltages per phase (and voltage profile)
+- element currents and power flows
+- total circuit losses
+- per-element power and energy over time-series runs
+- convergence and fault-study results
+runtime_required: Windows COM build or cross-platform DSS C-API; Python via pip install OpenDSSDirect.py
+  or dss-python
+access_type: permissive-open
+license: BSD 3-Clause (OpenDSSDirect.py and DSS-Python; OpenDSS core uses a BSD-style EPRI license)
+scale:
+  element_count: Ships with IEEE Test Feeders (e.g. IEEE 13-, 34-, 123-bus distribution feeders) and EPRI
+    test circuits with hundreds to thousands of nodes; large feeders model thousands of elements.
+  grouping: Elements grouped by class (Line, Transformer, Load, Capacitor, PVSystem, Storage); circuits
+    organized into feeders/energy meters and zones.
+  notes: Strong support for unbalanced multi-phase distribution modeling.
+maintenance_status:
+  status: active
+  latest_version: OpenDSS core version not pinned; DSS-Python 0.15.7, OpenDSSDirect.py 0.9.4
+  latest_release_date: OpenDSSDirect.py 0.9.4 released 2024-03-29; OpenDSS core repo updated 2026-01-30
+access_link: https://sourceforge.net/projects/electricdss/
+suitability: Distribution engineers, DER (distributed energy resource) integration researchers, and utilities
+  analyzing unbalanced feeders and grid modernization.
+executability_justification: Users edit feeder definitions, load shapes, and DER parameters, then Solve
+  and observe changed per-phase voltages, currents, and losses. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/dss-python/json
+  latest_release_date: https://pypi.org/pypi/OpenDSSDirect.py/json
+  license: https://pypi.org/pypi/dss-python/json
+  access_link: https://opendss.epri.com/Downloads.html
+verification_confidence:
+  overall: medium
+  unverified:
+  - latest_version
+  - latest_release_date
+  notes: OpenDSS core standalone release version on SourceForge could not be pinned to a precise number;
+    Python wrapper versions are verified via PyPI but the OpenDSSDirect.py wrapper is somewhat behind.
+tags:
+- distribution
+- der
+- unbalanced
+- epri

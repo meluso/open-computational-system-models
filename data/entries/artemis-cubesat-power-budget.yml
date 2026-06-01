@@ -1,0 +1,57 @@
+id: artemis-cubesat-power-budget
+name: Artemis CubeSat Kit Power Budget Spreadsheet
+gloss: A CubeSat power/energy budget Google Sheet (University of Hawaii Artemis CubeSat Kit) that tracks
+  energy generation, consumption, and battery state across mission modes.
+domain: parametric-spreadsheets
+system_represented: 'Models the electrical power system of a CubeSat: solar-array generation over an orbit,
+  per-subsystem power draw across operating modes, and battery charge/discharge balance to verify the
+  spacecraft can sustain operations.'
+inputs_you_can_change:
+- Per-subsystem/component power draw (voltage, current, peak/average)
+- Mission mode timeline and duty cycles
+- Solar power generation profile over the orbit
+- Battery capacity and state-of-charge limits
+- Orbital period / eclipse fraction
+outputs_you_can_observe:
+- Energy consumed per mode
+- Energy generated over the orbit
+- Running battery charge / state of charge
+- Net energy balance (positive/negative) over the cycle
+- Whether power is sustainable across the mission profile
+runtime_required: Google Sheets (or Microsoft Excel after download) — formula workbook
+access_type: permissive-open
+license: unstated — needs direct verification
+scale:
+  element_count: Dozens of rows for subsystem components and mode/time entries feeding the energy balance
+    — exceeds 25 interacting cells/elements
+  grouping: Groups into subsystem power lines, mission modes/phases, and the generation-vs-consumption-vs-battery
+    balance
+  notes: Shared as a Google Sheet linked from the open CubeSat design textbook (open educational resource)
+maintenance_status:
+  status: unknown
+  latest_version: unstated — needs direct verification
+  latest_release_date: unstated — needs direct verification
+access_link: https://docs.google.com/spreadsheets/d/1H-Gp8S-FXDa3bAo4ofADCgoDEZKV9h5Z/edit
+suitability: CubeSat student teams and educators sizing a spacecraft electrical power system
+executability_justification: Users edit component power draws, mode timelines, generation, and battery
+  capacity, and the sheet recomputes energy balance and battery state — different inputs give observably
+  different outputs (sustainable vs not).
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pressbooks-dev.oer.hawaii.edu/epet302/chapter/5-9-power-budget-and-profiling/
+  latest_release_date: https://pressbooks-dev.oer.hawaii.edu/epet302/chapter/5-9-power-budget-and-profiling/
+  license: https://pressbooks-dev.oer.hawaii.edu/epet302/chapter/5-9-power-budget-and-profiling/
+  access_link: https://docs.google.com/spreadsheets/d/1H-Gp8S-FXDa3bAo4ofADCgoDEZKV9h5Z/edit
+verification_confidence:
+  overall: medium
+  unverified:
+  - license
+  - latest_version
+  - latest_release_date
+  notes: The Google Sheets link is published in the open OER textbook chapter; it is view/copy shared
+    (not directly fetched as a file by the verification tool). Version and license are not stated for
+    the sheet itself.
+tags:
+- power-budget
+- cubesat
+- spreadsheet

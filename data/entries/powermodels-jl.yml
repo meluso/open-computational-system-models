@@ -1,0 +1,53 @@
+id: powermodels-jl
+name: PowerModels.jl
+gloss: PowerModels.jl, a Julia/JuMP package for steady-state power network optimization implementing many
+  formulations of optimal power flow and related problems.
+domain: power-energy
+system_represented: Electric power transmission networks represented as buses, branches, generators, loads,
+  and shunts, used to formulate and solve power flow and optimal power flow (and variants such as OTS,
+  TNEP) under multiple mathematical relaxations/formulations.
+inputs_you_can_change:
+- network data (buses, branches, generators) via MATPOWER/PSSE files
+- power flow formulation (AC, DC, SOC, QC relaxations)
+- generator cost functions and limits
+- load/demand values
+- solver choice (Ipopt, Gurobi, etc.) and problem type (OPF, PF, OTS)
+outputs_you_can_observe:
+- optimal generator dispatch
+- bus voltage magnitudes and angles
+- branch power flows
+- objective (generation cost) value and solver status
+- relaxation gap / feasibility metrics
+runtime_required: Julia (Pkg add PowerModels); JuMP and an optimization solver such as Ipopt
+access_type: permissive-open
+license: BSD 3-Clause
+scale:
+  element_count: Works with standard MATPOWER cases including IEEE 14-, 30-, 118-, and 300-bus systems
+    and large synthetic cases (thousands of buses).
+  grouping: Components grouped into data dictionaries (bus, branch, gen, load, shunt); multi-network and
+    multi-conductor groupings supported.
+  notes: Optimization-focused rather than time-series simulation.
+maintenance_status:
+  status: active
+  latest_version: v0.21.6
+  latest_release_date: '2026-05-06'
+access_link: https://github.com/lanl-ansi/PowerModels.jl
+suitability: Power systems optimization researchers comparing OPF formulations and building custom transmission
+  optimization problems.
+executability_justification: Users load a case, choose a formulation and solver, and run solve_opf to
+  observe changed dispatch, voltages, flows, and cost. Passes the inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/lanl-ansi/PowerModels.jl/releases/latest
+  latest_release_date: https://api.github.com/repos/lanl-ansi/PowerModels.jl/releases/latest
+  license: https://github.com/lanl-ansi/PowerModels.jl
+  access_link: https://github.com/lanl-ansi/PowerModels.jl
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: License BSD per repo convention; SPDX text not re-fetched this session.
+tags:
+- optimal-power-flow
+- optimization
+- julia
+- transmission

@@ -1,0 +1,57 @@
+id: openfoam-com
+name: OpenFOAM (openfoam.com / OpenCFD)
+gloss: OpenFOAM is an open-source computational fluid dynamics (CFD) toolbox; a representative tutorial
+  (e.g. the pitzDaily backward-facing-step flow) is a runnable meshed flow model.
+domain: continuum-cfd
+system_represented: Models continuum fluid flow in engineered geometries by discretizing the domain into
+  a finite-volume mesh and solving the Navier-Stokes equations. A representative engineered case is flow
+  over a backward-facing step (pitzDaily), a canonical separated-flow geometry.
+inputs_you_can_change:
+- Inlet velocity / boundary conditions
+- Fluid properties (viscosity, density)
+- Turbulence model selection (k-epsilon, k-omega SST, etc.)
+- Mesh resolution / refinement (blockMesh, snappyHexMesh)
+- Solver and numerical scheme settings (fvSolution, fvSchemes)
+- Simulation end time / time step
+outputs_you_can_observe:
+- Velocity and pressure fields over the mesh
+- Turbulence quantities (k, epsilon/omega) fields
+- Recirculation/reattachment behind the step
+- Residual convergence history
+- Field data viewable in ParaView
+runtime_required: OpenFOAM (Linux/macOS/Windows via WSL/containers); post-processing in ParaView
+access_type: copyleft-open
+license: GPL (GNU General Public License)
+scale:
+  element_count: The discretized mesh contains thousands to millions of finite-volume cells; even the
+    small pitzDaily tutorial has ~12,000+ cells — far exceeds 25 interacting elements
+  grouping: Groups into mesh cells organized by boundary patches (inlet, outlet, walls) and field/solver
+    regions
+  notes: Two forks exist — openfoam.com (Keysight/OpenCFD, v-series) and openfoam.org (OpenFOAM Foundation,
+    integer versions, currently v13); this entry uses the openfoam.com fork
+maintenance_status:
+  status: active
+  latest_version: v2512
+  latest_release_date: '2025-12-22'
+access_link: https://www.openfoam.com/
+suitability: CFD engineers, researchers, and students simulating fluid-flow systems
+executability_justification: Users edit boundary conditions, fluid properties, turbulence models, and
+  mesh, then run the solver; the finite-volume solution recomputes velocity/pressure fields, so varied
+  inputs produce observably different flow fields.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://www.openfoam.com/current-release
+  latest_release_date: https://www.openfoam.com/news/main-news/openfoam-v2506
+  license: https://www.openfoam.com/current-release
+  access_link: https://www.openfoam.com/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: v2512 confirmed as current release via openfoam.com/current-release; release date (2025-12-22)
+    from search of openfoam.com news. openfoam.org fork at v13 noted as the alternative. pitzDaily is
+    a standard shipped tutorial.
+tags:
+- cfd
+- openfoam
+- finite-volume
+- navier-stokes

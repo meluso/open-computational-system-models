@@ -1,0 +1,50 @@
+id: jaamsim
+name: JaamSim
+gloss: Free, open-source Java-based discrete-event simulation (DES) software with a drag-and-drop graphical
+  interface and 3D visualization for building object-oriented simulation models.
+domain: des-abm
+system_represented: Operational and logistics systems such as warehouses, mining haul networks, manufacturing
+  plants, and supply chains, built from interconnected processing objects (servers, queues, conveyors,
+  entity generators).
+inputs_you_can_change:
+- Entity generation rates and interarrival distributions
+- Server/processing capacities and service-time distributions
+- Object connections and routing logic in the model flow
+- Resource quantities and queue priorities
+- Simulation run duration, replications, and random seed
+outputs_you_can_observe:
+- Queue lengths and waiting times
+- Server/resource utilization
+- Entity throughput and cycle times
+- Time-series and statistical outputs (graphs, tables)
+- 3D animated state of the system
+runtime_required: Java (Java Runtime Environment); standalone desktop application (Windows/macOS/Linux)
+access_type: permissive-open
+license: Apache-2.0
+scale:
+  element_count: A representative logistics/manufacturing model comprises dozens to hundreds of process
+    objects (generators, servers, queues, conveyors) handling thousands of entities
+  grouping: Models are assembled from palettes of process-flow objects connected into subsystems
+  notes: Element count scales with the number of placed objects and generated entities
+maintenance_status:
+  status: active
+  latest_version: 2026-03
+  latest_release_date: '2026-04-27'
+access_link: https://jaamsim.com
+suitability: Industrial engineers and operations analysts who want a free GUI-based DES tool without coding
+executability_justification: Users change arrival/service rates, capacities, and routing and observe changed
+  throughput, queue lengths, and utilization, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/jaamsim/jaamsim/releases
+  latest_release_date: https://github.com/jaamsim/jaamsim/releases
+  license: https://github.com/jaamsim/jaamsim
+  access_link: https://jaamsim.com
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- discrete-event-simulation
+- logistics
+- java
+- gui

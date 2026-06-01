@@ -1,0 +1,53 @@
+id: floris
+name: FLORIS
+gloss: FLORIS (FLOw Redirection and Induction in Steady State) is NREL's open-source engineering wind
+  farm wake model for predicting turbine wakes, power, and wake-steering control benefits.
+domain: wind-marine-energy
+system_represented: Models a wind farm as an array of turbines whose wakes interact, using steady-state
+  engineering wake models to estimate per-turbine and farm-level power under given wind conditions and
+  control settings (yaw-based wake steering).
+inputs_you_can_change:
+- Turbine layout (positions, number of turbines)
+- Wind conditions (speed, direction, turbulence intensity, wind rose)
+- Turbine type/power-thrust curves
+- Yaw angles for wake steering
+- Wake model selection and parameters (Gauss, Jensen, etc.)
+outputs_you_can_observe:
+- Per-turbine power production
+- Total farm power / annual energy production (AEP)
+- Wake velocity-deficit flow fields
+- Turbine thrust and effective wind speeds
+runtime_required: Python 3 (pip "floris"); cross-platform
+access_type: permissive-open
+license: BSD-3-Clause
+scale:
+  element_count: A representative wind farm has dozens of turbines (commonly 25-100+) interacting through
+    wakes
+  grouping: Turbines group into a farm layout; flow field discretized over a grid; models grouped by wake
+    submodel (deflection, velocity, turbulence, combination)
+  notes: Counts scale with farm size
+maintenance_status:
+  status: active
+  latest_version: 4.6.4
+  latest_release_date: '2026-02-24'
+access_link: https://github.com/NREL/floris
+suitability: Wind farm designers, layout optimizers, and controls researchers studying wake steering and
+  energy yield
+executability_justification: Changing layout, wind conditions, or yaw angles and running FLORIS produces
+  observably different per-turbine and total farm power and wake flow fields.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/floris/json
+  latest_release_date: https://pypi.org/pypi/floris/json
+  license: https://pypi.org/pypi/floris/json
+  access_link: https://github.com/NREL/floris
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: PyPI v4.6.4 released 2026-02-24; BSD-3-Clause.
+tags:
+- floris
+- wake-modeling
+- wind-farm
+- nrel
+- wake-steering

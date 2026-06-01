@@ -1,0 +1,49 @@
+id: fmpy
+name: FMPy
+gloss: Python library to validate, simulate, and co-simulate Functional Mock-up Units (FMUs), including
+  a GUI for running and plotting them.
+domain: heterogeneous-digital-twin
+system_represented: FMPy is a free Python library (maintained under CATIA-Systems / Dassault Systemes)
+  for loading, validating, simulating, and co-simulating FMI 1.0/2.0/3.0 FMUs. It executes heterogeneous
+  tool-exported models and can connect them, serving as a runtime for FMU-based digital-twin and system
+  models.
+inputs_you_can_change:
+- FMU parameters and start values
+- Input signals/time tables fed to the FMU
+- Solver and step-size settings
+- Start/stop time of the simulation
+- Output variable selection
+outputs_you_can_observe:
+- Time-series of FMU output variables (returned as arrays / plotted)
+- Internal variable trajectories
+- Validation/diagnostic results for the FMU
+- Co-simulation coupling results
+runtime_required: Python (pip install FMPy); optional GUI
+access_type: permissive-open
+license: BSD 2-Clause
+scale:
+  element_count: A simulated FMU/composite represents a system with many internal elements; model-dependent
+  grouping: FMUs as units; can connect multiple FMUs in co-simulation
+  notes: Library/runtime, not itself a model
+maintenance_status:
+  status: active
+  latest_version: 0.3.29
+  latest_release_date: '2026-03-24'
+access_link: https://github.com/CATIA-Systems/FMPy
+suitability: Python users and engineers who need to run, validate, and script FMU simulations and co-simulations.
+executability_justification: Users set FMU parameters and inputs and run the simulation to obtain changed
+  output time-series. Satisfies inclusion test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/FMPy/json
+  latest_release_date: https://pypi.org/pypi/FMPy/json
+  license: https://raw.githubusercontent.com/CATIA-Systems/FMPy/main/LICENSE.txt
+  gloss: https://github.com/CATIA-Systems/FMPy
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- fmi
+- python
+- co-simulation
+- open-source

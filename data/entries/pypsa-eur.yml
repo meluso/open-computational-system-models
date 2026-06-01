@@ -1,0 +1,55 @@
+id: pypsa-eur
+name: PyPSA-Eur
+gloss: PyPSA-Eur, an open optimization model of the European electricity and energy system built on PyPSA,
+  with high spatial and temporal resolution.
+domain: power-energy
+system_represented: The European transmission grid and energy system, modeled at the level of substations/regions
+  across European countries, including conventional and renewable generation, storage, transmission lines,
+  and (in the sector-coupled variant) heating, transport, and industry.
+inputs_you_can_change:
+- spatial resolution (number of network clusters/nodes)
+- temporal resolution (number of snapshots/hours)
+- CO2 emission limits and cost assumptions
+- technology availability and capacity constraints (renewables, nuclear, etc.)
+- weather/renewable resource years and demand scenarios
+outputs_you_can_observe:
+- optimal generation and storage capacities by technology and region
+- hourly dispatch and cross-border power flows
+- total system cost and per-region marginal prices
+- CO2 emissions and renewable share
+- transmission line expansion/loading
+runtime_required: Python 3 with Snakemake workflow (conda/mamba environment); an LP/MILP solver (HiGHS,
+  Gurobi, etc.)
+access_type: permissive-open
+license: MIT (code; data under various open licenses)
+scale:
+  element_count: Configurable; full resolution covers hundreds of network nodes (clustered from thousands
+    of substations) across European countries, with thousands of generators and lines.
+  grouping: Nodes clustered into regions/countries; components grouped by carrier (technology) and by
+    sector in the sector-coupled version.
+  notes: One of the largest concrete open energy-system models.
+maintenance_status:
+  status: active
+  latest_version: v2026.02.0
+  latest_release_date: '2026-02-19'
+access_link: https://github.com/PyPSA/pypsa-eur
+suitability: Energy policy analysts and researchers studying European decarbonization, grid expansion,
+  and sector coupling at scale.
+executability_justification: Users set resolution, CO2 limits, and technology assumptions in config and
+  run the Snakemake workflow to produce changed capacities, dispatch, flows, and costs. Passes the inclusion
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://api.github.com/repos/PyPSA/pypsa-eur/releases/latest
+  latest_release_date: https://api.github.com/repos/PyPSA/pypsa-eur/releases/latest
+  license: https://github.com/PyPSA/pypsa-eur
+  access_link: https://github.com/PyPSA/pypsa-eur
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: License confirmed as MIT for code per repository; bundled data carries separate open licenses.
+tags:
+- europe
+- energy-system
+- decarbonization
+- large-model

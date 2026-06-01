@@ -1,0 +1,53 @@
+id: netlogo
+name: NetLogo
+gloss: Free, multi-agent programmable modeling environment for agent-based modeling (ABM), where "turtles"
+  (agents) act on a grid of "patches" with links between them.
+domain: des-abm
+system_represented: Complex systems of many interacting agents such as traffic flows, epidemics, flocking,
+  predator-prey ecosystems, segregation, and market dynamics, built from hundreds-to-thousands of agents
+  following simple rules.
+inputs_you_can_change:
+- Number of agents (turtles) via sliders
+- Behavioral rule parameters (speeds, thresholds, probabilities)
+- World/grid size and topology (wrapping, patch count)
+- Global parameters exposed as sliders/switches/choosers
+- Random seed and tick (time-step) count
+outputs_you_can_observe:
+- Animated spatial view of agents and patches
+- Plots and monitors of aggregate quantities over time
+- Population counts and emergent patterns
+- BehaviorSpace experiment data tables
+- Per-agent and per-patch reported variables
+runtime_required: NetLogo desktop (JVM-based, Java/Scala); also NetLogo Web; Windows/macOS/Linux
+access_type: copyleft-open
+license: GPL (GNU General Public License); commercial licenses also available
+scale:
+  element_count: A representative model runs hundreds-to-thousands of agents on a grid of thousands of
+    patches
+  grouping: Agents are grouped into breeds; the world is a grid of patches with links forming networks
+  notes: Element count scales with agent population and world dimensions
+maintenance_status:
+  status: active
+  latest_version: 7.0.4
+  latest_release_date: 2026-04
+access_link: https://ccl.northwestern.edu/netlogo/
+suitability: Educators, students, social scientists, and complexity researchers building agent-based models
+executability_justification: Users vary slider parameters, agent counts, and rules and observe changed
+  spatial patterns, population plots, and emergent behavior, satisfying the input-to-output variation
+  test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://github.com/NetLogo/NetLogo/releases
+  latest_release_date: https://docs.netlogo.org/7.0.4/versions
+  license: https://en.wikipedia.org/wiki/NetLogo
+  access_link: https://ccl.northwestern.edu/netlogo/
+verification_confidence:
+  overall: high
+  unverified: []
+  notes: Latest release 7.0.4; release date confirmed as April 2026 from the version-history docs (a GitHub
+    releases summary listed May 1 for the tag).
+tags:
+- agent-based-modeling
+- complex-systems
+- education
+- simulation

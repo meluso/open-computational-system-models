@@ -1,0 +1,53 @@
+id: repast4py
+name: Repast4Py
+gloss: Python member of the Repast Suite of agent-based modeling (ABM) tools, designed for building distributed,
+  large-scale agent-based simulations that run across multiple CPU cores via MPI on high-performance computing
+  systems.
+domain: des-abm
+system_represented: Large-scale complex systems of many interacting agents such as disease spread, urban
+  dynamics, or social networks, distributed across multiple processes so the agent population and space
+  are partitioned over HPC cores.
+inputs_you_can_change:
+- Number of agents and their behavioral parameters
+- Space type and dimensions (grids, continuous space, networks) and partitioning
+- Number of MPI ranks/processes for distribution
+- Number of simulation time steps and scheduling
+- Random seed and model-specific parameters (via input config)
+outputs_you_can_observe:
+- Aggregate and per-agent metrics logged over time
+- Agent spatial distributions and movement
+- Network/contact structures and counts
+- Time-series of model-level reporters
+- Scaling behavior across processes
+runtime_required: Python 3 with MPI (mpi4py) and a C/C++ MPI library; pip install repast4py; uses NumPy/Numba/PyTorch
+access_type: permissive-open
+license: BSD-3-Clause
+scale:
+  element_count: A representative distributed model simulates tens-of-thousands to millions of agents
+    partitioned across multiple MPI processes
+  grouping: Agents are distributed across processes with shared projections (grids, spaces, networks);
+    organized into a Model with a schedule and context
+  notes: Element count scales with agent population and the number of MPI ranks
+maintenance_status:
+  status: active
+  latest_version: 1.2.1
+  latest_release_date: '2025-11-12'
+access_link: https://repast.github.io/repast4py.site/
+suitability: Computational social scientists and researchers needing scalable, parallel agent-based models
+  on HPC
+executability_justification: Users vary agent counts, space, and model parameters and observe changed
+  logged metrics and spatial/network outcomes, satisfying the input-to-output variation test.
+last_verified: '2026-06-01'
+source_per_field:
+  latest_version: https://pypi.org/pypi/repast4py/json
+  latest_release_date: https://pypi.org/pypi/repast4py/json
+  license: https://pypi.org/pypi/repast4py/json
+  access_link: https://pypi.org/pypi/repast4py/json
+verification_confidence:
+  overall: high
+  unverified: []
+tags:
+- agent-based-modeling
+- distributed
+- hpc
+- python
