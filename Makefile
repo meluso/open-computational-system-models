@@ -4,7 +4,7 @@
 PY := .venv/bin/python
 PIP := .venv/bin/pip
 
-.PHONY: help venv validate build test test-site links clean all
+.PHONY: help venv validate build test test-site links gaps clean all
 
 help:
 	@echo "Targets:"
@@ -35,7 +35,10 @@ test: validate test-site
 	@echo "All tests passed."
 
 links:
-	$(PY) scripts/check_links.py $(if $(SOURCES),--sources,)
+	$(PY) scripts/check_links.py --json linkcheck.json $(if $(SOURCES),--sources,)
+
+gaps:
+	$(PY) scripts/gaps.py
 
 all: validate build test
 
