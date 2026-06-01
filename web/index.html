@@ -15,13 +15,97 @@
       <div class="wrap">
         <h1>A Catalog of Computational System Models</h1>
         <p class="tagline">
-          Runnable models of engineered systems — change inputs, observe
-          different outcomes. Built for practicing engineers and data
-          scientists.
+          A browsable list of <strong>computational system models</strong> —
+          software models of real engineered systems (power grids, robots,
+          spacecraft, chemical plants, and more) that you can actually run:
+          change an input, and the outputs change. Use it to find a model to
+          learn from, build on, or evaluate, whatever your field.
         </p>
         <p id="meta-line" class="meta-line"></p>
       </div>
     </header>
+
+    <details class="about wrap">
+      <summary>New here? How to read this catalog</summary>
+      <div class="about-body">
+        <h2>What's in here</h2>
+        <p>
+          Each card describes one runnable model or modeling tool. To be
+          listed, a model must be <em>executable</em>: a person can change its
+          inputs or parameters and observe different outputs (a static diagram
+          or spreadsheet with no computation does not qualify). The focus is on
+          models of systems with <em>many interacting parts</em> (roughly 25 or
+          more), grouped into subsystems.
+        </p>
+        <h2>How to use it</h2>
+        <ul>
+          <li><strong>Search</strong> by name, system, inputs, or outputs.</li>
+          <li>
+            <strong>Filter</strong> by domain (field of application) or by
+            access type (how you get the tool), and <strong>sort</strong> by how
+            recently each tool was maintained. <strong>Reset</strong> clears
+            everything.
+          </li>
+          <li>
+            Click a model's <strong>title</strong> to open its official page.
+            Hover any badge or field label for a one-line explanation.
+          </li>
+          <li>
+            Domains marked <strong>"(adjacent)"</strong> sit just outside the
+            core focus on engineered systems (for example systems biology or
+            fluid-dynamics solvers) but are included where the model can be run
+            as a multi-part system.
+          </li>
+        </ul>
+
+        <h2>What the labels mean</h2>
+        <p class="legend-intro">Each card carries four badges:</p>
+        <dl class="legend">
+          <dt>Domain</dt>
+          <dd>The field or sector the model applies to.</dd>
+          <dt>Access type</dt>
+          <dd>How you obtain and are allowed to use the tool (see below).</dd>
+          <dt>Status</dt>
+          <dd>
+            How actively the tool is kept up: <em>Active</em> (under ongoing
+            development), <em>Maintained</em> (kept working with fixes),
+            <em>Dormant</em> (no recent activity but still usable), or
+            <em>Abandoned</em> (no longer maintained).
+          </dd>
+          <dt>Confidence</dt>
+          <dd>
+            How sure we are that this entry's recorded facts (version, license,
+            scale, and so on) are correct, based on how directly we could
+            confirm them from primary sources. "Last verified" is the date we
+            checked.
+          </dd>
+        </dl>
+
+        <p class="legend-intro">Access types, in plain terms:</p>
+        <dl class="legend">
+          <dt>Permissive open source</dt>
+          <dd>Free and open; use, modify, and share with few conditions (e.g. MIT, BSD, Apache).</dd>
+          <dt>Weak-copyleft open source</dt>
+          <dd>Free and open; changes to the tool's own files stay open, but you may combine it with closed code (e.g. LGPL, MPL).</dd>
+          <dt>Copyleft open source</dt>
+          <dd>Free and open, but anything you distribute that builds on it must also be released under the same open license (e.g. GPL).</dd>
+          <dt>Free, closed source</dt>
+          <dd>Free to use, but the source code is not published.</dd>
+          <dt>Freemium</dt>
+          <dd>A free tier exists; full capability needs a paid plan.</dd>
+          <dt>Commercial</dt>
+          <dd>A paid product or license.</dd>
+          <dt>Campus / employer licensed</dt>
+          <dd>Reached through a university or workplace license (e.g. MATLAB/Simulink), not free to the public.</dd>
+        </dl>
+
+        <p class="legend-note">
+          A field shown as
+          <span class="unstated">unstated — needs direct verification</span>
+          means the source did not state that fact and we chose not to guess.
+        </p>
+      </div>
+    </details>
 
     <section class="controls wrap" aria-label="Search and filters">
       <input
@@ -48,11 +132,21 @@
 
     <footer class="site-footer wrap">
       <p>
-        Every entry records its access type, an honest verification confidence,
-        and the date its volatile facts were last checked. Fields marked
-        <span class="unstated">unstated — needs direct verification</span> were
-        deliberately not guessed. See the repository for the schema, the
-        narrative prose documents, and the gaps log.
+        Every entry records how you can access it, how confident we are in its
+        facts, and the date those facts were last checked. Facts the original
+        source never stated are marked
+        <span class="unstated">unstated — needs direct verification</span> rather
+        than guessed.
+      </p>
+      <p>
+        The full dataset, the data format, the longer write-ups, and the log of
+        known gaps are all in the
+        <a
+          href="https://github.com/meluso/open-computational-system-models"
+          target="_blank"
+          rel="noopener"
+          >project repository on GitHub</a
+        >.
       </p>
     </footer>
 
