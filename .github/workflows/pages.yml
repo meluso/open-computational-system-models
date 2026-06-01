@@ -13,6 +13,11 @@ permissions:
   pages: write
   id-token: write
 
+# Run the JS-based actions on Node 24 now (they declare Node 20, which GitHub is
+# deprecating). Covers checkout, setup-python, and the Pages actions.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 # Allow one in-flight deploy at a time; don't cancel a running publish.
 concurrency:
   group: pages
